@@ -1,4 +1,4 @@
-import vector from "../../assets/images/Vector.svg";
+import vector from "../../assets/images/vector.svg";
 import bgImage from "../../assets/images/gradientbg.png";
 // import { ArrowRight } from "@phosphor-icons/react";
 // import { BtnMain } from "../../components/buttons/BtnMain";
