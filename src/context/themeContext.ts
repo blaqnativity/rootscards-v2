@@ -5,11 +5,11 @@ import LogoDark from "/darkLogo.svg";
 // Create context with default values
 export const ThemeContext = createContext({
   isDarkBg: false,
-  logo: LogoDark,
-  textColor: "text-white",
-  iconColor: "text-black",
-  iconBg: "bg-white",
-  btnBg: "bg-black",
+  logo: LogoLight,
+  textColor: "text-black",
+  iconColor: "text-white",
+  iconBg: "bg-black",
+  btnBg: "bg-white",
 });
 
 // Hook to use theme

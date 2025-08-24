@@ -13,7 +13,7 @@ export const MainNav = () => {
   const { isToggled: menu, toggle } = useToggle();
 
   return (
-    <nav className={`transition-all duration-400 bg-transparent`}>
+    <nav className="absolute text-white w-full transition-all duration-400 bg-transparent">
       <header className="max-w-[1680px] mx-auto py-5">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center">

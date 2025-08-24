@@ -47,7 +47,7 @@ html {
   @apply md:text-lg text-gray-700;
 }
 .headerFive {
-  @apply md:text-sm uppercase font-semibold text-blue-700;
+  @apply md:text-sm uppercase font-semibold text-blue-800;
 }
 
 .custom-link {

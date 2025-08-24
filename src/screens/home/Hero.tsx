@@ -1,4 +1,5 @@
 import vector from "../../assets/images/Vector.svg";
+import bgImage from "../../assets/images/gradientbg.png";
 // import { ArrowRight } from "@phosphor-icons/react";
 // import { BtnMain } from "../../components/buttons/BtnMain";
 // import { Carousel } from "./Carousel";
@@ -6,7 +7,14 @@ import vector from "../../assets/images/Vector.svg";
 export const Hero = () => {
   //   const navigate = useNavigate();
   return (
-    <section className="h-[80vh] flex items-center justify-center">
+    <section
+      style={{
+        backgroundImage: `url(${bgImage})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+      className="h-[100vh] w-full flex items-center justify-center text-white"
+    >
       {/* Centered headline */}
       <div className="relative max-w-7xl">
         <h1 className="headerText font-bold text-center relative">

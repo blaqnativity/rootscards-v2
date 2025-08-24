@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-// import bgImage from "../src/assets/images/gradientbg.svg";
+import bgImage from "./assets/images/gradientBg.png";
 import { ArrowLeft } from "@phosphor-icons/react";
 import { MainLayout } from "./layouts/MainLayout";
 
@@ -9,13 +9,12 @@ export const ErrorPage = () => {
   return (
     <MainLayout>
       <main
-        // style={{
-        //   backgroundImage: `url(${bgImage})`,
-        //   backgroundSize: "cover",
-        //   backgroundPosition: "center",
-        //   backgroundColor: "#1a1a1a",
-        // }}
-        className="text-black"
+        style={{
+          backgroundImage: `url(${bgImage})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+        className="text-white"
       >
         <div className="h-screen flex flex-col justify-center items-center px-4 text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">
