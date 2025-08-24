@@ -1,5 +1,5 @@
 import vector from "../../assets/images/vector.svg";
-import bgImage from "../../assets/images/gradientbg.png";
+import bgImage from "../../assets/images/gradientBg.png";
 // import { ArrowRight } from "@phosphor-icons/react";
 // import { BtnMain } from "../../components/buttons/BtnMain";
 // import { Carousel } from "./Carousel";
