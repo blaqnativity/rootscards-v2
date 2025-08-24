@@ -1,0 +1,47 @@
+// themeContext import
+import { useTheme } from "../../context/themeContext";
+import { Link } from "react-router-dom";
+
+// phosphor-react-icons import
+import { X, List, ArrowRight } from "@phosphor-icons/react";
+import { navMenu } from "../../constants/navConstants";
+import { useToggle } from "../../hooks/useToggle";
+import { BtnMain } from "../buttons/BtnMain";
+
+export const MainNav = () => {
+  const { logo } = useTheme();
+  const { isToggled: menu, toggle } = useToggle();
+
+  return (
+    <nav className={`transition-all duration-400 bg-transparent`}>
+      <header className="max-w-[1680px] mx-auto py-5">
+        <div className="flex items-center justify-between">
+          <Link to="/" className="flex items-center">
+            <img src={logo} className="h-[1.5em]" alt="rootscards_logo" />
+          </Link>
+
+          {/* Desktop Nav */}
+          <ul className="hidden lg:flex font-medium space-x-8 items-center">
+            {navMenu.map((link, index) => (
+              <li key={index}>
+                <Link to={link.url} className="custom-link">
+                  {link.menu}
+                </Link>
+              </li>
+            ))}
+            <BtnMain
+              to="https://app.rootscards.com/signup"
+              text="start free trial"
+              icon={ArrowRight}
+            />
+          </ul>
+
+          {/* Toggle Button */}
+          <div className="lg:hidden z-50" onClick={toggle}>
+            {menu ? <X size={24} /> : <List size={24} />}
+          </div>
+        </div>
+      </header>
+    </nav>
+  );
+};

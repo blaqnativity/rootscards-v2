@@ -1,5 +1,11 @@
+import { RootRouter } from "./routes/RootRouter";
+
 const App = () => {
-  return <div>App</div>;
+  return (
+    <>
+      <RootRouter />
+    </>
+  );
 };
 
 export default App;
