@@ -19,7 +19,7 @@ export const Hero = () => {
       {/* Centered headline */}
       <div className="relative max-w-7xl">
         <h1 className="headerText font-bold text-center relative">
-          We make Qeues
+          We make Queues
           <span className="ml-3 relative inline-block">
             {/* The image sits on top */}
             <img

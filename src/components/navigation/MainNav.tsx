@@ -1,5 +1,4 @@
-// themeContext import
-import { useTheme } from "../../context/themeContext";
+import logo from "/lightLogo.svg";
 import { Link } from "react-router-dom";
 
 // phosphor-react-icons import
@@ -9,7 +8,6 @@ import { useToggle } from "../../hooks/useToggle";
 import { BtnMain } from "../buttons/BtnMain";
 
 export const MainNav = () => {
-  const { logo } = useTheme();
   const { isToggled: menu, toggle } = useToggle();
 
   return (

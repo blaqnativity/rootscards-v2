@@ -1,7 +1,7 @@
 import { ProcessCard } from "./ProcessCard";
 export const Processes = () => {
   return (
-    <section className="py-14">
+    <section className="md:py-30">
       <main className="w-full mx-auto px-4 overflow-hidden">
         <div className="ml-30 grid gap-10 md:grid-cols-[30%_100%]">
           <div className="flex flex-col justify-start gap-6">
