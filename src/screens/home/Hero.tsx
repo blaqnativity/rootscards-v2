@@ -1,7 +1,8 @@
 import vector from "../../assets/images/vector.svg";
 import bgImage from "../../assets/images/gradientBg.png";
-// import { ArrowRight } from "@phosphor-icons/react";
-// import { BtnMain } from "../../components/buttons/BtnMain";
+import { ArrowRight } from "@phosphor-icons/react";
+import { BtnMain } from "../../components/buttons/BtnMain";
+import { BtnSecondary } from "../../components/buttons/BtnSecondary";
 // import { Carousel } from "./Carousel";
 
 export const Hero = () => {
@@ -36,13 +37,21 @@ export const Hero = () => {
           and retail.
         </p>
 
-        {/* <div>
-          <BtnMain
+        <div className="flex gap-5 justify-center items-center">
+          <BtnSecondary
             to="https://app.rootscards.com/signup"
-            text="Get Started"
+            text="Start Free Trial"
             icon={ArrowRight}
           />
-        </div> */}
+          <BtnMain
+            to="https://app.rootscards.com/signup"
+            text="Book a Demo"
+            textColor="text-white"
+            icon={ArrowRight}
+            btnBg="bg-black"
+            btnBorder="border border-white"
+          />
+        </div>
         {/* <Carousel /> */}
       </div>
     </section>

@@ -6,10 +6,10 @@ import LogoDark from "/darkLogo.svg";
 export const ThemeContext = createContext({
   isDarkBg: false,
   logo: LogoLight,
-  textColor: "text-black",
-  iconColor: "text-white",
-  iconBg: "bg-black",
-  btnBg: "bg-white",
+  // textColor: "text-black",
+  // iconColor: "text-white",
+  // iconBg: "bg-black",
+  // btnBg: "bg-white",
 });
 
 // Hook to use theme
@@ -19,8 +19,8 @@ export const useTheme = () => useContext(ThemeContext);
 export const getThemeValues = (isDarkBg: boolean) => ({
   isDarkBg,
   logo: isDarkBg ? LogoDark : LogoLight,
-  textColor: isDarkBg ? "text-white" : "text-black",
-  iconColor: isDarkBg ? "text-black" : "text-white",
-  iconBg: isDarkBg ? "bg-white" : "bg-black",
-  btnBg: isDarkBg ? "bg-black" : "bg-white",
+  // textColor: isDarkBg ? "text-white" : "text-black",
+  // iconColor: isDarkBg ? "text-black" : "text-white",
+  // iconBg: isDarkBg ? "bg-white" : "bg-black",
+  // btnBg: isDarkBg ? "bg-black" : "bg-white",
 });
