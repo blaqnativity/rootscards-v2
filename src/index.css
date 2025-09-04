@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+:root {
+  --color-body: #080506;
+  --color-light: #d4d4d4;
+  --color-white: #ffff;
+  --text-color: #d4d4d4;
+  --text-dark: #171717;
+  --color-dark: #171717;
+}
+
+body {
+  font-family: "Satoshi", sans-serif;
+}
+
+html {
+  @apply scroll-smooth;
+}
+
+.fadeText {
+  @apply text-black/50
+  /* color: var(--color-light); */;
+}
+
+.headerText {
+  @apply text-3xl md:text-9xl tracking-tight;
+  font-family: "Forum", sans-serif;
+}
+.headerSubText {
+  @apply md:text-8xl tracking-tight;
+  font-family: "Forum", sans-serif;
+}
+
+.headerOne {
+  @apply md:text-6xl font-semibold;
+}
+
+.headerTwo {
+  @apply md:text-5xl font-semibold;
+}
+
+.headerThree {
+  @apply md:text-3xl font-semibold;
+}
+
+.headerFour {
+  @apply md:text-lg text-gray-700;
+}
+.headerFive {
+  @apply md:text-sm uppercase font-semibold text-blue-800;
+}
+
+.custom-link {
+  @apply text-sm font-semibold;
+}
+
+/* button sizes */
+.btnMain {
+  @apply text-[var(--text-dark)] px-4 py-2 rounded-full font-semibold text-[.6em] md:text-[1em] w-full md:w-fit text-center;
+}
