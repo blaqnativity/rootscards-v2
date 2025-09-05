@@ -1,4 +1,4 @@
-// import { Footer } from "../components/navigation/Footer";
+import { Footer } from "../components/navigation/Footer";
 import { MainNav as Navbar } from "../components/navigation/MainNav";
 
 export const MainLayout = ({ children }: LayoutProps) => {
@@ -6,7 +6,7 @@ export const MainLayout = ({ children }: LayoutProps) => {
     <section>
       <Navbar />
       {children}
-      {/* <Footer /> */}
+      <Footer />
     </section>
   );
 };
