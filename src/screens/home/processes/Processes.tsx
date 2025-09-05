@@ -5,7 +5,7 @@ export const Processes = () => {
       <main className="w-full mx-auto px-8 overflow-hidden">
         <div className="grid gap-10 md:grid-cols-[30%_100%]">
           <div className="flex flex-col justify-start gap-6">
-            <span className="headerFive">how it works</span>
+            <span className="headerFive fadeText">how it works</span>
             <h2 className="headerTwo">Check-In. Route. Optimize. Report.</h2>
             <span className="fadeText">
               RootsCards turns messy arrivals into streamlined experiences. From

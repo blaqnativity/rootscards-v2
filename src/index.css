@@ -18,8 +18,7 @@ html {
 }
 
 .fadeText {
-  @apply text-black/50
-  /* color: var(--color-light); */;
+  @apply text-black/60;
 }
 
 .headerText {
@@ -47,7 +46,7 @@ html {
   @apply md:text-lg text-gray-700;
 }
 .headerFive {
-  @apply md:text-sm uppercase font-semibold text-blue-800;
+  @apply md:text-sm uppercase font-semibold;
 }
 
 .custom-link {
