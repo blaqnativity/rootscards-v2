@@ -3,10 +3,9 @@ import bgImage from "../../assets/images/gradientBg.png";
 import { ArrowRight } from "@phosphor-icons/react";
 import { BtnMain } from "../../components/buttons/BtnMain";
 import { BtnSecondary } from "../../components/buttons/BtnSecondary";
-// import { Carousel } from "./Carousel";
+import { Carousel } from "../../components/utils/Carousel";
 
 export const Hero = () => {
-  //   const navigate = useNavigate();
   return (
     <section
       style={{
@@ -14,7 +13,7 @@ export const Hero = () => {
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
-      className="h-[100vh] w-full flex items-center justify-center text-white"
+      className="h-screen w-full flex items-center justify-center text-white"
     >
       {/* Centered headline */}
       <div className="relative max-w-7xl">
@@ -52,8 +51,8 @@ export const Hero = () => {
             btnBorder="border border-white"
           />
         </div>
-        {/* <Carousel /> */}
       </div>
+      <Carousel />
     </section>
   );
 };

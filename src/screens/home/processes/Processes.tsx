@@ -1,9 +1,9 @@
 import { ProcessCard } from "./ProcessCard";
 export const Processes = () => {
   return (
-    <section className="md:py-30">
+    <section className="md:py-20">
       <main className="w-full mx-auto px-4 overflow-hidden">
-        <div className="ml-30 grid gap-10 md:grid-cols-[30%_100%]">
+        <div className="grid gap-10 md:grid-cols-[30%_100%]">
           <div className="flex flex-col justify-start gap-6">
             <span className="headerFive">how it works</span>
             <h2 className="headerTwo">Check-In. Route. Optimize. Report.</h2>

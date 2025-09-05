@@ -2,7 +2,7 @@ import eventImage from "../../assets/images/events.svg";
 
 export const PainPointSection = () => {
   return (
-    <section className="md:py-30 bg-[#F6F6F6]">
+    <section className="md:py-20 bg-[#F6F6F6]">
       <main className="max-w-[1680px] mx-auto px-4">
         <span className="headerFive">the need</span>
         <h2 className="headerTwo max-w-7xl my-10">
