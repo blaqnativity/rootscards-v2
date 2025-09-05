@@ -1,4 +1,5 @@
 import { ProcessCard } from "./ProcessCard";
+
 export const Processes = () => {
   return (
     <section className="md:py-20">

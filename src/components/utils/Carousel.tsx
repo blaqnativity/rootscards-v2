@@ -1,24 +1,30 @@
 import { carouselLogos } from "../../constants/carouseLogos";
+import LogoLoop from "../reactbits/LogoLoop";
 
 export const Carousel = () => {
   return (
     <section className="w-full absolute bottom-8 bg-[#222222] flex justify-center items-center border border-[#444444] py-5">
-      <div className="max-w-[1680px] mx-auto flex justify-evenly items-center w-full">
+      <div className="max-w-[1680px] px-8 mx-auto flex justify-between items-center w-full">
         {/* Left side */}
-        <div className="items-start">
-          <span>Connect what you already use</span>
+        <div>
+          <span className="headerFive text-white">
+            Connect what you already use
+          </span>
         </div>
 
-        {/* Right side */}
-        <div className="flex gap-20">
-          {carouselLogos.map((logo, index) => (
-            <img
-              key={index}
-              src={logo}
-              alt={`logo-${index}`}
-              className="h-8 object-contain"
-            />
-          ))}
+        {/* Right side: animated logos */}
+        <div className="w-[80%]">
+          <LogoLoop
+            logos={carouselLogos}
+            speed={120}
+            direction="left"
+            logoHeight={32}
+            gap={40}
+            pauseOnHover
+            fadeOut
+            fadeOutColor="#222222"
+            scaleOnHover
+          />
         </div>
       </div>
     </section>
