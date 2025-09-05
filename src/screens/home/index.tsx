@@ -4,6 +4,7 @@ import { Hero } from "./Hero";
 import { PainPointSection } from "./PainPointSection";
 // import { PricingPlan } from "./pricing/PricingPlan";
 import { Processes } from "./processes/Processes";
+import { FAQ } from "../../components/utils/FAQ";
 
 export const Home = () => {
   return (
@@ -13,6 +14,7 @@ export const Home = () => {
       <PainPointSection />
       <Processes />
       {/* <PricingPlan /> */}
+      <FAQ />
     </MainLayout>
   );
 };

@@ -5,7 +5,7 @@ import noiseBg from "../../assets/images/noiseBg.svg";
 
 export const FeatureCards = () => {
   return (
-    <section className="md:py-30 bg-white max-w-[1680px] px-4 mx-auto">
+    <section className="md:py-30 bg-white max-w-[1680px] px-8 mx-auto">
       <div className="grid md:grid-cols-2 gap-12">
         {/* Card 1 */}
         <div className="flex flex-col gap-4">

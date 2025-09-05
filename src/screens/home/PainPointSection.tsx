@@ -3,7 +3,7 @@ import eventImage from "../../assets/images/events.svg";
 export const PainPointSection = () => {
   return (
     <section className="md:py-20 bg-[#F6F6F6]">
-      <main className="max-w-[1680px] mx-auto px-4">
+      <main className="max-w-[1680px] mx-auto px-8">
         <span className="headerFive">the need</span>
         <h2 className="headerTwo max-w-7xl my-10">
           Long waits erode revenue and trust. RootsCards eliminates bottlenecks

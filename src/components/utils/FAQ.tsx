@@ -1,0 +1,65 @@
+import { CaretDownIcon } from "@phosphor-icons/react";
+import { FAQData } from "../../constants/FAQ";
+
+import { useState } from "react";
+
+export const FAQ = () => {
+  const [openIndexes, setOpenIndexes] = useState<boolean[]>(
+    FAQData.map(() => false)
+  );
+
+  const handleToggle = (idx: number) => {
+    setOpenIndexes((prev) => prev.map((open, i) => (i === idx ? !open : open)));
+  };
+
+  return (
+    <div className="w-full bg-[#f6f6f6]">
+      <div className="py-20 px-8 max-w-[1680px] mx-auto flex flex-col md:flex-row gap-12">
+        {/* Left side */}
+        <div className="flex flex-col text-left basis-1/2">
+          <p className="sm:text-4xl text-3xl font-extrabold text-base-content">
+            Frequently Asked <br />
+            Questions
+          </p>
+        </div>
+
+        {/* FAQ list */}
+        <ul className="basis-1/2">
+          {FAQData.map((item, index) => {
+            const isOpen = openIndexes[index];
+
+            return (
+              <li key={index}>
+                <button
+                  className="relative flex gap-2 items-center w-full py-5 text-base font-semibold text-left border-t md:text-lg border-base-content/10"
+                  aria-expanded={isOpen}
+                  onClick={() => handleToggle(index)}
+                >
+                  <span className="flex-1 text-base-content">
+                    {item.question}
+                  </span>
+                  <CaretDownIcon
+                    size={20}
+                    className={`transition-transform duration-300 ${
+                      isOpen ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+                <div
+                  className={`transition-all duration-300 ease-in-out overflow-hidden ${
+                    isOpen ? "max-h-40" : "max-h-0"
+                  }`}
+                  style={{ transition: "max-height 0.3s ease-in-out" }}
+                >
+                  <div className="pb-5 leading-relaxed space-y-2">
+                    {item.answer}
+                  </div>
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </div>
+  );
+};
