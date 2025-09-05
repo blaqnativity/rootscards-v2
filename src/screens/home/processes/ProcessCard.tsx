@@ -19,7 +19,9 @@ export const ProcessCard = () => {
                 <ArrowUpRight size={18} weight="bold" />
               </span>
             </div>
-            <h3 className="headerThree my-3 md:w-40">{process.title}</h3>
+            <h3 className="headerThree font-semibold my-2 md:w-40">
+              {process.title}
+            </h3>
             <p className="fadeText">{process.description}</p>
           </div>
 

@@ -22,7 +22,7 @@ html {
 }
 
 .headerText {
-  @apply text-3xl md:text-9xl tracking-tight;
+  @apply text-3xl md:text-8xl tracking-tight;
   font-family: "Forum", sans-serif;
 }
 .headerSubText {
@@ -39,7 +39,7 @@ html {
 }
 
 .headerThree {
-  @apply md:text-3xl font-semibold;
+  @apply md:text-3xl;
 }
 
 .headerFour {
