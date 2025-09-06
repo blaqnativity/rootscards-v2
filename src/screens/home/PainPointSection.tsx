@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom";
 import eventImage from "../../assets/images/events.svg";
+import { ArrowUpRight, ArrowRight, ArrowLeft } from "@phosphor-icons/react";
 
 export const PainPointSection = () => {
   return (
@@ -16,7 +18,27 @@ export const PainPointSection = () => {
         <div className="grid md:grid-cols-[40%_60%]">
           {/* text box */}
           <div className="bg-[#F9ECC9] flex items-center justify-center p-20 tracking-widest">
-            <h3 className="headerSubText">Eliminates Bottlenecks at Events</h3>
+            <div className="flex flex-col space-y-5">
+              <Link
+                to="/"
+                className="flex items-center gap-1 bg-gray-100 w-fit px-5 py-2 rounded-full shadow-md hover:shadow-lg transition-shadow duration-300"
+              >
+                <span>Explore More</span>
+                <ArrowUpRight size={18} className="text-gray-600" />
+              </Link>
+              <h3 className="headerSubText">
+                Eliminates Bottlenecks at Events
+              </h3>
+
+              <div className="flex items-center gap-8">
+                <button className="bg-white p-3 rounded-full hover:bg-gray-100 shadow cursor-pointer transition-all duration-300">
+                  <ArrowLeft />
+                </button>
+                <button className="bg-white p-3 rounded-full hover:bg-gray-100 shadow cursor-pointer transition-all duration-300">
+                  <ArrowRight />
+                </button>
+              </div>
+            </div>
           </div>
 
           {/* image box */}
