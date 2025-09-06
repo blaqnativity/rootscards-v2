@@ -4,7 +4,8 @@ export const Processes = () => {
   return (
     <section className="py-10 md:py-20">
       <main className="max-w-[1680px] mx-auto px-4 md:px-8 overflow-hidden">
-        <div className="grid gap-10 md:grid-cols-[30%_100%]">
+        <div className="grid gap-10 grid-cols-1 md:grid-cols-[30%_70%]">
+          {/* Left section */}
           <div className="flex flex-col justify-start gap-6">
             <span className="headerFive fadeText uppercase">how it works</span>
             <h2 className="headerTwo">Check-In. Route. Optimize. Report.</h2>
@@ -15,7 +16,10 @@ export const Processes = () => {
               insights to act with confidence.
             </span>
           </div>
-          <div>
+
+          {/* Right section */}
+          <div className="overflow-hidden w-full">
+            {/* Mobile: show as carousel, Desktop: show normally */}
             <ProcessCard />
           </div>
         </div>
