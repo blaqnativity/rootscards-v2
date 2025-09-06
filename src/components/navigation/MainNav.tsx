@@ -12,10 +12,10 @@ export const MainNav = () => {
 
   return (
     <nav className="absolute text-white w-full transition-all duration-400 bg-transparent">
-      <header className="max-w-[1680px] mx-auto py-5 px-8">
+      <header className="max-w-[1680px] mx-auto py-5 px-4 md:px-8">
         <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-baseline-last gap-2">
-            <img src={logo} alt="logo" className="h-[1.5em]" />
+          <Link to="/" className="flex items-baseline-last gap-1 md:gap-2">
+            <img src={logo} alt="logo" className="h-[1.1em] md:h-[1.5em]" />
             <span className="logoText lowercase">rootscards</span>
           </Link>
 

@@ -4,8 +4,8 @@ import { ArrowUpRight, ArrowRight, ArrowLeft } from "@phosphor-icons/react";
 
 export const PainPointSection = () => {
   return (
-    <section className="md:py-20 bg-[#F6F6F6]">
-      <main className="max-w-[1680px] mx-auto px-8">
+    <section className="py-10 md:py-20 bg-[#F6F6F6]">
+      <main className="max-w-[1680px] mx-auto px-4 md:px-8">
         <span className="headerFive fadeText uppercase">the need</span>
         <h2 className="headerTwo max-w-7xl my-10">
           Long waits erode revenue and trust. RootsCards eliminates bottlenecks
@@ -17,8 +17,8 @@ export const PainPointSection = () => {
 
         <div className="grid md:grid-cols-[40%_60%]">
           {/* text box */}
-          <div className="bg-[#F9ECC9] flex items-center justify-center p-20 tracking-widest">
-            <div className="flex flex-col space-y-5">
+          <div className="bg-[#F9ECC9] flex items-center justify-center p-10 md:p-20 tracking-widest">
+            <div className="flex md:items-start items-center flex-col space-y-5">
               <Link
                 to="/"
                 className="flex items-center gap-1 bg-gray-100 w-fit px-5 py-2 rounded-full shadow-md hover:shadow-lg transition-shadow duration-300"
