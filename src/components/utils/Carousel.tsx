@@ -19,7 +19,7 @@ export const Carousel = () => {
             speed={80}
             direction="left"
             logoHeight={32}
-            gap={40}
+            gap={80}
             pauseOnHover
             fadeOut
             fadeOutColor="#222222"

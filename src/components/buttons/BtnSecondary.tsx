@@ -31,7 +31,7 @@ export const BtnSecondary: React.FC<ButtonProps> = ({
       <span className={`text-sm mr-2 ${textColor}`}>{text}</span>
       {Icon && (
         <span
-          className={`flex items-center justify-center h-full w-10 rounded-full ${iconBg} ${iconColor}`}
+          className={`flex items-center justify-center h-full w-10 rounded-full ${iconBg} ${iconColor} ${btnBg}`}
         >
           <Icon size={18} />
         </span>

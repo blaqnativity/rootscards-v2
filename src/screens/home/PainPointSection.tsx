@@ -21,7 +21,7 @@ export const PainPointSection = () => {
             <div className="flex md:items-start items-center flex-col space-y-5">
               <Link
                 to="/"
-                className="flex items-center gap-1 bg-gray-100 w-fit px-5 py-2 rounded-full shadow-md hover:shadow-lg transition-shadow duration-300"
+                className="flex items-center gap-1 bg-gray-100 w-fit px-5 py-2 rounded-full"
               >
                 <span>Explore More</span>
                 <ArrowUpRight size={18} className="text-gray-600" />
@@ -31,10 +31,10 @@ export const PainPointSection = () => {
               </h3>
 
               <div className="flex items-center gap-8">
-                <button className="bg-white p-3 rounded-full hover:bg-gray-100 shadow cursor-pointer transition-all duration-300">
+                <button className="bg-white p-3 rounded-full hover:bg-gray-100 cursor-pointer transition-all duration-300">
                   <ArrowLeft />
                 </button>
-                <button className="bg-white p-3 rounded-full hover:bg-gray-100 shadow cursor-pointer transition-all duration-300">
+                <button className="bg-white p-3 rounded-full hover:bg-gray-100 cursor-pointer transition-all duration-300">
                   <ArrowRight />
                 </button>
               </div>

@@ -1,4 +1,6 @@
 import { ProcessCard } from "./ProcessCard";
+import { BtnSecondary } from "@/components/buttons/BtnSecondary";
+import { ArrowRight } from "@phosphor-icons/react";
 
 export const Processes = () => {
   return (
@@ -15,6 +17,14 @@ export const Processes = () => {
               routing, and optimizing in real time — while giving your team the
               insights to act with confidence.
             </span>
+            <BtnSecondary
+              to="https://app.rootscards.com/signup"
+              text="Create an account"
+              icon={ArrowRight}
+              btnBg="black"
+              iconBg="white"
+              iconColor="black"
+            />
           </div>
 
           {/* Right section */}

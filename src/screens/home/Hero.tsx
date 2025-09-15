@@ -5,6 +5,7 @@ import { BtnMain } from "../../components/buttons/BtnMain";
 import { BtnSecondary } from "../../components/buttons/BtnSecondary";
 import { Carousel } from "../../components/utils/Carousel";
 import Aurora from "../../components/reactbits/Aurora";
+import { scheduleDemo } from "../../services/useCalendly";
 
 export const Hero = () => {
   return (
@@ -52,13 +53,14 @@ export const Hero = () => {
               text="Start Free Trial"
               icon={ArrowRight}
             />
+
             <BtnMain
-              to="https://app.rootscards.com/signup"
               text="Book a Demo"
               textColor="text-white"
               icon={ArrowRight}
               btnBg="bg-black"
               btnBorder="border border-white"
+              onClick={scheduleDemo}
             />
           </div>
         </div>
