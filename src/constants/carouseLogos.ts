@@ -4,7 +4,7 @@ import whatsapp from "../assets/images/whatsapp.svg";
 import inter from "../assets/images/inter.svg";
 import hubspot from "../assets/images/hubspot.svg";
 import eventbrite from "../assets/images/eventbrite.svg";
-import type { LogoItem } from "../components/reactbits/LogoLoop";
+import type { LogoItem } from "../components/ui/reactbits/LogoLoop";
 
 export const carouselLogos: LogoItem[] = [
   { src: cowry, alt: "Cowry" },

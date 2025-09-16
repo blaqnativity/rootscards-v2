@@ -12,8 +12,8 @@ export const Footer = () => {
   return (
     <>
       <footer className="w-full bg-black py-10 md:py-20 text-white">
-        <div className="mx-auto max-w-[1680px] px-4 md:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+        <div className="flex flex-col gap-10 mx-auto max-w-[1680px] px-4 md:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4 gap-y-10 items-start">
             {/* block one */}
             <div className="flex flex-col gap-4">
               <Link to="/" className="flex items-baseline-last gap-1 md:gap-2">
@@ -27,28 +27,36 @@ export const Footer = () => {
             </div>
             {/* block two */}
             <div className="flex flex-col gap-4">
-              <Link to="/">Advanced Features</Link>
+              <Link to="/" className="headerFive">
+                Advanced Features
+              </Link>
               <Link to="/">AI-Powered Segmentation</Link>
               <Link to="/">Small Identity Engine</Link>
               <Link to="/">Real Time Dashboard</Link>
             </div>
             {/* block three */}
             <div className="flex flex-col gap-4">
-              <Link to="/">Product</Link>
-              <Link to="/">AI-Powered Segmentation</Link>
-              <Link to="/">Small Identity Engine</Link>
-              <Link to="/">Real Time Dashboard</Link>
+              <Link to="/" className="headerFive">
+                Product
+              </Link>
+              <Link to="/">Rootscard</Link>
+              <Link to="/">Rootscard Suite</Link>
+              <Link to="/">View Demo</Link>
+              <Link to="/">Dev Docs</Link>
             </div>
             {/* block four */}
             <div className="flex flex-col gap-4">
-              <Link to="/">Support</Link>
-              <Link to="/">AI-Powered Segmentation</Link>
-              <Link to="/">Small Identity Engine</Link>
-              <Link to="/">Real Time Dashboard</Link>
+              <Link to="/" className="headerFive">
+                Support
+              </Link>
+              <Link to="/">Product Updates</Link>
+              <Link to="/">FAQs</Link>
+              <Link to="/">Blogs</Link>
+              <Link to="/">Help Docs</Link>
             </div>
 
             {/* social icons */}
-            <div className="flex flex-col gap-4 items-center">
+            <div className="flex flex-col gap-6">
               <div className="flex items-center gap-4">
                 <Link to="/" className="icon">
                   <LinkedinLogoIcon size={22} weight="fill" />
@@ -64,11 +72,44 @@ export const Footer = () => {
                 </Link>
               </div>
               {/* whatsapp */}
-              <span className="flex items-center gap-2">
-                <WhatsappLogo size={32} weight="fill" />
-                send us a dm
-              </span>
+              <Link
+                to="/"
+                className="bg-[#1EAE54] flex items-center gap-2 px-4 py-2 rounded-full w-fit"
+              >
+                <WhatsappLogo size={22} />
+                Chat on Whatsapp
+              </Link>
+
+              <span>support@rootscard.com</span>
             </div>
+          </div>
+
+          {/* copyright text */}
+          <span>© Copyright rootscard* Inc. 2025</span>
+
+          {/* line */}
+          <div className="bg-white/30 h-[1px]"></div>
+
+          <div>
+            <span className="headerFive">Backed by techstars_</span>
+
+            <ul className="mt-4 space-y-4">
+              <li>
+                * Mainstack offers its products and services in partnership with
+                licensed transmitters and payment processors in their respective
+                jurisdictions.
+              </li>
+              <li>
+                * Mainstack offers its products and services in partnership with
+                licensed transmitters and payment processors in their respective
+                jurisdictions.
+              </li>
+              <li>
+                * Mainstack offers its products and services in partnership with
+                licensed transmitters and payment processors in their respective
+                jurisdictions.
+              </li>
+            </ul>
           </div>
         </div>
       </footer>

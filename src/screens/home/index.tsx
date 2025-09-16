@@ -4,7 +4,7 @@ import { PainPointSection } from "./PainPointSection";
 import { Processes } from "./processes/Processes";
 import { FAQ } from "../../components/utils/FAQ";
 import { VideoCards } from "./VideoCards";
-import { Testimonial } from "../../components/testimonials/Testimonial";
+import { Testimonial } from "../../components/utils/Testimonial";
 
 export const Home = () => {
   return (

@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import bgImage from "./assets/images/gradientBg.png";
 import { ArrowLeft } from "@phosphor-icons/react";
 import { MainLayout } from "./layouts/MainLayout";
-import Aurora from "./components/reactbits/Aurora";
+import Aurora from "./components/ui/reactbits/Aurora";
 
 export const ErrorPage = () => {
   const navigate = useNavigate();

@@ -1,5 +1,5 @@
 import { carouselLogos } from "../../constants/carouseLogos";
-import LogoLoop from "../reactbits/LogoLoop";
+import LogoLoop from "../ui/reactbits/LogoLoop";
 
 export const Carousel = () => {
   return (

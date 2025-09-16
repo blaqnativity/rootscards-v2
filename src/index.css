@@ -114,11 +114,12 @@ html {
 }
 
 .card {
-  width: 518px;
+  @apply w-[350px] md:w-[500px];
   border-radius: 16px;
   padding: 1.5rem;
   color: #f5f5f5;
   background: linear-gradient(to right, #333333, #111111); /* inner bg */
+  flex-shrink: 0;
 
   /* border gradient trick */
   border: 1px solid transparent;
