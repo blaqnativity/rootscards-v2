@@ -14,7 +14,7 @@ export const ProcessCard = () => {
               <span className="bg-gray-200 px-4 py-2 rounded-full">
                 {process.tagline}
               </span>
-              <span className="bg-white p-2 flex justify-center items-center rounded-full shadow">
+              <span className="bg-white p-2 flex justify-center items-center rounded-full">
                 <ArrowUpRight size={18} weight="bold" />
               </span>
             </div>

@@ -87,7 +87,9 @@ export const InfiniteMovingCards = ({
       >
         {items.map((item) => (
           <div className="card">
-            <p className="text-sm leading-relaxed mb-4">{item.text}</p>
+            <p className="text-sm text-neutral-400 leading-relaxed mb-4">
+              {item.text}
+            </p>
             <div className="flex items-center gap-3 overflow-hidden">
               <img
                 src={item.avatar}
@@ -95,7 +97,7 @@ export const InfiniteMovingCards = ({
                 className="w-10 h-10 rounded-full object-cover"
               />
               <div>
-                <p className="text-sm font-semibold">{item.name}</p>
+                <p className="text-sm text-white font-semibold">{item.name}</p>
                 <p className="text-xs text-neutral-400">{item.role}</p>
               </div>
             </div>

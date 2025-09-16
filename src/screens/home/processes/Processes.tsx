@@ -9,7 +9,9 @@ export const Processes = () => {
         <div className="grid gap-10 grid-cols-1 md:grid-cols-[30%_70%]">
           {/* Left section */}
           <div className="flex flex-col justify-start gap-6">
-            <span className="headerFive fadeText uppercase">how it works</span>
+            <span className="headerFive text-white fadeText uppercase">
+              how it works
+            </span>
             <h2 className="headerTwo">Check-In. Route. Optimize. Report.</h2>
             <span className="fadeText">
               RootsCards turns messy arrivals into streamlined experiences. From
