@@ -23,9 +23,10 @@ export const Processes = () => {
               to="https://app.rootscards.com/signup"
               text="Create an account"
               icon={ArrowRight}
-              btnBg="black"
-              iconBg="white"
-              iconColor="black"
+              btnBg="bg-black"
+              iconBg="bg-white"
+              iconColor="text-black"
+              textColor="text-white"
             />
           </div>
 

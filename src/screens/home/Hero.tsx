@@ -1,6 +1,6 @@
 import vector from "../../assets/images/vector.svg";
 import bgImage from "../../assets/images/gradientBg.png";
-import { ArrowRight } from "@phosphor-icons/react";
+import { ArrowRight, Lightning } from "@phosphor-icons/react";
 import { BtnMain } from "../../components/buttons/BtnMain";
 import { BtnSecondary } from "../../components/buttons/BtnSecondary";
 import { Carousel } from "../../components/utils/Carousel";
@@ -29,6 +29,11 @@ export const Hero = () => {
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-white">
+        <div className="pill">
+          <Lightning weight="fill" size={26} />
+          <span>AI-Powered Smart Infrastructure</span>
+        </div>
+
         <div className="max-w-7xl text-center">
           <h1 className="headerText font-bold relative">
             We make Queues

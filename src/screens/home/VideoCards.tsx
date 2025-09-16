@@ -80,13 +80,12 @@ export const VideoCards = () => {
               </p>
               <BtnMain
                 text="Book a Demo"
-                btnBg="black"
-                textColor="white"
+                btnBg="bg-black"
+                textColor="text-white"
                 icon={ArrowRight}
               />
             </div>
           </div>
-          {/* card one */}
           <div className="w-fit md:max-w-4xl mx-auto flex-shrink-0">
             <div className="relative">
               {/* Badge */}
@@ -141,8 +140,8 @@ export const VideoCards = () => {
               </p>
               <BtnMain
                 text="Book a Demo"
-                btnBg="black"
-                textColor="white"
+                btnBg="bg-black"
+                textColor="text-white"
                 icon={ArrowRight}
               />
             </div>
