@@ -55,12 +55,12 @@ export const Hero = () => {
           <div className="flex gap-5 justify-center items-center">
             <BtnSecondary
               to="https://app.rootscards.com/signup"
-              text="Start Free Trial"
+              text="Start free trial"
               icon={ArrowRight}
             />
 
             <BtnMain
-              text="Book a Demo"
+              text="Book a demo"
               textColor="text-white"
               icon={ArrowRight}
               btnBg="bg-black"

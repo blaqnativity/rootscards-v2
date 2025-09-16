@@ -79,7 +79,7 @@ export const VideoCards = () => {
                 actions applicable today, not in months.
               </p>
               <BtnMain
-                text="Book a Demo"
+                text="Book a demo"
                 btnBg="bg-black"
                 textColor="text-white"
                 icon={ArrowRight}
@@ -139,7 +139,7 @@ export const VideoCards = () => {
                 actions applicable today, not in months.
               </p>
               <BtnMain
-                text="Book a Demo"
+                text="Book a demo"
                 btnBg="bg-black"
                 textColor="text-white"
                 icon={ArrowRight}

@@ -16,10 +16,6 @@ export const carouselLogos: LogoItem[] = [
   { src: inter, alt: "Intercom" },
   { src: whatsapp, alt: "WhatsApp" },
   { src: hubspot, alt: "HubSpot" },
-  { src: cowry, alt: "Cowry" },
-  { src: slack, alt: "Slack" },
-  { src: inter, alt: "Intercom" },
-  { src: whatsapp, alt: "WhatsApp" },
   { src: juliusBerger, alt: "juliusBerger" },
   { src: tix, alt: "tix" },
 ];

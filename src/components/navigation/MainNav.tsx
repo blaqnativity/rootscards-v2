@@ -30,7 +30,7 @@ export const MainNav = () => {
             ))}
             <BtnMain
               to="https://app.rootscards.com/signup"
-              text="start free trial"
+              text="Start free trial"
               icon={ArrowRight}
             />
           </ul>

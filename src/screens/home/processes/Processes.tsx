@@ -13,7 +13,7 @@ export const Processes = () => {
               how it works
             </span>
             <h2 className="headerTwo">Check-In. Route. Optimize. Report.</h2>
-            <span className="fadeText">
+            <span className="fadeText md:mb-6">
               RootsCards turns messy arrivals into streamlined experiences. From
               the moment someone checks in, AI handles the flow of segmenting,
               routing, and optimizing in real time — while giving your team the
