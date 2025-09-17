@@ -1,15 +1,3 @@
-// phosphor-icons-react
-// import {
-//   DotsThree,
-//   SignIn,
-//   ListBullets,
-//   Code,
-//   Tag,
-//   Barcode,
-//   AddressBook,
-//   Monitor,
-// } from "@phosphor-icons/react";
-
 // navmenu
 export interface NavItem {
   menu: string;
