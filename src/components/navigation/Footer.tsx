@@ -27,7 +27,7 @@ export const Footer = () => {
             </div>
             {/* block two */}
             <div className="flex flex-col gap-4">
-              <Link to="/" className="headerFive">
+              <Link to="/" className="logoText">
                 Advanced Features
               </Link>
               <Link to="/">AI-Powered Segmentation</Link>
@@ -36,7 +36,7 @@ export const Footer = () => {
             </div>
             {/* block three */}
             <div className="flex flex-col gap-4">
-              <Link to="/" className="headerFive">
+              <Link to="/" className="logoText">
                 Product
               </Link>
               <Link to="/">Rootscard</Link>
@@ -46,7 +46,7 @@ export const Footer = () => {
             </div>
             {/* block four */}
             <div className="flex flex-col gap-4">
-              <Link to="/" className="headerFive">
+              <Link to="/" className="logoText">
                 Support
               </Link>
               <Link to="/">Product Updates</Link>

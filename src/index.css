@@ -64,7 +64,7 @@ html {
 }
 
 .logoText {
-  @apply text-lg md:text-2xl font-bold;
+  @apply text-lg md:text-xl font-bold text-white;
 }
 
 .fadeText {
@@ -130,7 +130,7 @@ html {
 }
 
 .custom-link {
-  @apply text-sm font-semibold;
+  @apply md:text-sm font-semibold text-white;
 }
 
 /* button sizes */

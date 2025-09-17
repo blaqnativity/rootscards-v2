@@ -15,7 +15,7 @@ export const MainNav = () => {
           {/* Desktop brand + nav */}
           <Link to="/" className="hidden lg:flex items-center gap-2">
             <img src={logo} alt="logo" className="h-[1.3em] md:h-[1.5em]" />
-            <span className="logoText lowercase">rootscards</span>
+            <span className="logoText">rootscards</span>
           </Link>
 
           <ul className="hidden lg:flex font-medium space-x-8 items-center">
