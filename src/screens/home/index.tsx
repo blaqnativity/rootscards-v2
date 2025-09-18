@@ -3,7 +3,7 @@ import { Hero } from "./Hero";
 import { PainPointSection } from "./PainPointSection";
 import { Processes } from "./Processes";
 import { FAQ } from "../../components/utils/FAQ";
-import { VideoCards } from "./VideoCards";
+import { VideoCard } from "./VideoCard";
 import { Testimonial } from "../../components/utils/Testimonial";
 
 export const Home = () => {
@@ -12,7 +12,7 @@ export const Home = () => {
       <Hero />
       <PainPointSection />
       <Processes />
-      <VideoCards />
+      <VideoCard />
       <Testimonial />
       <FAQ />
     </MainLayout>
