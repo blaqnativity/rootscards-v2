@@ -7,15 +7,18 @@ import eventbrite from "../assets/images/eventbrite.svg";
 import juliusBerger from "../assets/images/JuliusBerger.svg";
 import tix from "../assets/images/Tix-Africa.svg";
 
-import type { LogoItem } from "../components/ui/reactbits/LogoLoop";
+export type CarouselLogo = {
+  src: string;
+  alt: string;
+};
 
-export const carouselLogos: LogoItem[] = [
+export const carouselLogos: CarouselLogo[] = [
   { src: cowry, alt: "Cowry" },
-  { src: eventbrite, alt: "eventbrite" },
+  { src: eventbrite, alt: "Eventbrite" },
   { src: slack, alt: "Slack" },
   { src: inter, alt: "Intercom" },
   { src: whatsapp, alt: "WhatsApp" },
   { src: hubspot, alt: "HubSpot" },
-  { src: juliusBerger, alt: "juliusBerger" },
-  { src: tix, alt: "tix" },
+  { src: juliusBerger, alt: "Julius Berger" },
+  { src: tix, alt: "Tix Africa" },
 ];

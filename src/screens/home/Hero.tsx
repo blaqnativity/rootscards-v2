@@ -3,9 +3,9 @@ import bgImage from "../../assets/images/gradientBg.png";
 import { ArrowRight, Lightning } from "@phosphor-icons/react";
 import { BtnMain } from "../../components/buttons/BtnMain";
 import { BtnSecondary } from "../../components/buttons/BtnSecondary";
-import { Carousel } from "../../components/utils/Carousel";
 import Aurora from "../../components/ui/reactbits/Aurora";
 import { scheduleDemo } from "../../services/useCalendly";
+import { Carousel } from "../../components/utils/LogoCarousel";
 
 export const Hero = () => {
   return (
@@ -34,7 +34,7 @@ export const Hero = () => {
           <span>AI-Powered Smart Infrastructure</span>
         </div>
 
-        <div className="max-w-7xl text-center">
+        <div className="max-w-7xl text-center mb-10">
           <h1 className="headerText font-bold relative">
             We make Queues
             <span className="ml-3 relative inline-block">
