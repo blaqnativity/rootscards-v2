@@ -21,7 +21,7 @@ export const Carousel = () => {
             pauseOnHover
             gap={80}
             scaleOnHover={true}
-            logoHeight={4}
+            logoHeight={30}
           />
         </div>
       </div>

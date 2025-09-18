@@ -1,5 +1,5 @@
-import { ProcessCard } from "./ProcessCard";
 import { BtnSecondary } from "@/components/buttons/BtnSecondary";
+import { ProcessesCard } from "@/components/utils/ProcessesCarousel";
 import { ArrowRight } from "@phosphor-icons/react";
 
 export const Processes = () => {
@@ -33,7 +33,7 @@ export const Processes = () => {
           {/* Right section */}
           <div className="overflow-hidden w-full">
             {/* Mobile: show as carousel, Desktop: show normally */}
-            <ProcessCard />
+            <ProcessesCard />
           </div>
         </div>
       </main>
