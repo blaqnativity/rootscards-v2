@@ -72,7 +72,7 @@ export const MobileNav = ({ isWhiteBackground }: MobileNavProps) => {
                   <Link
                     to={link.url}
                     onClick={toggle}
-                    className="block hover:opacity-80 transition"
+                    className="custom-link block hover:opacity-80 transition"
                   >
                     {link.menu}
                   </Link>
@@ -83,6 +83,12 @@ export const MobileNav = ({ isWhiteBackground }: MobileNavProps) => {
                   to="https://app.rootscards.com/signup"
                   text="Start free trial"
                   icon={ArrowRight}
+                  // ✅ Dynamic styles
+                  btnBg={isWhiteBackground ? "bg-black" : "bg-white"}
+                  textColor={isWhiteBackground ? "text-white" : "text-black"}
+                  btnBorder={
+                    isWhiteBackground ? "border-black" : "border-white"
+                  }
                 />
               </li>
             </ul>
