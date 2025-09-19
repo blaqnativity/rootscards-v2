@@ -7,10 +7,10 @@ export const PainPointSection = () => {
     <section className="py-10 md:py-20 bg-[#F6F6F6]">
       <main className="max-w-[1680px] mx-auto px-4 md:px-8">
         <span className="headerFive fadeText uppercase">the need</span>
-        <h2 className="headerTwo max-w-7xl my-10">
+        <h2 className="headerTwo font-semibold max-w-7xl my-10">
           Long waits erode revenue and trust. RootsCards eliminates bottlenecks
-          with{" "}
-          <span className="fadeText">
+          with
+          <span className="text-black/60">
             instant arrivals, smart queues, and real insights.
           </span>
         </h2>

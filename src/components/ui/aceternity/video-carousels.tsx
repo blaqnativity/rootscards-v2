@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import type { VideoCard } from "@/constants/videoCards";
 import { Play, Stack, ArrowRight } from "@phosphor-icons/react";
 import { BtnMain } from "@/components/buttons/BtnMain";
+// import vector from "@/assets/images/vector.svg";
 
 export const VideoCarousel = ({
   cards,
@@ -105,7 +106,7 @@ export const VideoCarousel = ({
               </button>
 
               {/* Optional testimonial */}
-              {/* {card.testimonial && (
+              {card.testimonial && (
                 <div className="absolute inset-0 bg-black/40 flex flex-col justify-end p-6">
                   <blockquote className="text-white text-xl md:text-2xl font-light max-w-2xl">
                     “
@@ -135,7 +136,7 @@ export const VideoCarousel = ({
                     </div>
                   </div>
                 </div>
-              )} */}
+              )}
             </div>
 
             {/* Bottom text + button */}

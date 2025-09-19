@@ -81,21 +81,26 @@ export const ProcessesCarousel = ({
         {processesCard.map((process, index) => (
           <li
             key={index}
-            className="min-w-[300px] md:min-w-[400px] flex-shrink-0 flex flex-col justify-between shadow-sm rounded-[41px] bg-gray-100 overflow-hidden transition-opacity duration-500"
+            className="min-w-[300px] md:min-w-[400px] flex-shrink-0 flex flex-col justify-between shadow-sm rounded-[41px] bg-[#222222] overflow-hidden transition-opacity duration-500 border border-[#555555]"
           >
             <div className="px-6 space-y-2 py-6">
               <div className="flex justify-between items-center">
-                <span className="bg-gray-200 px-4 py-2 rounded-full">
+                <span className="bg-[#111111] text-white px-4 py-2 rounded-full">
                   {process.tagline}
                 </span>
-                <span className="bg-white p-2 flex justify-center items-center rounded-full">
+                <span
+                  className="bg-white p-2 flex justify-center items-center rounded-full"
+                  style={{ backgroundColor: process.color }}
+                >
                   <ArrowUpRight size={18} weight="bold" />
                 </span>
               </div>
-              <h3 className="headerThree font-semibold md:w-40">
+              <h3 className="headerThree text-white font-semibold md:w-60">
                 {process.title}
               </h3>
-              <p className="fadeText">{process.description}</p>
+              <p className="text-white md:w-[85%] tracking-widest">
+                {process.description}
+              </p>
             </div>
 
             {/* Image section */}

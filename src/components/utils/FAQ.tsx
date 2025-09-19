@@ -17,7 +17,7 @@ export const FAQ = () => {
       <div className="py-20 px-8 max-w-[1680px] mx-auto flex flex-col md:flex-row gap-12">
         {/* Left side */}
         <div className="flex flex-col text-left basis-1/2">
-          <p className="headerTwo">
+          <p className="headerTwo font-semibold">
             Frequently Asked <br />
             Questions
           </p>

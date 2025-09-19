@@ -7,7 +7,7 @@ export const VideoCard = () => {
         {/* Top section */}
         <div className="flex flex-col md:flex-row justify-between md:items-center gap-10">
           <div className="flex gap-4 flex-col max-w-lg">
-            <h1 className="headerTwo">
+            <h1 className="headerTwo titleFont">
               From noise to <span className="font-bold">insight</span>
             </h1>
             <span>
@@ -17,7 +17,7 @@ export const VideoCard = () => {
           </div>
 
           <div className="hidden md:inline-flex line"></div>
-          <span className="headerThree">1/4</span>
+          <span className="headerTwo titleFont">1/4</span>
         </div>
 
         {/* Video Cards Carousel*/}
