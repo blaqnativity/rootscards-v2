@@ -10,9 +10,10 @@ export const VideoCard = () => {
             <h1 className="headerTwo titleFont">
               From noise to <span className="font-bold">insight</span>
             </h1>
-            <span>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore
-              tempore esse exercitationem? Nam cumque eveniet quos!
+            <span className="text-sm tracking-wide leading-7">
+              Generate Lorem Ipsum placeholder text for use in your graphic,
+              print and web layouts, and discover plugins for your favorite
+              writing.
             </span>
           </div>
 

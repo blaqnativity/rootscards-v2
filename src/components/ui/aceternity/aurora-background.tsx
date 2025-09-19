@@ -23,7 +23,7 @@ export const AuroraBackground = ({
         {...props}
       >
         <div
-          className="absolute inset-0 overflow-hidden"
+          className="absolute inset-0 bg-black/70 z-0 overflow-hidden"
           style={
             {
               "--aurora":
@@ -33,13 +33,13 @@ export const AuroraBackground = ({
               "--white-gradient":
                 "repeating-linear-gradient(100deg,#fff_0%,#fff_7%,transparent_10%,transparent_12%,#fff_16%)",
 
-              "--blue-300": "#93c5fd",
-              "--blue-400": "#60a5fa",
-              "--blue-500": "#3b82f6",
-              "--indigo-300": "#a5b4fc",
-              "--violet-200": "#ddd6fe",
+              "--blue-300": "#7CFF67",
+              "--blue-400": "#B19EEF",
+              "--blue-500": "#5227ff",
+              "--indigo-300": "#B19EEF",
+              "--violet-200": "#7CFF67",
               "--black": "#000",
-              "--white": "#fff",
+              "--white": "#5227ff",
               "--transparent": "transparent",
             } as React.CSSProperties
           }

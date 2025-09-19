@@ -4,6 +4,7 @@ import { ArrowRight, Lightning } from "@phosphor-icons/react";
 import { BtnMain } from "../../components/buttons/BtnMain";
 import { BtnSecondary } from "../../components/buttons/BtnSecondary";
 import Aurora from "../../components/ui/reactbits/Aurora";
+// import { AuroraBackground } from "@/components/ui/aceternity/aurora-background";
 import { scheduleDemo } from "../../services/useCalendly";
 import { Carousel } from "../../components/utils/LogoCarousel";
 

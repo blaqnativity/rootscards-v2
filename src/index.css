@@ -94,7 +94,7 @@ html {
 }
 
 .headerSubText {
-  @apply md:text-8xl tracking-tight;
+  @apply text-5xl md:text-8xl tracking-tight;
   font-family: "Forum", sans-serif;
 }
 
@@ -103,11 +103,11 @@ html {
 }
 
 .headerTwo {
-  @apply md:text-5xl;
+  @apply text-[32px] md:text-5xl;
 }
 
 .headerThree {
-  @apply text-xl md:text-3xl;
+  @apply text-lg md:text-3xl;
 }
 
 .headerFour {

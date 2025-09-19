@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import React, { useEffect, useState } from "react";
 
-export const InfiniteMovingCards = ({
+export const TestimonialCarousel = ({
   items,
   direction = "left",
   speed = "fast",
