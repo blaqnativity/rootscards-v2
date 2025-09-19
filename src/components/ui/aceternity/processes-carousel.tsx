@@ -62,10 +62,10 @@ export const ProcessesCarousel = ({
       className={cn("scroller relative z-20 w-full overflow-hidden", className)}
       style={{
         WebkitMaskImage: fadeOut
-          ? `linear-gradient(to right, transparent, ${fadeOutColor} 15%, ${fadeOutColor} 85%, transparent)`
+          ? `linear-gradient(to right, transparent, ${fadeOutColor} 0.5%, ${fadeOutColor} 99%, transparent)`
           : undefined,
         maskImage: fadeOut
-          ? `linear-gradient(to right, transparent, ${fadeOutColor} 15%, ${fadeOutColor} 85%, transparent)`
+          ? `linear-gradient(to right, transparent, ${fadeOutColor} 0.5%, ${fadeOutColor} 99%, transparent)`
           : undefined,
       }}
     >
@@ -81,7 +81,7 @@ export const ProcessesCarousel = ({
         {processesCard.map((process, index) => (
           <li
             key={index}
-            className="min-w-[300px] md:min-w-[400px] flex-shrink-0 flex flex-col justify-between shadow-sm rounded-[41px] bg-[#222222] overflow-hidden transition-opacity duration-500 border border-[#555555]"
+            className="min-w-[300px] md:min-w-[400px] flex-shrink-0 flex flex-col justify-between shadow-sm rounded-[49px] bg-[#222222] overflow-hidden transition-opacity duration-500 border border-[#555555]"
           >
             <div className="px-6 space-y-2 py-6">
               <div className="flex justify-between items-center">

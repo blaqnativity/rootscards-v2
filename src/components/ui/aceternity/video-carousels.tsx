@@ -66,10 +66,10 @@ export const VideoCarousel = ({
       className={cn("scroller relative z-20 w-full overflow-hidden", className)}
       style={{
         WebkitMaskImage: fadeOut
-          ? `linear-gradient(to right, transparent, ${fadeOutColor} 15%, ${fadeOutColor} 99%, transparent)`
+          ? `linear-gradient(to right, transparent, ${fadeOutColor} 0.5%, ${fadeOutColor} 99%, transparent)`
           : undefined,
         maskImage: fadeOut
-          ? `linear-gradient(to right, transparent, ${fadeOutColor} 15%, ${fadeOutColor} 99%, transparent)`
+          ? `linear-gradient(to right, transparent, ${fadeOutColor} 0.5%, ${fadeOutColor} 99%, transparent)`
           : undefined,
       }}
     >
