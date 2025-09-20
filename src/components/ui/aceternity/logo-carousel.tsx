@@ -81,6 +81,12 @@ export const LogoCarousel = ({
           start && "animate-scroll",
           pauseOnHover && "hover:[animation-play-state:paused]"
         )}
+        onTouchStart={(e) => {
+          (e.currentTarget as HTMLElement).style.animationPlayState = "paused";
+        }}
+        onTouchEnd={(e) => {
+          (e.currentTarget as HTMLElement).style.animationPlayState = "running";
+        }}
       >
         {logos.map((logo, index) => (
           <li key={index} className="flex items-center">

@@ -84,16 +84,23 @@ export const TestimonialCarousel = ({
           start && "animate-scroll",
           pauseOnHover && "hover:[animation-play-state:paused]"
         )}
+        // 👇 Added mobile touch pause/resume
+        onTouchStart={(e) => {
+          (e.currentTarget as HTMLElement).style.animationPlayState = "paused";
+        }}
+        onTouchEnd={(e) => {
+          (e.currentTarget as HTMLElement).style.animationPlayState = "running";
+        }}
       >
-        {items.map((item) => (
-          <div className="card">
+        {items.map((item, index) => (
+          <div key={index} className="card">
             <p className="text-sm text-neutral-400 leading-relaxed mb-4">
               {item.text}
             </p>
             <div className="flex items-center gap-3 overflow-hidden">
               <img
                 src={item.avatar}
-                // alt={name}
+                alt={item.name}
                 className="w-10 h-10 rounded-full object-cover"
               />
               <div>

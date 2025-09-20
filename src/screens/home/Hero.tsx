@@ -16,10 +16,10 @@ export const Hero = () => {
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
-      className="relative h-screen w-full overflow-hidden"
+      className="py-10 md:py-15 relative h-screen w-full overflow-hidden"
     >
       {/* Aurora full screen background */}
-      <div className="absolute inset-0 z-0">
+      <div className="hidden md:block absolute inset-0 z-0">
         <Aurora
           colorStops={["#7CFF67", "#B19EEF", "#5227FF"]}
           blend={0.5}

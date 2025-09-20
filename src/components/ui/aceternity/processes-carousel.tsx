@@ -77,6 +77,13 @@ export const ProcessesCarousel = ({
           start && "animate-scroll",
           pauseOnHover && "hover:[animation-play-state:paused]"
         )}
+        // 👇 Added for mobile touch pause/resume
+        onTouchStart={(e) => {
+          (e.currentTarget as HTMLElement).style.animationPlayState = "paused";
+        }}
+        onTouchEnd={(e) => {
+          (e.currentTarget as HTMLElement).style.animationPlayState = "running";
+        }}
       >
         {processesCard.map((process, index) => (
           <li
