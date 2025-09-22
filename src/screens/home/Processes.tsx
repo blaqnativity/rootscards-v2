@@ -1,5 +1,6 @@
 import { BtnSecondary } from "@/components/buttons/BtnSecondary";
 import { ProcessesCard } from "@/components/utils/ProcessesCarousel";
+import { ProcessesMobileCarousel } from "@/components/ui/aceternity/processes-mobile-carousel";
 import { ArrowRight } from "@phosphor-icons/react";
 
 export const Processes = () => {
@@ -33,9 +34,13 @@ export const Processes = () => {
           </div>
 
           {/* Right section */}
-          <div className="overflow-hidden w-full">
+          <div className="hidden md:block overflow-hidden w-full">
             {/* Mobile: show as carousel, Desktop: show normally */}
             <ProcessesCard />
+          </div>
+          {/* Mobile carousel */}
+          <div className="block md:hidden">
+            <ProcessesMobileCarousel />
           </div>
         </div>
       </main>

@@ -83,10 +83,13 @@ export const VideoCarousel = ({
         )}
       >
         {cards.map((card, index) => (
-          <li key={index} className="w-fit md:max-w-7xl mx-auto flex-shrink-0">
-            <div className="relative">
+          <li
+            key={index}
+            className="w-[350px] md:w-[760px] mx-auto flex-shrink-0"
+          >
+            <div className="relative rounded-4xl overflow-hidden">
               {/* Badge */}
-              <span className="absolute top-4 left-4 bg-black/20 text-white text-xs px-4 py-2 rounded-full z-10 flex items-center gap-2">
+              <span className="absolute top-4 left-4 text-white text-xs px-4 py-2 rounded-full z-10 flex items-center gap-2">
                 <Stack />
                 {card.badgeText}
               </span>
