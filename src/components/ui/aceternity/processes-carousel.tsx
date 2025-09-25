@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 import React, { useEffect, useState } from "react";
-import { processesCard } from "@/constants/processesCard";
+import { processesCard } from "@/constants/processes";
 import { ArrowUpRight } from "@phosphor-icons/react";
 
 export const ProcessesCarousel = ({

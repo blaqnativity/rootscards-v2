@@ -35,7 +35,7 @@ export const Hero = () => {
           <span>AI-Powered Smart Infrastructure</span>
         </div>
 
-        <div className="max-w-7xl text-center mb-10">
+        <div className="max-w-7xl text-center mb-10 md:mb-20">
           <h1 className="headerText font-bold relative">
             Make your
             <div className="ml-3 relative inline-block">

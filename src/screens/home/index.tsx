@@ -5,6 +5,7 @@ import { Processes } from "./Processes";
 import { FAQ } from "../../components/utils/FAQ";
 import { VideoCard } from "./VideoCard";
 import { Testimonial } from "../../components/utils/Testimonial";
+import { FAQData } from "@/constants/FAQ";
 
 export const Home = () => {
   return (
@@ -14,7 +15,7 @@ export const Home = () => {
       <Processes />
       <VideoCard />
       <Testimonial />
-      <FAQ />
+      <FAQ data={FAQData} />
     </MainLayout>
   );
 };

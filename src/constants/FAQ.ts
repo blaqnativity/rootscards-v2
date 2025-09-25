@@ -25,3 +25,26 @@ export const FAQData = [
       "RootsCards is an AI‑powered smart infrastructure for check‑ins, queue management, and engagement. It combines software, NFC/QR/Face ID, and APIs to process arrivals in seconds, route people intelligently, and give you real‑time insights.",
   },
 ];
+
+export const ShortletsFAQ = [
+  {
+    question: "Do I need to replace my locks?",
+    answer:
+      "No. We support code keypads and popular smart locks. Worst-case, rotate manual codes per stay.",
+  },
+  {
+    question: "How do deposits work?",
+    answer:
+      "No. We support code keypads and popular smart locks. Worst-case, rotate manual codes per stay.",
+  },
+  {
+    question: "Will this work with Airbnb/Booking.com?",
+    answer:
+      "No. We support code keypads and popular smart locks. Worst-case, rotate manual codes per stay.",
+  },
+  {
+    question: "Is WhatsApp required?",
+    answer:
+      "No. We support code keypads and popular smart locks. Worst-case, rotate manual codes per stay.",
+  },
+];

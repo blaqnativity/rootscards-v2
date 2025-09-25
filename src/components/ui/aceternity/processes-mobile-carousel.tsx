@@ -1,7 +1,7 @@
 "use client";
 import { IconArrowNarrowRight } from "@tabler/icons-react";
 import { useState, useId } from "react";
-import { processesCard } from "@/constants/processesCard";
+import { processesCard } from "@/constants/processes";
 import { ArrowUpRight } from "@phosphor-icons/react";
 
 const ProcessSlide = ({

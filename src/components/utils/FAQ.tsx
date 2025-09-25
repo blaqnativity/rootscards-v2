@@ -1,11 +1,22 @@
 import { CaretDownIcon } from "@phosphor-icons/react";
-import { FAQData } from "../../constants/FAQ";
-
 import { useState } from "react";
 
-export const FAQ = () => {
+export interface FAQItem {
+  question: string;
+  answer: string | React.ReactNode;
+}
+
+interface FAQProps {
+  title?: string | React.ReactNode;
+  data: FAQItem[];
+}
+
+export const FAQ = ({
+  title = "Frequently Asked Questions",
+  data,
+}: FAQProps) => {
   const [openIndexes, setOpenIndexes] = useState<boolean[]>(
-    FAQData.map(() => false)
+    data.map(() => false)
   );
 
   const handleToggle = (idx: number) => {
@@ -17,21 +28,24 @@ export const FAQ = () => {
       <div className="py-20 px-8 max-w-[1680px] mx-auto flex flex-col md:flex-row gap-12">
         {/* Left side */}
         <div className="flex flex-col text-left basis-1/2">
-          <p className="headerTwo font-semibold">
-            Frequently Asked <br />
-            Questions
-          </p>
+          {typeof title === "string" ? (
+            <p className="headerTwo font-semibold whitespace-pre-line">
+              {title}
+            </p>
+          ) : (
+            title
+          )}
         </div>
 
         {/* FAQ list */}
         <ul className="basis-1/2">
-          {FAQData.map((item, index) => {
+          {data.map((item, index) => {
             const isOpen = openIndexes[index];
 
             return (
               <li className="border-b border-black/30" key={index}>
                 <button
-                  className="relative flex gap-2 items-center w-full py-5 text-base font-semibold text-left  md:text-lg"
+                  className="relative flex gap-2 items-center w-full py-5 text-base font-semibold text-left md:text-lg"
                   aria-expanded={isOpen}
                   onClick={() => handleToggle(index)}
                 >
