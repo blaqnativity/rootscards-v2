@@ -37,15 +37,16 @@ export const Hero = () => {
 
         <div className="max-w-7xl text-center mb-10">
           <h1 className="headerText font-bold relative">
-            We make Queues
+            Make your
             <div className="ml-3 relative inline-block">
               <img
                 src={vector}
                 alt="overlay"
                 className="absolute top-1/2 -right-18 h-auto w-full max-w-none -translate-x-1/3 md:-translate-x-1/5 -translate-y-1/2 pointer-events-none"
               />
-              <span className="relative z-0">disappear</span>
+              <span className="relative z-0">shortlets</span>
             </div>
+            {""} self-serve, fraud-proof, and queue-free.
           </h1>
           <p className="headerThree px-10 my-10 tracking-wide">
             Process thousands in seconds with AI-powered check-ins, automated
