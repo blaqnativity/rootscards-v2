@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { CheckIcon } from "@phosphor-icons/react";
+import { BtnOrdinary } from "../buttons/BtnOrdinary";
 
 interface PlanFeature {
   text: string;
@@ -28,7 +29,6 @@ export const Pricing = () => {
       period: "/month",
       highlight: "Perfect for small teams",
       buttonText: "Free trial",
-      buttonVariant: "primary",
       features: [
         { text: "Up to 10 stays/month" },
         { text: "WhatsApp check-in" },
@@ -124,11 +124,15 @@ export const Pricing = () => {
                   </h3>
                 </div>
                 {plan.highlight && (
-                  <p className="text-sm pl-3 mt-1">{plan.highlight}</p>
+                  <p className="text-sm pl-3 my-4">{plan.highlight}</p>
                 )}
+                {/* Button */}
+                <BtnOrdinary
+                  text={plan.buttonText}
+                  btnBg="bg-black"
+                  textColor="text-white"
+                />
               </div>
-
-              {/* Button */}
 
               {/* Features */}
               <ul className="mt-6 pl-5 pb-5 space-y-2 text-left">

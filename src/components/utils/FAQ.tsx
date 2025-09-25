@@ -29,7 +29,7 @@ export const FAQ = ({
         {/* Left side */}
         <div className="flex flex-col text-left basis-1/2">
           {typeof title === "string" ? (
-            <p className="headerTwo font-semibold whitespace-pre-line">
+            <p className="headerTwo font-semibold whitespace-pre-line md:leading-14 max-w-xl">
               {title}
             </p>
           ) : (
