@@ -16,7 +16,7 @@ export const Hero = () => {
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
-      className="py-10 md:py-15 relative h-screen w-full overflow-hidden"
+      className="py-10 md:py-20 relative h-screen w-full overflow-hidden"
     >
       {/* Aurora full screen background */}
       <div className="hidden md:block absolute inset-0 z-0">
@@ -35,7 +35,7 @@ export const Hero = () => {
           <span>AI-Powered Smart Infrastructure</span>
         </div>
 
-        <div className="max-w-7xl text-center mb-10 md:mb-20">
+        <div className="max-w-7xl text-center mb-10 md:mb-10">
           <h1 className="headerText font-bold relative">
             Make your
             <div className="ml-3 relative inline-block">
@@ -48,7 +48,7 @@ export const Hero = () => {
             </div>
             {""} self-serve, fraud-proof, and queue-free.
           </h1>
-          <p className="headerThree px-10 my-10 tracking-wide">
+          <p className="max-w-4xl mx-auto headerThree px-10 my-10 tracking-wide">
             Process thousands in seconds with AI-powered check-ins, automated
             queue routing and live insights—built for events, clinics, coworking
             and retail.

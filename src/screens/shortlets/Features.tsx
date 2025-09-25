@@ -8,7 +8,7 @@ export const Features = () => {
           {properties.map((feature, index) => (
             <li
               key={index}
-              className="rounded-2xl border border-gray-200 p-6 bg-white flex flex-col gap-3 shadow-sm hover:shadow-md transition-shadow duration-200"
+              className="rounded-2xl border border-gray-200 p-6 bg-white flex flex-col gap-3 hover:shadow-md transition-shadow duration-200"
             >
               <div
                 className="w-10 h-10 flex items-center justify-center rounded-lg"

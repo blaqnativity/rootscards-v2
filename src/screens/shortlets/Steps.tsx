@@ -38,7 +38,7 @@ export const Steps = () => {
         {cards.map((card, index) => (
           <div
             key={index}
-            className="bg-white p-2 rounded-2xl shadow-md flex flex-col space-y-4"
+            className="bg-white p-2 rounded-2xl border border-[#DDDDDD] flex flex-col space-y-4"
           >
             <img src={card.image} alt={card.title} className="w-full h-auto" />
             <div className="p-4">
