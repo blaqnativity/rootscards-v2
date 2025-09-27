@@ -14,9 +14,12 @@ export const Shortlets = () => {
   return (
     <Layout>
       <Hero />
-      <div className="w-full bg-[#222222] flex justify-center items-center border border-[#444444] mt-4 py-5">
-        <Carousel logos={carouselTwo} title="Works with" />
+      <div className="relative overflow-hidden">
+        <div className="w-full bg-[#222222] flex justify-center items-center border border-[#444444] mt-4 py-5">
+          <Carousel logos={carouselTwo} title="Works with" />
+        </div>
       </div>
+
       <Features />
       <Steps />
       <Pricing />

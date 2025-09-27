@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 interface ButtonProps {
   to: string;
   icon?: React.ComponentType<{ size?: number }>;
-  text: string;
+  text?: string;
   textColor?: string; // e.g. "text-gray-800"
   iconBg?: string; // e.g. "bg-gray-800"
   iconColor?: string; // e.g. "text-white"
@@ -15,7 +15,7 @@ interface ButtonProps {
 export const BtnSecondary: React.FC<ButtonProps> = ({
   to,
   icon: Icon,
-  text = "Click Me",
+  text = "Book a Demo",
   textColor = "text-gray-800",
   iconBg = "bg-gray-800",
   iconColor = "text-white",
