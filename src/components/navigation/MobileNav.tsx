@@ -15,7 +15,7 @@ export const MobileNav = ({ isWhiteBackground }: MobileNavProps) => {
 
   return (
     <nav className="lg:hidden fixed top-6 left-0 w-full z-50 pointer-events-auto">
-      <header className="max-w-[1680px] mx-auto px-4 md:px-8">
+      <header className="max-w-[1400px] mx-auto px-4 md:px-8">
         <div className="flex justify-center">
           <div
             className={`w-full max-w-[880px] rounded-full px-6 py-3 flex items-center justify-between shadow-sm transition-colors duration-300 ${

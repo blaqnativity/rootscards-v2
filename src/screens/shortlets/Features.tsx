@@ -3,7 +3,7 @@ import { properties } from "@/constants/processes";
 export const Features = () => {
   return (
     <section className="py-12">
-      <div className="max-w-[1680px] mx-auto px-4">
+      <div className="max-w-[1400px] mx-auto px-4">
         <ul className="grid grid-cols-2 md:grid-cols-3 gap-6">
           {properties.map((feature, index) => (
             <li

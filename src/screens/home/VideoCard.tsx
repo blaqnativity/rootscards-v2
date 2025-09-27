@@ -2,8 +2,8 @@ import { VideoCards } from "@/components/utils/VideoCards";
 
 export const VideoCard = () => {
   return (
-    <section>
-      <main className="py-10 md:py-20 max-w-[1680px] mx-auto px-4 md:px-8 overflow-hidden">
+    <section className="py-10 md:py-20 px-4 md:px-8">
+      <main className="max-w-[1400px] mx-auto overflow-hidden">
         {/* Top section */}
         <div className="flex flex-col md:flex-row justify-between md:items-center gap-10">
           <div className="flex gap-4 flex-col max-w-lg">
@@ -22,8 +22,8 @@ export const VideoCard = () => {
         </div>
 
         {/* Video Cards Carousel*/}
-        <VideoCards />
       </main>
+      <VideoCards />
     </section>
   );
 };

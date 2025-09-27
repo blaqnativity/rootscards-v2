@@ -6,7 +6,7 @@ import { ArrowRight } from "@phosphor-icons/react";
 export const Processes = () => {
   return (
     <section className="py-10 md:py-20 bg-black">
-      <main className="max-w-[1680px] mx-auto px-4 md:px-8 overflow-hidden">
+      <main className="max-w-[1400px] mx-auto px-4 md:px-8 overflow-hidden">
         <div className="grid gap-10 grid-cols-1 md:grid-cols-[30%_70%]">
           {/* Left section */}
           <div className="flex flex-col justify-start gap-6">

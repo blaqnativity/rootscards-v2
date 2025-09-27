@@ -1,4 +1,4 @@
-import { MainLayout } from "../../layouts/MainLayout";
+import { MainLayout as Layout } from "../../layouts/MainLayout";
 import { Hero } from "./Hero";
 import { PainPointSection } from "./PainPointSection";
 import { Processes } from "./Processes";
@@ -9,13 +9,13 @@ import { FAQData } from "@/constants/FAQ";
 
 export const Home = () => {
   return (
-    <MainLayout>
+    <Layout>
       <Hero />
       <PainPointSection />
       <Processes />
       <VideoCard />
       <Testimonial />
       <FAQ data={FAQData} />
-    </MainLayout>
+    </Layout>
   );
 };

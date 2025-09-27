@@ -12,7 +12,7 @@ export const Footer = () => {
   return (
     <>
       <footer className="w-full bg-black py-10 md:py-20 text-white">
-        <div className="flex flex-col gap-10 mx-auto max-w-[1680px] px-4 md:px-8">
+        <div className="flex flex-col gap-10 mx-auto max-w-[1400px] px-4 md:px-8">
           <div className="grid grid-cols-2 md:grid-cols-5 gap-4 gap-y-10 items-start">
             {/* block one */}
             <div className="flex flex-col gap-4">

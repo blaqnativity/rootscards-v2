@@ -1,5 +1,7 @@
-import { MainLayout } from "@/layouts/MainLayout";
+import { SecondLayout as Layout } from "@/layouts/SecondLayout";
 import { Hero } from "./Hero";
+import { Carousel } from "@/components/utils/LogoCarousel";
+import { carouselTwo } from "@/constants/carouseLogos";
 import { Features } from "./Features";
 import { Steps } from "./Steps";
 import { Pricing } from "@/components/utils/PricingPlans";
@@ -10,14 +12,17 @@ import { ShortletsFAQ } from "@/constants/FAQ";
 
 export const Shortlets = () => {
   return (
-    <MainLayout>
+    <Layout>
       <Hero />
+      <div className="w-full bg-[#222222] flex justify-center items-center border border-[#444444] mt-4 py-5">
+        <Carousel logos={carouselTwo} title="Works with" />
+      </div>
       <Features />
       <Steps />
       <Pricing />
       <Kits />
       <Testimonial />
       <FAQ data={ShortletsFAQ} />
-    </MainLayout>
+    </Layout>
   );
 };

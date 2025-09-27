@@ -1,4 +1,3 @@
-import logo from "/lightLogo.svg";
 import darkLogo from "/darkLogo.svg";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "@phosphor-icons/react";
@@ -8,7 +7,7 @@ import { useEffect, useState } from "react";
 import { MobileNav } from "./MobileNav";
 
 // ...
-export const MainNav = () => {
+export const SecondaryNav = () => {
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
@@ -33,7 +32,7 @@ export const MainNav = () => {
           <div className="flex items-center justify-between">
             <Link to="/" className="flex items-center gap-2">
               <img
-                src={isWhiteBackground ? darkLogo : logo}
+                src={darkLogo}
                 alt="logo"
                 className="h-[1.3em] md:h-[1.5em]"
               />

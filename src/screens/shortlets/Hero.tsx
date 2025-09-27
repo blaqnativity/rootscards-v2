@@ -1,77 +1,58 @@
-import vector from "../../assets/images/vector.svg";
-import bgImage from "../../assets/images/gradientBg.png";
-import { ArrowRight, Lightning } from "@phosphor-icons/react";
-import { BtnMain } from "../../components/buttons/BtnMain";
-import { BtnSecondary } from "../../components/buttons/BtnSecondary";
-import Aurora from "../../components/ui/reactbits/Aurora";
-// import { AuroraBackground } from "@/components/ui/aceternity/aurora-background";
-import { scheduleDemo } from "../../services/useCalendly";
-import { Carousel } from "../../components/utils/LogoCarousel";
+import desktop from "@/assets/images/desktop.svg";
+import mobileBg from "@/assets/images/mobileBg.svg";
+import { BtnMain } from "@/components/buttons/BtnMain";
+import { BtnSecondary } from "@/components/buttons/BtnSecondary";
+import { ArrowRightIcon } from "@phosphor-icons/react";
 
 export const Hero = () => {
   return (
-    <section
-      style={{
-        backgroundImage: `url(${bgImage})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-      className="py-10 md:py-20 relative h-screen w-full overflow-hidden"
-    >
-      {/* Aurora full screen background */}
-      <div className="hidden md:block absolute inset-0 z-0">
-        <Aurora
-          colorStops={["#7CFF67", "#B19EEF", "#5227FF"]}
-          blend={0.5}
-          amplitude={1.0}
-          speed={0.5}
+    <section className="relative flex items-center bg-white py-10 md:py-20 h-[720px] md:h-screen w-full overflow-hidden">
+      {/* Desktop background */}
+      <div className="absolute inset-0 hidden md:flex justify-center items-center">
+        <div
+          className="min-w-[1600px] max-w-[1680px] h-[720px] bg-no-repeat bg-center bg-contain"
+          style={{ backgroundImage: `url(${desktop})` }}
         />
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-white">
-        <div className="pill">
-          <Lightning weight="fill" size={26} />
-          <span>AI-Powered Smart Infrastructure</span>
-        </div>
+      {/* Mobile background */}
+      <div className="absolute inset-0 flex md:hidden justify-center items-center">
+        <div
+          className="w-full max-w-[420px] h-[920px] bg-no-repeat bg-bottom bg-cover"
+          style={{ backgroundImage: `url(${mobileBg})` }}
+        />
+      </div>
 
-        <div className="max-w-7xl text-center mb-10 md:mb-10">
-          <h1 className="headerText font-bold relative">
-            Make your
-            <div className="ml-3 relative inline-block">
-              <img
-                src={vector}
-                alt="overlay"
-                className="absolute top-1/2 -right-18 h-auto w-full max-w-none -translate-x-1/3 md:-translate-x-1/5 -translate-y-1/2 pointer-events-none"
-              />
-              <span className="relative z-0">shortlets</span>
-            </div>
-            {""} self-serve, fraud-proof, and queue-free.
+      {/* Foreground content */}
+      <div className="relative grid md:grid-cols-[3fr_2fr] gap-10 z-10 max-w-[1400px] mx-auto px-4 md:px-8">
+        <div>
+          <h1 className="headingText  md:leading-21 text-white ">
+            Make your shortlets self-serve, fraud-proof, and queue-free.
           </h1>
-          <p className="max-w-4xl mx-auto headerThree px-10 my-10 tracking-wide">
-            Process thousands in seconds with AI-powered check-ins, automated
-            queue routing and live insights—built for events, clinics, coworking
-            and retail.
-          </p>
+        </div>
+        <div className="flex flex-col gap-6">
+          <span className="headerThree md:w-md text-white">
+            RootsCards handles identity, access codes, deposits, and
+            housekeeping—so guests check in on WhatsApp, and you stop
+            babysitting arrivals.
+          </span>
 
-          <div className="flex gap-5 justify-center items-center">
-            <BtnSecondary
-              to="https://app.rootscards.com/signup"
-              text="Start free trial"
-              icon={ArrowRight}
-            />
-
+          <div className="flex items-center gap-4">
             <BtnMain
-              text="Book a demo"
-              textColor="text-white"
-              icon={ArrowRight}
+              text="Start free trial"
+              icon={ArrowRightIcon}
               btnBg="bg-black"
-              btnBorder="border border-white"
-              onClick={scheduleDemo}
+              textColor="text-white"
+            />
+            <BtnSecondary
+              to="/"
+              text="Book a Demo"
+              icon={ArrowRightIcon}
+              btnBg="bg-white"
+              textColor="text-black"
             />
           </div>
         </div>
-        <Carousel />
       </div>
     </section>
   );

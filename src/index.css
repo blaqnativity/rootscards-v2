@@ -88,6 +88,9 @@ html {
   @apply text-6xl md:text-8xl tracking-tight;
   font-family: "Forum", sans-serif;
 }
+.headingText {
+  @apply text-4xl md:text-7xl font-semibold;
+}
 
 .titleFont {
   font-family: "Forum", sans-serif;

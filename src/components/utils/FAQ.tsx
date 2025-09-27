@@ -25,7 +25,7 @@ export const FAQ = ({
 
   return (
     <div className="w-full bg-[#f6f6f6]">
-      <div className="py-20 px-8 max-w-[1680px] mx-auto flex flex-col md:flex-row gap-12">
+      <div className="py-20 px4 md:px-8 max-w-[1400px] mx-auto flex flex-col md:flex-row gap-12">
         {/* Left side */}
         <div className="flex flex-col text-left basis-1/2">
           {typeof title === "string" ? (

@@ -4,10 +4,9 @@ import { ArrowRight, Lightning } from "@phosphor-icons/react";
 import { BtnMain } from "../../components/buttons/BtnMain";
 import { BtnSecondary } from "../../components/buttons/BtnSecondary";
 import Aurora from "../../components/ui/reactbits/Aurora";
-// import { AuroraBackground } from "@/components/ui/aceternity/aurora-background";
 import { scheduleDemo } from "../../services/useCalendly";
 import { Carousel } from "../../components/utils/LogoCarousel";
-
+import { carouselOne as carousels } from "@/constants/carouseLogos";
 export const Hero = () => {
   return (
     <section
@@ -70,7 +69,9 @@ export const Hero = () => {
             />
           </div>
         </div>
-        <Carousel />
+        <div className="w-full absolute bottom-0 bg-[#222222] flex justify-center items-center border border-[#444444] py-5">
+          <Carousel logos={carousels} />
+        </div>
       </div>
     </section>
   );
