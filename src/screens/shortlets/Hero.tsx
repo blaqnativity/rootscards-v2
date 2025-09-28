@@ -4,7 +4,12 @@ import { BtnMain } from "@/components/buttons/BtnMain";
 import { BtnSecondary } from "@/components/buttons/BtnSecondary";
 import { ArrowRightIcon } from "@phosphor-icons/react";
 
+// calendly api hook
+import { scheduleDemo } from "../../services/useCalendly";
+import useCalendlyLoader from "@/hooks/useCalendlyLoader";
+
 export const Hero = () => {
+  useCalendlyLoader();
   return (
     <section className="relative flex items-center bg-white py-10 md:py-20 h-[620px] md:h-screen w-full overflow-hidden">
       {/* Desktop background */}
@@ -43,13 +48,14 @@ export const Hero = () => {
               icon={ArrowRightIcon}
               btnBg="bg-black"
               textColor="text-white"
+              to="https://app.rootscards.com/signup"
             />
             <BtnSecondary
-              to="/"
               text="Book a Demo"
               icon={ArrowRightIcon}
               btnBg="bg-white"
               textColor="text-black"
+              onClick={scheduleDemo}
             />
           </div>
         </div>

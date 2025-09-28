@@ -31,7 +31,7 @@ export const Steps = () => {
                 human error.
               </p>
               <BtnMain
-                to="#"
+                to="https://app.rootscards.com/signup"
                 text="Start free trial"
                 icon={ArrowRight}
                 btnBg="bg-black"

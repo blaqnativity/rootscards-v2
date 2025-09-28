@@ -5,9 +5,11 @@ import { BtnMain } from "../../components/buttons/BtnMain";
 import { BtnSecondary } from "../../components/buttons/BtnSecondary";
 import Aurora from "../../components/ui/reactbits/Aurora";
 import { scheduleDemo } from "../../services/useCalendly";
+import useCalendlyLoader from "@/hooks/useCalendlyLoader";
 import { Carousel } from "../../components/utils/LogoCarousel";
 import { carouselOne as carousels } from "@/constants/carouseLogos";
 export const Hero = () => {
+  useCalendlyLoader();
   return (
     <section
       style={{
