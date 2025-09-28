@@ -10,14 +10,14 @@ export const ErrorPage = () => {
   return (
     <MainLayout>
       <main
+        className="relative flex flex-col items-center justify-center min-h-screen text-white px-4 text-center"
         style={{
           backgroundImage: `url(${bgImage})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
-        className="text-white"
       >
-        {" "}
+        {/* Aurora background overlay */}
         <div className="absolute inset-0 z-0">
           <Aurora
             colorStops={["#7CFF67", "#B19EEF", "#5227FF"]}
@@ -26,17 +26,19 @@ export const ErrorPage = () => {
             speed={0.5}
           />
         </div>
-        <div className="h-screen flex flex-col justify-center items-center px-4 text-center">
+
+        {/* Content */}
+        <div className="relative z-10">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">
             Page Not Found!
           </h1>
-          <p className="text-lg md:text-xl lg:text-2xl my-8 max-w-xl">
-            We couldn't find the page you were looking for
+          <p className="text-lg md:text-xl lg:text-2xl my-8 max-w-xl mx-auto">
+            We couldn’t find the page you were looking for.
           </p>
-          <div className="flex space-x-4">
+          <div className="flex justify-center">
             <button
               onClick={() => navigate(-1)}
-              className="border-2 border-white text-white hover:bg-white hover:text-black transition-all duration-300 font-semibold py-3 px-6 rounded cursor-pointer flex items-center gap-1"
+              className="border-2 border-white text-white hover:bg-white hover:text-black transition-all duration-300 font-semibold py-3 px-6 rounded flex items-center gap-1"
             >
               <ArrowLeft size={18} />
               Return

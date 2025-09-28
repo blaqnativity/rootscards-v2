@@ -1,4 +1,4 @@
-import { SecondLayout as Layout } from "@/layouts/SecondLayout";
+import { MainLayout as Layout } from "@/layouts/MainLayout";
 import { Hero } from "./Hero";
 import { Carousel } from "@/components/utils/LogoCarousel";
 import { carouselTwo } from "@/constants/carouseLogos";

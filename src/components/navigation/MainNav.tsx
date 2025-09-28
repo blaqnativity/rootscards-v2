@@ -1,14 +1,24 @@
-import logo from "/lightLogo.svg";
-import darkLogo from "/darkLogo.svg";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "@phosphor-icons/react";
 import { navMenu } from "../../constants/navConstants";
 import { BtnMain } from "../buttons/BtnMain";
-import { useEffect, useState } from "react";
 import { MobileNav } from "./MobileNav";
+import logo from "/lightLogo.svg";
 
-// ...
-export const MainNav = () => {
+export interface ScrollRange {
+  start: number;
+  end?: number;
+  bgColor?: string;
+  textColor?: string;
+  logo?: string;
+}
+
+interface MainNavProps {
+  ranges?: ScrollRange[];
+}
+
+export const MainNav: React.FC<MainNavProps> = ({ ranges = [] }) => {
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
@@ -17,39 +27,36 @@ export const MainNav = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // define your scroll ranges
-  const isWhiteBackground =
-    (scrollY >= 900.8 && scrollY < 1863.2) || scrollY >= 2871.1;
+  // Find the matching range based on scroll
+  const activeRange = ranges.find((range) => {
+    if (range.end !== undefined) {
+      return scrollY >= range.start && scrollY < range.end;
+    }
+    return scrollY >= range.start; // open-ended range
+  });
+
+  // Default styles if no range is matched
+  const bgColor = activeRange?.bgColor || "bg-transparent";
+  const textColor = activeRange?.textColor || "text-white";
+  const logoToShow = activeRange?.logo || logo;
 
   return (
     <>
-      {/* Desktop nav */}
       <nav
-        className={`absolute hidden lg:block w-full z-40 transition-colors duration-300 ${
-          isWhiteBackground ? "bg-white shadow-md" : "bg-transparent"
-        }`}
+        className={`absolute hidden lg:block w-full z-40 transition-colors duration-300 ${bgColor}`}
       >
         <header className="max-w-[1400px] mx-auto px-4 md:px-8 py-6">
           <div className="flex items-center justify-between">
             <Link to="/" className="flex items-center gap-2">
               <img
-                src={isWhiteBackground ? darkLogo : logo}
+                src={logoToShow}
                 alt="logo"
                 className="h-[1.3em] md:h-[1.5em]"
               />
-              <span
-                className={`logoText ${
-                  isWhiteBackground ? "text-black" : "text-white"
-                }`}
-              >
-                rootscards
-              </span>
+              <span className={`logoText ${textColor}`}>rootscards</span>
             </Link>
-
             <ul
-              className={`flex font-medium space-x-8 items-center ${
-                isWhiteBackground ? "text-black" : "text-white"
-              }`}
+              className={`flex font-medium space-x-8 items-center ${textColor}`}
             >
               {navMenu.map((link, index) => (
                 <li key={index}>
@@ -69,7 +76,7 @@ export const MainNav = () => {
       </nav>
 
       {/* Mobile nav */}
-      <MobileNav isWhiteBackground={isWhiteBackground} />
+      <MobileNav activeRange={activeRange} />
     </>
   );
 };

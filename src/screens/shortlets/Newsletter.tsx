@@ -5,7 +5,7 @@ import { ArrowRightIcon } from "@phosphor-icons/react";
 export const Newsletter = () => {
   return (
     <section className="bg-white py-10 md:py-20 px-4 md:px-8">
-      <div className="max-w-7xl bg-[#F6F6F6] mx-auto rounded-3xl grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+      <div className="max-w-7xl bg-[#F6F6F6] mx-auto rounded-3xl grid grid-cols-1 md:grid-cols-2 gap-6 items-center p-4 md:p-6">
         {/* Left side image */}
         <div>
           <img
@@ -28,7 +28,7 @@ export const Newsletter = () => {
           </p>
 
           {/* Input + Button */}
-          <form className="flex items-center gap-2 p-2 rounded-xl border border-gray-200 max-w-lg">
+          <form className="flex items-center gap-2 p-2 rounded-4xl border border-gray-200 max-w-lg">
             <input
               type="email"
               placeholder="Work email"

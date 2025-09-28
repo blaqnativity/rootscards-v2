@@ -1,25 +1,31 @@
+import { useState } from "react";
 import { BtnMain } from "@/components/buttons/BtnMain";
-import { ArrowRight } from "@phosphor-icons/react";
-import video from "@/assets/images/video-frame.svg";
+import { ArrowRight, Play } from "@phosphor-icons/react";
+import videoPrev from "@/assets/images/videoPrev.svg";
 import { cards } from "@/constants/processes";
 
 export const Steps = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <div className="bg-[#F6F6F6] w-full">
-      <div className="max-w-[1400px] mx-auto px-4 py-10 md:py-20 ">
-        {/* top section */}
+      <div className="max-w-[1400px] mx-auto px-4 py-10 md:py-20">
+        {/* Top section */}
         <section className="grid gap-10 md:gap-15">
-          <div className="flex flex-col gap-3 md:gap-0 md:flex-row justify-between">
+          <div className="flex flex-col items-center gap-3 md:gap-0 md:flex-row justify-between">
+            {/* Left side: heading */}
             <div>
               <span className="text-sm uppercase tracking-wide text-gray-600">
                 HOW IT WORKS
               </span>
-              <h2 className="headerTwo font-semibold w-sm md:max-w-lg leading-10 md:leading-14">
-                From booking to checkout in 4 steps
+              <h2 className="headingText font-bold max-w-2xl leading-10 md:leading-20">
+                From booking to <br className="hidden md:block" /> checkout in 4
+                steps
               </h2>
             </div>
 
-            <div className="space-y-3">
+            {/* Right side: text + CTA */}
+            <div className="space-y-3 text-center md:text-right">
               <p className="max-w-xs text-gray-700">
                 Mirrors your current process — just faster, auditable, and less
                 human error.
@@ -34,16 +40,62 @@ export const Steps = () => {
             </div>
           </div>
 
-          <div>
-            <img
-              src={video}
-              alt="Video preview"
-              className="w-full rounded-lg"
-            />
+          {/* Video card */}
+          <div className="relative rounded-2xl overflow-hidden shadow-lg">
+            {/* "See a 3-min demo" button */}
+            <button
+              onClick={() => setIsOpen(true)}
+              className="absolute top-6 left-6 bg-white/20 backdrop-blur-lg text-white text-sm px-4 py-2 rounded-full hover:bg-black/80 transition z-20"
+            >
+              See a 3-min demo →
+            </button>
+
+            {/* Thumbnail (shown only if video not open) */}
+            {!isOpen && (
+              <>
+                <img
+                  src={videoPrev}
+                  alt="Demo Video Thumbnail"
+                  className="w-full h-[600px] rounded-2xl"
+                />
+
+                {/* Play button overlay */}
+                <button
+                  onClick={() => setIsOpen(true)}
+                  className="absolute inset-0 flex items-center justify-center bg-black/30 hover:bg-black/50 transition"
+                >
+                  <div className="w-20 h-20 bg-white/20 backdrop-blur-lg rounded-full flex items-center justify-center">
+                    <Play size={48} color="white" />
+                  </div>
+                </button>
+
+                {/* Caption */}
+                <div className="absolute bottom-10 left-10 text-white max-w-xl z-10">
+                  <p className="headerTwo leading-14">
+                    “How Rootscard eliminates wait time and improves user{" "}
+                    <span className="">experience</span>”
+                  </p>
+                </div>
+              </>
+            )}
+
+            {/* Video player (replaces thumbnail when open) */}
+            {isOpen && (
+              <div className="w-full h-[600px] bg-black">
+                <iframe
+                  className="w-full h-full"
+                  src="https://www.youtube.com/embed/fkA5bKihJRw?autoplay=1&mute=1&playsinline=1&loop=1&rel=0&controls=1"
+                  title="Demo Video"
+                  frameBorder="0"
+                  allow="autoplay; fullscreen"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            )}
           </div>
         </section>
 
-        {/* cards section */}
+        {/* Steps cards section */}
         <section className="mt-15 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {cards.map((card, index) => (
             <div
@@ -53,11 +105,11 @@ export const Steps = () => {
               <img
                 src={card.image}
                 alt={card.title}
-                className="w-full h-auto"
+                className="w-full h-auto rounded-lg"
               />
               <div className="p-4">
-                <h3 className="">{card.title}</h3>
-                <p className="">{card.desc}</p>
+                <h3 className="font-semibold">{card.title}</h3>
+                <p className="text-gray-600 text-sm">{card.desc}</p>
               </div>
             </div>
           ))}
