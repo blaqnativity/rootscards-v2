@@ -3,7 +3,6 @@ import slack from "@/assets/images/slack.svg";
 import whatsapp from "@/assets/images/whatsapp.svg";
 import inter from "@/assets/images/inter.svg";
 import hubspot from "@/assets/images/hubspot.svg";
-import juliusBerger from "@/assets/images/JuliusBerger.svg";
 import tix from "@/assets/images/Tix-Africa.svg";
 
 export type CarouselLogo = {
@@ -17,7 +16,6 @@ export const carouselOne: CarouselLogo[] = [
   { src: inter, alt: "Intercom" },
   { src: whatsapp, alt: "WhatsApp" },
   { src: hubspot, alt: "HubSpot" },
-  { src: juliusBerger, alt: "Julius Berger" },
   { src: tix, alt: "Tix Africa" },
 ];
 

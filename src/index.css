@@ -79,11 +79,9 @@ html {
 .logoText {
   @apply text-lg md:text-xl font-bold;
 }
-
 .fadeText {
-  /* @apply text-black/60; */
+  @apply text-black/60;
 }
-
 .headerText {
   @apply text-6xl md:text-8xl tracking-tight;
   font-family: "Forum", sans-serif;
@@ -91,37 +89,31 @@ html {
 .headingText {
   @apply text-4xl md:text-7xl font-semibold;
 }
-
 .titleFont {
   font-family: "Forum", sans-serif;
 }
-
 .headerSubText {
   @apply text-5xl md:text-8xl tracking-tight;
   font-family: "Forum", sans-serif;
 }
-
 .headerOne {
   @apply md:text-6xl font-semibold;
 }
-
 .headerTwo {
   @apply text-[32px] md:text-5xl;
 }
-
 .headerThree {
   @apply text-lg md:text-3xl;
 }
-
 .headerFour {
   @apply md:text-lg text-gray-700;
 }
 .headerFive {
-  @apply md:text-sm font-semibold;
+  @apply md:text-sm;
 }
 
 .line {
-  @apply h-[1.6px] flex-1 w-fit bg-gray-400 rounded-full;
+  @apply h-[1.6px] flex-1 w-fit bg-gray-200 rounded-full;
 }
 
 .icon {

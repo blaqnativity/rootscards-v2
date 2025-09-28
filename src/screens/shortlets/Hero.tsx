@@ -6,7 +6,7 @@ import { ArrowRightIcon } from "@phosphor-icons/react";
 
 export const Hero = () => {
   return (
-    <section className="relative flex items-center bg-white py-10 md:py-20 h-[720px] md:h-screen w-full overflow-hidden">
+    <section className="relative flex items-center bg-white py-10 md:py-20 h-[620px] md:h-screen w-full overflow-hidden">
       {/* Desktop background */}
       <div className="absolute inset-0 hidden md:flex justify-center items-center">
         <div
@@ -16,17 +16,17 @@ export const Hero = () => {
       </div>
 
       {/* Mobile background */}
-      <div className="absolute inset-0 flex md:hidden justify-center items-center">
+      <div className="px-2 absolute inset-0 flex md:hidden justify-center items-center">
         <div
-          className="w-full max-w-[420px] h-[920px] bg-no-repeat bg-bottom bg-cover"
+          className="w-full h-[620px] bg-no-repeat bg-bottom-right bg-cover"
           style={{ backgroundImage: `url(${mobileBg})` }}
         />
       </div>
 
       {/* Foreground content */}
-      <div className="relative grid md:grid-cols-[3fr_2fr] gap-10 z-10 max-w-[1400px] mx-auto px-4 md:px-8">
+      <div className="relative grid items-start md:grid-cols-[3fr_2fr] gap-10 z-10 max-w-[1400px] mx-auto px-4 md:px-8">
         <div>
-          <h1 className="headingText  md:leading-21 text-white ">
+          <h1 className="headingText  md:leading-23 text-white ">
             Make your shortlets self-serve, fraud-proof, and queue-free.
           </h1>
         </div>

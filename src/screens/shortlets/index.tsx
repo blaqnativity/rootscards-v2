@@ -5,10 +5,11 @@ import { carouselTwo } from "@/constants/carouseLogos";
 import { Features } from "./Features";
 import { Steps } from "./Steps";
 import { Pricing } from "@/components/utils/PricingPlans";
-import { Kits } from "./Kits";
+import { Ratings } from "./Ratings";
 import { Testimonial } from "../../components/utils/Testimonial";
 import { FAQ } from "@/components/utils/FAQ";
 import { ShortletsFAQ } from "@/constants/FAQ";
+import { Newsletter } from "./Newsletter";
 
 export const Shortlets = () => {
   return (
@@ -19,13 +20,13 @@ export const Shortlets = () => {
           <Carousel logos={carouselTwo} title="Works with" />
         </div>
       </div>
-
       <Features />
       <Steps />
       <Pricing />
-      <Kits />
+      <Ratings />
       <Testimonial />
       <FAQ data={ShortletsFAQ} />
+      <Newsletter />
     </Layout>
   );
 };

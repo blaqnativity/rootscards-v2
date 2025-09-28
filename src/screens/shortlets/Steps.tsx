@@ -8,25 +8,30 @@ export const Steps = () => {
     <div className="bg-[#F6F6F6] w-full">
       <div className="max-w-[1400px] mx-auto px-4 py-10 md:py-20 ">
         {/* top section */}
-        <section className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-0">
-          <div className="flex flex-col space-y-6">
-            <span className="text-sm uppercase tracking-wide text-gray-600">
-              HOW IT WORKS
-            </span>
-            <h2 className="headerTwo font-semibold max-w-lg md:leading-14">
-              From booking to checkout in 4 steps
-            </h2>
-            <p className="max-w-xs text-gray-700">
-              Mirrors your current process — just faster, auditable, and less
-              human error.
-            </p>
-            <BtnMain
-              to="#"
-              text="Start free trial"
-              icon={ArrowRight}
-              btnBg="bg-black"
-              textColor="text-white"
-            />
+        <section className="grid gap-10 md:gap-15">
+          <div className="flex flex-col gap-3 md:gap-0 md:flex-row justify-between">
+            <div>
+              <span className="text-sm uppercase tracking-wide text-gray-600">
+                HOW IT WORKS
+              </span>
+              <h2 className="headerTwo font-semibold w-sm md:max-w-lg leading-10 md:leading-14">
+                From booking to checkout in 4 steps
+              </h2>
+            </div>
+
+            <div className="space-y-3">
+              <p className="max-w-xs text-gray-700">
+                Mirrors your current process — just faster, auditable, and less
+                human error.
+              </p>
+              <BtnMain
+                to="#"
+                text="Start free trial"
+                icon={ArrowRight}
+                btnBg="bg-black"
+                textColor="text-white"
+              />
+            </div>
           </div>
 
           <div>
