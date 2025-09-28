@@ -21,7 +21,7 @@ export const Ratings = () => {
               BUSINESS FEEDBACK
             </span>
             <h3 className="headerTwo font-bold">Success Stories</h3>
-            <p className="headerFive text-gray-600 w-xs">
+            <p className="headerFive text-gray-600 max-w-xs">
               Mirrors your current process—just faster, auditable, and less
               human error.
             </p>
@@ -44,12 +44,12 @@ export const Ratings = () => {
           </div>
 
           {/* line */}
-          <div className="border-t border-gray-200 w-lg"></div>
+          <div className="border-t border-gray-200 w-full"></div>
 
           {/* testimonial */}
           <div className="flex flex-col gap-4">
             <span className="text-yellow-500 text-lg">⭐⭐⭐⭐⭐</span>
-            <p className="headerFive text-gray-700 w-xs">
+            <p className="headerFive text-gray-700 max-w-xs">
               “Cleaning SLAs improved because tasks fire themselves.”
             </p>
             <div className="flex items-center gap-3">

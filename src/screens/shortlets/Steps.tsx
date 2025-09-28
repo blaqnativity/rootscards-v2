@@ -41,7 +41,7 @@ export const Steps = () => {
           </div>
 
           {/* Video card */}
-          <div className="relative rounded-2xl overflow-hidden shadow-lg">
+          <div className="relative rounded-2xl overflow-hidden">
             {/* "See a 3-min demo" button */}
             <button
               onClick={() => setIsOpen(true)}

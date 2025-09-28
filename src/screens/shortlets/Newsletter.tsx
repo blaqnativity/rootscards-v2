@@ -18,7 +18,7 @@ export const Newsletter = () => {
         {/* Right side content */}
         <div className="flex flex-col gap-6">
           {/* Headline */}
-          <h2 className="headerTwo font-bold w-lg">
+          <h2 className="headerTwo font-bold max-w-lg">
             Ready to make keys and coordinators optional?
           </h2>
 

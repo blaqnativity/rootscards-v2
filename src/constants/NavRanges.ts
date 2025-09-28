@@ -3,7 +3,7 @@ import darkLogo from "/darkLogo.svg";
 
 export const navRange1 = [
   {
-    start: 3,
+    start: 10,
     end: 900.8,
     bgColor: "bg-white/5 backdrop-blur-2xl",
     textColor: "text-white",
