@@ -23,7 +23,7 @@ export const BtnSecondary: React.FC<ButtonProps> = ({
   btnBorder = "border-none",
   onClick,
 }) => {
-  const classes = `w-fit inline-flex items-center rounded-full font-bold h-10 pr-[2px] py-[1px] pl-4 hover:opacity-90 transition ${btnBg} ${btnBorder}`;
+  const classes = `w-fit inline-flex items-center cursor-pointer rounded-full font-bold h-10 pr-[2px] py-[1px] pl-4 hover:opacity-90 transition ${btnBg} ${btnBorder}`;
 
   const content = (
     <>

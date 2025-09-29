@@ -45,7 +45,7 @@ export const Steps = () => {
             {/* "See a 3-min demo" button */}
             <button
               onClick={() => setIsOpen(true)}
-              className="absolute top-6 left-6 bg-white/20 backdrop-blur-lg text-white text-sm px-4 py-2 rounded-full hover:bg-black/80 transition z-20"
+              className="absolute top-6 left-6 bg-white/20 backdrop-blur-lg text-white text-sm px-4 py-2 rounded-full z-20"
             >
               See a 3-min demo →
             </button>

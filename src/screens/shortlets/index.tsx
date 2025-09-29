@@ -30,3 +30,5 @@ export const Shortlets = () => {
     </Layout>
   );
 };
+
+export default Shortlets;

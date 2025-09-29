@@ -124,7 +124,7 @@ html {
 }
 
 .pill {
-  @apply mb-10 border border-[#cccccc]/20 bg-white/10 flex items-center gap-2 px-4 py-3 rounded-full;
+  @apply mb-10 border border-[#cccccc]/20 bg-white/10 flex items-center gap-2 px-3 py-2 rounded-full;
 }
 
 .card {

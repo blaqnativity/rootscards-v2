@@ -1,6 +1,6 @@
 import { Footer } from "../components/navigation/Footer";
 import { MainNav as Navbar } from "../components/navigation/MainNav";
-import { navRange1 } from "@/constants/NavRanges";
+import { navRange1 } from "@/constants/navConstants";
 
 export const MainLayout = ({ children }: LayoutProps) => {
   return (

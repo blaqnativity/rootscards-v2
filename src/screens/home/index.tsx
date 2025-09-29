@@ -7,7 +7,7 @@ import { VideoCard } from "./VideoCard";
 import { Testimonial } from "../../components/utils/Testimonial";
 import { FAQData } from "@/constants/FAQ";
 
-export const Home = () => {
+const Home = () => {
   return (
     <Layout>
       <Hero />
@@ -19,3 +19,5 @@ export const Home = () => {
     </Layout>
   );
 };
+
+export default Home;
