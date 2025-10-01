@@ -3,30 +3,30 @@ import mobile from "@/assets/images/mobileBg.svg";
 import { BtnMain } from "@/components/buttons/BtnMain";
 import { BtnSecondary } from "@/components/buttons/BtnSecondary";
 import { ArrowRightIcon } from "@phosphor-icons/react";
-
-// calendly api hook
 import { scheduleDemo } from "../../services/useCalendly";
 import useCalendlyLoader from "@/hooks/useCalendlyLoader";
 
 export const Hero = () => {
   useCalendlyLoader();
   return (
-    <section className="relative flex items-center bg-black py-10 md:py-20 h-[70vh] md:h-[110vh] w-full overflow-hidden">
+    <section className="relative flex items-center bg-black py-10 md:py-20 h-[65vh] md:h-[110vh] w-full overflow-hidden">
       {/* Desktop background */}
       <img
         src={desktop}
-        className="hidden md:w-[90vw] md:h-dvh md:block absolute inset-0 top-15 mx-auto"
+        className="hidden md:block absolute top-20 left-1/2 -translate-x-1/2 
+             w-full max-w-[1450px] h-auto object-cover"
       />
-      {/* mobile background */}
+
+      {/* Mobile background */}
       <img
         src={mobile}
-        className="w-[96vw] h-full md:hidden absolute inset-0 mx-auto top-10"
+        className="w-[96%] h-[90%] md:hidden absolute inset-0 mx-auto top-15 object-contain"
       />
 
       {/* Foreground content */}
       <div className="relative grid items-start md:grid-cols-[3fr_2fr] gap-10 z-10 max-w-[1400px] mx-auto px-4 md:px-8">
         <div>
-          <h1 className="headingText  md:leading-23 text-white ">
+          <h1 className="headingText md:leading-23 text-white">
             Make your shortlets self-serve, fraud-proof, and queue-free.
           </h1>
         </div>

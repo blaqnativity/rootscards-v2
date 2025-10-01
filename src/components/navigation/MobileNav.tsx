@@ -1,18 +1,23 @@
 import { Link } from "react-router-dom";
 import { X, List, ArrowRight } from "@phosphor-icons/react";
-import { navMenu } from "../../constants/navConstants";
 import { BtnMain } from "../buttons/BtnMain";
 import { useToggle } from "../../hooks/useToggle";
 
 import logo from "/lightLogo.svg";
-
 import type { ScrollRange } from "./MainNav";
+
+// Define the type for nav items
+interface NavItem {
+  menu: string;
+  url: string;
+}
 
 interface MobileNavProps {
   activeRange?: ScrollRange;
+  menuItems: NavItem[];
 }
 
-export const MobileNav = ({ activeRange }: MobileNavProps) => {
+export const MobileNav = ({ activeRange, menuItems }: MobileNavProps) => {
   const { isToggled: menu, toggle } = useToggle();
 
   // Defaults
@@ -61,7 +66,7 @@ export const MobileNav = ({ activeRange }: MobileNavProps) => {
             className={`w-full max-w-[820px] rounded-3xl p-8 shadow-2xl transition-colors duration-300 ${bgColor} ${textColor}`}
           >
             <ul className="space-y-8 text-lg font-medium">
-              {navMenu.map((link, index) => (
+              {menuItems.map((link, index) => (
                 <li key={index}>
                   <Link
                     to={link.url}

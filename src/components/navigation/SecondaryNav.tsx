@@ -76,7 +76,7 @@ export const SecondaryNav: React.FC<MainNavProps> = ({ ranges = [] }) => {
       </nav>
 
       {/* Mobile nav */}
-      <MobileNav activeRange={activeRange} />
+      <MobileNav activeRange={activeRange} menuItems={navMenu2} />
     </>
   );
 };

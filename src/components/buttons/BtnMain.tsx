@@ -34,7 +34,9 @@ export const BtnMain: React.FC<ButtonProps> = ({
           <Icon size={18} />
         </span>
       )}
-      <span className={`ml-2 text-sm ${textColor} cursor-pointer`}>{text}</span>
+      <span className={`ml-2 text-xs md:text-sm ${textColor} cursor-pointer`}>
+        {text}
+      </span>
     </>
   );
 

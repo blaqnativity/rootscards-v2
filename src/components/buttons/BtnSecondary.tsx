@@ -28,7 +28,7 @@ export const BtnSecondary: React.FC<ButtonProps> = ({
   const content = (
     <>
       {/* Text on the left */}
-      <span className={`text-sm mr-2 ${textColor}`}>{text}</span>
+      <span className={`text-xs md:text-sm mr-2 ${textColor}`}>{text}</span>
 
       {/* Icon on the right */}
       {Icon && (
