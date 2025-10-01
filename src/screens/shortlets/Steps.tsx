@@ -19,8 +19,9 @@ export const Steps = () => {
                 HOW IT WORKS
               </span>
               <h2 className="headingText font-bold max-w-2xl leading-10 md:leading-20">
-                From booking to <br className="hidden md:block" /> checkout in 4
-                steps
+                <span className="text-black/50">From booking to </span>
+                <br className="hidden md:block" />
+                checkout in 4 steps
               </h2>
             </div>
 

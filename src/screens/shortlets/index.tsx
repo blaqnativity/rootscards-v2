@@ -1,4 +1,4 @@
-import { MainLayout as Layout } from "@/layouts/MainLayout";
+import { SecondLayout as Layout } from "@/layouts/SecondLayout";
 import { Hero } from "./Hero";
 import { Carousel } from "@/components/utils/LogoCarousel";
 import { carouselTwo } from "@/constants/carouseLogos";
@@ -6,7 +6,6 @@ import { Features } from "./Features";
 import { Steps } from "./Steps";
 import { Pricing } from "@/components/utils/PricingPlans";
 import { Ratings } from "./Ratings";
-import { Testimonial } from "../../components/utils/Testimonial";
 import { FAQ } from "@/components/utils/FAQ";
 import { ShortletsFAQ } from "@/constants/FAQ";
 import { Newsletter } from "./Newsletter";
@@ -24,7 +23,6 @@ export const Shortlets = () => {
       <Steps />
       <Pricing />
       <Ratings />
-      <Testimonial />
       <FAQ data={ShortletsFAQ} />
       <Newsletter />
     </Layout>

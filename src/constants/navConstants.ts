@@ -7,13 +7,15 @@ export interface NavItem {
 
 // main navmenu
 export const navMenu: NavItem[] = [
-  // { menu: "About", url: "/about" },
   { menu: "View demo", url: "/demo" },
-  // { menu: "Features", url: "/features" },
+  { menu: "Product", url: "/shortlets" },
   { menu: "Documentation", url: "#" },
   { menu: "Pricing", url: "/pricing" },
-  // { menu: "Check-in Suite", url: "/check-in-suite" },
-  // { menu: "Contact sales", url: "/contact-sales" },
+  { menu: "Sign In/Up", url: "https://app.rootscards.com" },
+];
+export const navMenu2: NavItem[] = [
+  { menu: "View demo", url: "/demo" },
+  { menu: "Pricing", url: "/pricing" },
   { menu: "Sign In/Up", url: "https://app.rootscards.com" },
 ];
 

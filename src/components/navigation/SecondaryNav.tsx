@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "@phosphor-icons/react";
-import { navMenu } from "../../constants/navConstants";
+import { navMenu2 } from "@/constants/navConstants";
 import { BtnMain } from "../buttons/BtnMain";
 import { MobileNav } from "./MobileNav";
 import logo from "/lightLogo.svg";
@@ -58,7 +58,7 @@ export const SecondaryNav: React.FC<MainNavProps> = ({ ranges = [] }) => {
             <ul
               className={`flex font-medium space-x-8 items-center ${textColor}`}
             >
-              {navMenu.map((link, index) => (
+              {navMenu2.map((link, index) => (
                 <li key={index}>
                   <Link to={link.url} className="custom-link">
                     {link.menu}

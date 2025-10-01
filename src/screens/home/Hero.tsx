@@ -33,7 +33,9 @@ export const Hero = () => {
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-white">
         <div className="pill">
           <Lightning weight="fill" size={15} />
-          <span className="text-xs">AI-Powered Smart Infrastructure</span>
+          <span className="text-xs shadow-2xl">
+            AI-Powered Smart Infrastructure
+          </span>
         </div>
 
         <div className="max-w-7xl text-center mb-10">

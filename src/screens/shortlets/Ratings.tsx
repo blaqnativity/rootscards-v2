@@ -15,7 +15,7 @@ export const Ratings = () => {
         </div>
 
         {/* text div */}
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-6 max-w-96">
           <div className="flex flex-col gap-4">
             <span className="headerFour uppercase tracking-wide text-gray-500">
               BUSINESS FEEDBACK
@@ -44,7 +44,7 @@ export const Ratings = () => {
           </div>
 
           {/* line */}
-          <div className="border-t border-gray-200 w-full"></div>
+          <div className="border-t border-gray-300 w-full"></div>
 
           {/* testimonial */}
           <div className="flex flex-col gap-4">

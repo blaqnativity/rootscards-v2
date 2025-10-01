@@ -1,5 +1,5 @@
 import desktop from "@/assets/images/desktop.svg";
-import mobileBg from "@/assets/images/mobileBg.svg";
+import mobile from "@/assets/images/mobileBg.svg";
 import { BtnMain } from "@/components/buttons/BtnMain";
 import { BtnSecondary } from "@/components/buttons/BtnSecondary";
 import { ArrowRightIcon } from "@phosphor-icons/react";
@@ -11,22 +11,17 @@ import useCalendlyLoader from "@/hooks/useCalendlyLoader";
 export const Hero = () => {
   useCalendlyLoader();
   return (
-    <section className="relative flex items-center bg-white py-10 md:py-20 h-[620px] md:h-screen w-full overflow-hidden">
+    <section className="relative flex items-center bg-black py-10 md:py-20 h-[70vh] md:h-[110vh] w-full overflow-hidden">
       {/* Desktop background */}
-      <div className="absolute inset-0 hidden md:flex justify-center items-center">
-        <div
-          className="min-w-[1600px] max-w-[1680px] h-[720px] bg-no-repeat bg-center bg-contain"
-          style={{ backgroundImage: `url(${desktop})` }}
-        />
-      </div>
-
-      {/* Mobile background */}
-      <div className="px-2 absolute inset-0 flex md:hidden justify-center items-center">
-        <div
-          className="w-full h-[620px] bg-no-repeat bg-bottom-right bg-cover"
-          style={{ backgroundImage: `url(${mobileBg})` }}
-        />
-      </div>
+      <img
+        src={desktop}
+        className="hidden md:w-[90vw] md:h-dvh md:block absolute inset-0 top-15 mx-auto"
+      />
+      {/* mobile background */}
+      <img
+        src={mobile}
+        className="w-[96vw] h-full md:hidden absolute inset-0 mx-auto top-10"
+      />
 
       {/* Foreground content */}
       <div className="relative grid items-start md:grid-cols-[3fr_2fr] gap-10 z-10 max-w-[1400px] mx-auto px-4 md:px-8">
