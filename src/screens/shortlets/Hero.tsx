@@ -1,8 +1,8 @@
 import desktop from "@/assets/images/desktop.svg";
-import { ArrowRight } from "@phosphor-icons/react";
-import { BtnMain } from "../../components/buttons/BtnMain";
-import { BtnSecondary } from "../../components/buttons/BtnSecondary";
-import { scheduleDemo } from "../../services/useCalendly";
+// import { ArrowRight } from "@phosphor-icons/react";
+// import { BtnMain } from "../../components/buttons/BtnMain";
+// import { BtnSecondary } from "../../components/buttons/BtnSecondary";
+// import { scheduleDemo } from "../../services/useCalendly";
 import useCalendlyLoader from "@/hooks/useCalendlyLoader";
 import { Carousel } from "../../components/utils/LogoCarousel";
 import { carouselTwo as carousel } from "@/constants/carouseLogos";

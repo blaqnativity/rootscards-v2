@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import logo from "/lightLogo.svg";
 import {
-  WhatsappLogo,
   LinkedinLogoIcon,
   XLogo,
   InstagramLogo,
