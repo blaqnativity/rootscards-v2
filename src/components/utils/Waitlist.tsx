@@ -1,15 +1,15 @@
-import bg from "@/assets/images/waitlist.svg";
 import { BtnSecondary } from "@/components/buttons/BtnSecondary";
 import { ArrowRightIcon } from "@phosphor-icons/react";
+import vector from "@/assets/images/bg-vector.svg";
 
 export const Waitlist = () => {
   return (
-    <section className="py-10 md:py-20 w-full px-4 md:px-8 bg-[#F6F6F6]">
+    <section className="relative overflow-hidden py-10 md:py-20 w-full px-4 md:px-8 bg-[#F6F6F6]">
       <div
-        className="max-w-[1200px] mx-auto bg-cover md:h-[50vh] flex items-center p-5 md:p-10"
-        style={{ backgroundImage: `url(${bg})` }}
+        className="bg-gradient-to-br from-[#3A98FD] to-[#0453A9]
+ max-w-[1200px] rounded-4xl h-[50vh] mx-auto bg-no-repeat md:bg-cover flex items-center p-5 md:p-10"
       >
-        <div className="md:w-[50%]">
+        <div className="w-full md:w-[50%]">
           <h2 className="headerTwo text-white">Join our Waitlist</h2>
           <span className="headerFive text-white my-6 block">
             Be among the first to experience what we’re building. By joining our
@@ -32,6 +32,11 @@ export const Waitlist = () => {
             />
           </form>
         </div>
+
+        <img
+          src={vector}
+          className="absolute w-2xl -bottom-40 md:bottom-20 md:right-20"
+        />
       </div>
     </section>
   );

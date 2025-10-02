@@ -1,8 +1,11 @@
 import newsletter from "@/assets/images/newsletter.svg";
 import { BtnSecondary } from "@/components/buttons/BtnSecondary";
 import { ArrowRightIcon } from "@phosphor-icons/react";
+import { scheduleDemo } from "@/services/useCalendly";
+import useCalendlyLoader from "@/hooks/useCalendlyLoader";
 
 export const Newsletter = () => {
+  useCalendlyLoader();
   return (
     <section className="bg-white py-10 md:py-20 px-4 md:px-8">
       <div className="max-w-7xl bg-[#F6F6F6] mx-auto rounded-3xl grid grid-cols-1 md:grid-cols-2 gap-6 items-center p-4 md:p-6">
@@ -40,13 +43,18 @@ export const Newsletter = () => {
               btnBg="bg-black"
               textColor="text-white"
               icon={ArrowRightIcon}
+              iconBg="bg-[#444444]"
+              iconColor="text-white"
             />
           </form>
 
           {/* Small link */}
-          <a href="#" className="text-blue-600 text-sm underline">
+          <span
+            className="text-blue-600 text-sm underline cursor-pointer"
+            onClick={scheduleDemo}
+          >
             Prefer a walkthrough? Book a 15-min demo.
-          </a>
+          </span>
         </div>
       </div>
     </section>

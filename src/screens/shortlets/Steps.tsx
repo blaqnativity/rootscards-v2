@@ -2,6 +2,7 @@ import { useState } from "react";
 import { BtnMain } from "@/components/buttons/BtnMain";
 import { ArrowRight, Play } from "@phosphor-icons/react";
 import videoPrev from "@/assets/images/videoPrev.svg";
+import vector from "@/assets/images/vector.svg";
 import { cards } from "@/constants/processes";
 
 export const Steps = () => {
@@ -12,7 +13,7 @@ export const Steps = () => {
       <div className="max-w-[1400px] mx-auto px-4 py-10 md:py-20">
         {/* Top section */}
         <section className="grid gap-10 md:gap-15">
-          <div className="flex flex-col items-center gap-3 md:gap-0 md:flex-row justify-between">
+          <div className="flex flex-col items-start gap-3 md:gap-0 md:flex-row justify-between">
             {/* Left side: heading */}
             <div>
               <span className="text-sm uppercase tracking-wide text-gray-600">
@@ -26,7 +27,7 @@ export const Steps = () => {
             </div>
 
             {/* Right side: text + CTA */}
-            <div className="space-y-3 text-center md:text-right">
+            <div className="space-y-3 text-start">
               <p className="max-w-xs text-gray-700">
                 Mirrors your current process — just faster, auditable, and less
                 human error.
@@ -57,7 +58,7 @@ export const Steps = () => {
                 <img
                   src={videoPrev}
                   alt="Demo Video Thumbnail"
-                  className="w-full h-[600px] rounded-2xl"
+                  className="w-full h-[500px] md:h-[600px] rounded-2xl"
                 />
 
                 {/* Play button overlay */}
@@ -71,10 +72,17 @@ export const Steps = () => {
                 </button>
 
                 {/* Caption */}
-                <div className="absolute bottom-10 left-10 text-white max-w-xl z-10">
+                <div className="absolute bottom-5 left-5 md:bottom-10 md:left-10 text-white w-xs md:max-w-xl z-10">
                   <p className="headerTwo leading-14">
                     “How Rootscard eliminates wait time and improves user{" "}
-                    <span className="">experience</span>”
+                    <div className="ml-3 relative inline-block">
+                      <img
+                        src={vector}
+                        alt="overlay"
+                        className="absolute -bottom-10 md:-bottom-20 left-10 h-auto w-full max-w-none -translate-x-1/3 md:-translate-x-1/5 -translate-y-1/2 pointer-events-none"
+                      />
+                      <span className="relative z-0">experience"</span>
+                    </div>
                   </p>
                 </div>
               </>
@@ -82,7 +90,7 @@ export const Steps = () => {
 
             {/* Video player (replaces thumbnail when open) */}
             {isOpen && (
-              <div className="w-full h-[600px] bg-black">
+              <div className="w-full h-[500px] md:h-[600px] bg-black">
                 <iframe
                   className="w-full h-full"
                   src="https://www.youtube.com/embed/fkA5bKihJRw?autoplay=1&mute=1&playsinline=1&loop=1&rel=0&controls=1"
