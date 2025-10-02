@@ -7,7 +7,10 @@ import Aurora from "../../components/ui/reactbits/Aurora";
 import { scheduleDemo } from "../../services/useCalendly";
 import useCalendlyLoader from "@/hooks/useCalendlyLoader";
 import { Carousel } from "../../components/utils/LogoCarousel";
-import { carouselOne as carousels } from "@/constants/carouseLogos";
+import {
+  carouselOne as carousels,
+  carouselTwo,
+} from "@/constants/carouseLogos";
 export const Hero = () => {
   useCalendlyLoader();
   return (
@@ -50,7 +53,7 @@ export const Hero = () => {
               <span className="relative z-0">disappear</span>
             </div>
           </h1>
-          <p className="headerThree px-10 my-10 tracking-wide">
+          <p className="headerThree px-10 max-w-4xl my-10 tracking-wide">
             Process thousands in seconds with AI-powered check-ins, automated
             queue routing and live insights—built for events, clinics, coworking
             and retail.
@@ -68,12 +71,11 @@ export const Hero = () => {
               textColor="text-white"
               icon={ArrowRight}
               btnBg="bg-black"
-              btnBorder="border border-white"
               onClick={scheduleDemo}
             />
           </div>
         </div>
-        <div className="w-full absolute bottom-0 bg-[#222222] flex justify-center items-center border border-[#444444] py-5">
+        <div className="w-full absolute -bottom-10 bg-[#222222] flex justify-center items-center border border-[#444444] py-4">
           <Carousel logos={carousels} />
         </div>
       </div>

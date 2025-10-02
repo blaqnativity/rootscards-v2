@@ -117,7 +117,7 @@ html {
 }
 
 .icon {
-  background-color: #f1f1f1;
+  @apply bg-[#fffffa]/90;
   color: #000000;
   padding: 6px;
   border-radius: 100%;
@@ -144,11 +144,6 @@ html {
 
 .custom-link {
   @apply text-[13px] md:text-sm font-semibold;
-}
-
-/* button sizes */
-.btnMain {
-  @apply text-[var(--text-dark)] px-4 py-2 rounded-full font-semibold text-[.6em] md:text-[1em] w-full md:w-fit text-center;
 }
 
 @theme inline {

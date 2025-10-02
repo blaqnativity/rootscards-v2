@@ -21,7 +21,7 @@ export const Carousel: React.FC<CarouselProps> = ({
   pauseOnHover = true,
   gap = 80,
   scaleOnHover = true,
-  logoHeight = 30,
+  logoHeight = 24,
   // commented out for now but to be used where it is rendered
   // className = "w-full absolute bottom-0 bg-[#222222] flex justify-center items-center border border-[#444444] py-5",
   innerClassName = "max-w-[1400px] px-4 md:px-8 mx-auto flex flex-col gap-4 md:flex-row justify-between items-center w-full",

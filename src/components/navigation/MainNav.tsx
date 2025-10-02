@@ -69,6 +69,9 @@ export const MainNav: React.FC<MainNavProps> = ({ ranges = [] }) => {
                 to="https://app.rootscards.com/signup"
                 text="Start free trial"
                 icon={ArrowRight}
+                btnBg="bg-white"
+                textColor="text-black"
+                iconBg="bg-black"
               />
             </ul>
           </div>

@@ -11,14 +11,19 @@ import {
 export const Footer = () => {
   return (
     <>
-      <footer className="w-full bg-black py-10 md:py-20 text-white">
+      <footer className="w-full bg-black py-10 md:py-20">
         <div className="flex flex-col gap-10 mx-auto max-w-[1400px] px-4 md:px-8">
           <div className="grid grid-cols-2 md:grid-cols-5 gap-4 gap-y-10 items-start">
             {/* block one */}
-            <div className="flex flex-col gap-4">
-              <Link to="/" className="flex items-baseline-last gap-1 md:gap-2">
+            <div className="flex flex-col gap-4 text-[#fffffa]/70 text-xs md:text-sm">
+              <Link
+                to="/"
+                className="flex items-baseline-last gap-1 md:gap-2 text-white"
+              >
                 <img src={logo} alt="logo" className="h-[1.1em] md:h-[1.5em]" />
-                <span className="logoText lowercase">rootscards</span>
+                <span className="logoText text-white lowercase">
+                  rootscards
+                </span>
               </Link>
               <Link to="/">Contact</Link>
               <Link to="/">Pricing</Link>
@@ -26,8 +31,8 @@ export const Footer = () => {
               <Link to="/">Terms of Use</Link>
             </div>
             {/* block two */}
-            <div className="flex flex-col gap-4">
-              <Link to="/" className="logoText">
+            <div className="flex flex-col gap-4 text-[#fffffa]/70 text-xs md:text-sm">
+              <Link to="/" className="logoText text-white">
                 Advanced Features
               </Link>
               <Link to="/">AI-Powered Segmentation</Link>
@@ -35,8 +40,8 @@ export const Footer = () => {
               <Link to="/">Real Time Dashboard</Link>
             </div>
             {/* block three */}
-            <div className="flex flex-col gap-4">
-              <Link to="/" className="logoText">
+            <div className="flex flex-col gap-4 text-[#fffffa]/70 text-xs md:text-sm">
+              <Link to="/" className="logoText text-white">
                 Product
               </Link>
               <Link to="/">Rootscard</Link>
@@ -45,8 +50,8 @@ export const Footer = () => {
               <Link to="/">Dev Docs</Link>
             </div>
             {/* block four */}
-            <div className="flex flex-col gap-4">
-              <Link to="/" className="logoText">
+            <div className="flex flex-col gap-4 text-[#fffffa]/70 text-xs md:text-sm">
+              <Link to="/" className="logoText text-white">
                 Support
               </Link>
               <Link to="/">Product Updates</Link>
@@ -72,26 +77,28 @@ export const Footer = () => {
                 </Link>
               </div>
               {/* whatsapp */}
-              <Link
+              {/* <Link
                 to="/"
                 className="bg-[#1EAE54] flex items-center gap-2 px-4 py-2 rounded-full w-fit"
               >
                 <WhatsappLogo size={22} />
                 Chat on Whatsapp
-              </Link>
+              </Link> */}
 
               <span>support@rootscard.com</span>
             </div>
           </div>
 
           {/* copyright text */}
-          <span>© Copyright rootscard* Inc. 2025</span>
+          <span className="text-[#fffffa]/70 text-xs md:text-sm">
+            © Copyright rootscard* Inc. 2025
+          </span>
 
           {/* line */}
           <div className="bg-white/30 h-[1px]"></div>
 
-          <div>
-            <span className="headerFive">Backed by techstars_</span>
+          <div className="text-[#fffffa]/70 text-xs md:text-sm">
+            <span className="logoText text-white">Backed by techstars_</span>
 
             <ul className="mt-4 space-y-4">
               <li>

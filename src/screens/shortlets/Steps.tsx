@@ -8,7 +8,7 @@ export const Steps = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="bg-[#F6F6F6] w-full">
+    <div className="w-full">
       <div className="max-w-[1400px] mx-auto px-4 py-10 md:py-20">
         {/* Top section */}
         <section className="grid gap-10 md:gap-15">

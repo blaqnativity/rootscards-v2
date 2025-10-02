@@ -2,14 +2,11 @@ import { properties } from "@/constants/processes";
 
 export const Features = () => {
   return (
-    <section className="py-12">
+    <section className="py-12 bg-[#F6F6F6]">
       <div className="max-w-[1400px] mx-auto px-4">
         <ul className="grid grid-cols-2 md:grid-cols-3 gap-6">
           {properties.map((feature, index) => (
-            <li
-              key={index}
-              className="rounded-2xl border border-gray-200 p-6 bg-white flex flex-col gap-3 hover:shadow-md transition-shadow duration-200"
-            >
+            <li key={index} className="p-6 flex flex-col gap-3 duration-200">
               <div
                 className="w-10 h-10 flex items-center justify-center rounded-lg"
                 style={{ backgroundColor: feature.color }}
@@ -23,7 +20,7 @@ export const Features = () => {
                 )}
               </div>
               <h3 className="font-semibold text-gray-900">{feature.title}</h3>
-              <p className="text-sm text-gray-600">{feature.desc}</p>
+              <p className="text-sm text-gray-600 w-2/3">{feature.desc}</p>
             </li>
           ))}
         </ul>

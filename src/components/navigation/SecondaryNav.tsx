@@ -47,7 +47,7 @@ export const SecondaryNav: React.FC<MainNavProps> = ({ ranges = [] }) => {
       >
         <header className="max-w-[1400px] mx-auto px-4 md:px-8 py-6">
           <div className="flex items-center justify-between">
-            <Link to="/" className="flex items-center gap-2">
+            <Link to="/shortlets" className="flex items-center gap-2">
               <img
                 src={logoToShow}
                 alt="logo"

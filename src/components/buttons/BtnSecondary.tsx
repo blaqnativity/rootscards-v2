@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom";
 
 interface ButtonProps {
-  to?: string; // make optional like BtnMain
+  to?: string;
   icon?: React.ComponentType<{ size?: number }>;
   text?: string;
-  textColor?: string; // e.g. "text-gray-800"
-  iconBg?: string; // e.g. "bg-gray-800"
-  iconColor?: string; // e.g. "text-white"
-  btnBg?: string; // e.g. "bg-white"
-  btnBorder?: string; // e.g. "border border-gray-300"
+  textColor?: string;
+  iconBg?: string;
+  iconColor?: string;
+  btnBg?: string;
+  btnBorder?: string;
   onClick?: () => void;
 }
 
@@ -16,28 +16,33 @@ export const BtnSecondary: React.FC<ButtonProps> = ({
   to,
   icon: Icon,
   text = "Book a Demo",
-  textColor = "text-gray-800",
-  iconBg = "bg-gray-800",
+  textColor = "text-black",
+  iconBg = "bg-black",
   iconColor = "text-white",
   btnBg = "bg-white",
-  btnBorder = "border-none",
+  btnBorder = "border border-[#444444]",
   onClick,
 }) => {
-  const classes = `w-fit inline-flex items-center cursor-pointer rounded-full font-bold h-10 pr-[2px] py-[1px] pl-4 hover:opacity-90 transition ${btnBg} ${btnBorder}`;
+  const classes = `
+    w-fit inline-flex items-center justify-between 
+    rounded-full cursor-pointer font-bold 
+    h-12 pr-1 pl-4 
+    hover:opacity-90 transition 
+    ${btnBg} ${btnBorder}
+  `;
+
+  const iconBubble = Icon && (
+    <span
+      className={`flex items-center justify-center w-10 h-10 rounded-full ${iconBg} ${iconColor}`}
+    >
+      <Icon size={18} />
+    </span>
+  );
 
   const content = (
     <>
-      {/* Text on the left */}
-      <span className={`text-xs md:text-sm mr-2 ${textColor}`}>{text}</span>
-
-      {/* Icon on the right */}
-      {Icon && (
-        <span
-          className={`flex items-center justify-center h-full w-10 rounded-full ${iconBg} ${iconColor}`}
-        >
-          <Icon size={18} />
-        </span>
-      )}
+      <span className={`mr-2 text-sm ${textColor}`}>{text}</span>
+      {iconBubble}
     </>
   );
 
