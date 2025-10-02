@@ -72,7 +72,7 @@ export const Steps = () => {
                 </button>
 
                 {/* Caption */}
-                <div className="absolute bottom-5 left-5 md:bottom-10 md:left-10 text-white w-xs md:max-w-xl z-10">
+                <div className="absolute bottom-5 left-5 md:bottom-10 md:left-10 text-white w-xs md:w-2xl z-10">
                   <p className="headerTwo leading-14">
                     “How Rootscard eliminates wait time and improves user{" "}
                     <div className="ml-3 relative inline-block">
