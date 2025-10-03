@@ -75,14 +75,14 @@ export const Steps = () => {
                 <div className="absolute bottom-5 left-5 md:bottom-10 md:left-10 text-white w-xs md:w-2xl z-10">
                   <p className="headerTwo leading-14">
                     “How Rootscard eliminates wait time and improves user{" "}
-                    <div className="ml-3 relative inline-block">
+                    <span className="ml-3 relative inline-block">
                       <img
                         src={vector}
                         alt="overlay"
                         className="absolute -bottom-10 md:-bottom-20 left-10 h-auto w-full max-w-none -translate-x-1/3 md:-translate-x-1/5 -translate-y-1/2 pointer-events-none"
                       />
                       <span className="relative z-0">experience"</span>
-                    </div>
+                    </span>
                   </p>
                 </div>
               </>

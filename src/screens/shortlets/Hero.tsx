@@ -1,31 +1,55 @@
-import desktop from "@/assets/images/desktop.svg";
-// import { ArrowRight } from "@phosphor-icons/react";
-// import { BtnMain } from "../../components/buttons/BtnMain";
-// import { BtnSecondary } from "../../components/buttons/BtnSecondary";
-// import { scheduleDemo } from "../../services/useCalendly";
+import vector from "../../assets/images/vector.svg";
+import bgImage from "../../assets/images/gradientBg.png";
+import { ArrowRight, Lightning } from "@phosphor-icons/react";
+import { BtnMain } from "../../components/buttons/BtnMain";
+import { BtnSecondary } from "../../components/buttons/BtnSecondary";
+import Aurora from "../../components/ui/reactbits/Aurora";
+import { scheduleDemo } from "@/services/useCalendly";
 import useCalendlyLoader from "@/hooks/useCalendlyLoader";
 import { Carousel } from "../../components/utils/LogoCarousel";
-import { carouselTwo as carousel } from "@/constants/carouseLogos";
-
+import { carouselTwo as carousels } from "@/constants/carouseLogos";
 export const Hero = () => {
   useCalendlyLoader();
   return (
-    <section className="relative h-screen w-full bg-black overflow-hidden">
-      {/* Background image */}
-      <div className="absolute inset-0 flex justify-center items-center">
-        <img
-          src={desktop}
-          alt="background"
-          className="max-w-[1500px] h-[70vh] object-contain"
-        />
-      </div>
+    <section
+      style={{
+        backgroundImage: `url(${bgImage})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+      className="py-10 md:py-15 relative h-screen w-full overflow-hidden"
+    >
+      {/* Content */}
+      <div className="relative z-10 flex flex-col items-center justify-center h-full text-white">
+        <div className="max-w-7xl text-center mb-10">
+          <h1 className="headerText font-bold relative">
+            Make your shortlets self-serve, fraud-proof, and queue-free
+          </h1>
+          <p className="headerThree px-10 max-w-4xl my-10 tracking-wide mx-auto">
+            RootsCards handles identity, access codes, deposits, and
+            housekeeping—so guests check in on WhatsApp, and you stop
+            babysitting arrivals.
+          </p>
 
-      {/* Main content */}
-      {/* <div></div> */}
+          <div className="flex gap-5 justify-center items-center">
+            <BtnSecondary
+              to="https://app.rootscards.com/signup"
+              text="Start free trial"
+              icon={ArrowRight}
+            />
 
-      {/* Carousel */}
-      <div className="absolute bottom-5 left-0 w-full bg-[#222] border border-[#444] py-5 flex justify-center">
-        <Carousel logos={carousel} />
+            <BtnMain
+              text="Book a demo"
+              textColor="text-white"
+              icon={ArrowRight}
+              btnBg="bg-black"
+              onClick={scheduleDemo}
+            />
+          </div>
+        </div>
+        <div className="w-full absolute -bottom-10 bg-[#222222] flex justify-center items-center border border-[#444444] py-4">
+          <Carousel logos={carousels} />
+        </div>
       </div>
     </section>
   );

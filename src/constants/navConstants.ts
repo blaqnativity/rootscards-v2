@@ -62,7 +62,7 @@ export const navRange2 = [
   },
   {
     start: 900.8,
-    end: 1863.2,
+    end: 2871.1,
     bgColor: "bg-white shadow-md",
     textColor: "text-black",
     logo: darkLogo,
@@ -70,9 +70,9 @@ export const navRange2 = [
   {
     start: 1863.2,
     end: 2871.1,
-    bgColor: "bg-white/5 backdrop-blur-2xl",
-    textColor: "text-white",
-    logo,
+    bgColor: "bg-white shadow-md",
+    textColor: "text-black",
+    logo: darkLogo,
   },
   {
     start: 2871.1,
