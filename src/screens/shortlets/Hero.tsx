@@ -1,9 +1,8 @@
-import vector from "../../assets/images/vector.svg";
 import bgImage from "../../assets/images/gradientBg.png";
-import { ArrowRight, Lightning } from "@phosphor-icons/react";
+import { ArrowRight } from "@phosphor-icons/react";
 import { BtnMain } from "../../components/buttons/BtnMain";
 import { BtnSecondary } from "../../components/buttons/BtnSecondary";
-import Aurora from "../../components/ui/reactbits/Aurora";
+
 import { scheduleDemo } from "@/services/useCalendly";
 import useCalendlyLoader from "@/hooks/useCalendlyLoader";
 import { Carousel } from "../../components/utils/LogoCarousel";
