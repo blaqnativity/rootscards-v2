@@ -1,18 +1,60 @@
 // navmenu
-export interface NavItem {
-  menu: string;
+export interface SubNavItem {
+  title: string;
+  description: string;
   url: string;
   icon?: React.FC<{ size?: number }>;
 }
 
-// main navmenu
+export interface NavItem {
+  menu: string;
+  url?: string;
+  submenu?: SubNavItem[];
+  icon?: React.FC<{ size?: number }>;
+}
+
+//navMenu items
 export const navMenu: NavItem[] = [
   { menu: "View demo", url: "/demo" },
-  { menu: "Product", url: "/shortlets" },
+
+  {
+    menu: "Products",
+    submenu: [
+      {
+        title: "Rootscards Check-in",
+        description:
+          "Streamline visitor management with easy digital check-in.",
+        url: "/check-in",
+      },
+      {
+        title: "Rootscards for Events",
+        description: "Seamless registration and attendee tracking for events.",
+        url: "/events",
+      },
+      {
+        title: "Rootscards for Offices",
+        description: "Modernize office entries and visitor access.",
+        url: "/offices",
+      },
+      {
+        title: "Rootscards for Shortlets",
+        description: "Simplify guest management for rentals and apartments.",
+        url: "/shortlets",
+      },
+      {
+        title: "Rootscards for Churches",
+        description:
+          "Efficient attendance and guest tracking for congregations.",
+        url: "/churches",
+      },
+    ],
+  },
+
   { menu: "Documentation", url: "#" },
   { menu: "Pricing", url: "/pricing" },
   { menu: "Sign In/Up", url: "https://app.rootscards.com" },
 ];
+
 export const navMenu2: NavItem[] = [
   { menu: "View demo", url: "/demo" },
   { menu: "Pricing", url: "/pricing" },

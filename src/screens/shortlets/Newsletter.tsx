@@ -38,7 +38,7 @@ export const Newsletter = () => {
               className="flex-1 px-4 py-2 text-sm outline-none rounded-lg"
             />
             <BtnSecondary
-              to="/signup"
+              to="https://app.rootscards.com/signup"
               text="Create Account"
               btnBg="bg-black"
               textColor="text-white"
@@ -48,7 +48,7 @@ export const Newsletter = () => {
             />
           </form>
 
-          {/* Small link */}
+          {/* demo link */}
           <span
             className="text-blue-600 text-sm underline cursor-pointer"
             onClick={scheduleDemo}

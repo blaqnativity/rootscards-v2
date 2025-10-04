@@ -6,10 +6,15 @@ import { useToggle } from "../../hooks/useToggle";
 import logo from "/lightLogo.svg";
 import type { ScrollRange } from "./MainNav";
 
-// Define the type for nav items
+// Define the type for nav items (support submenu too, in case needed later)
 interface NavItem {
   menu: string;
-  url: string;
+  url?: string;
+  submenu?: {
+    title: string;
+    description: string;
+    url: string;
+  }[];
 }
 
 interface MobileNavProps {
@@ -17,15 +22,18 @@ interface MobileNavProps {
   menuItems: NavItem[];
 }
 
-export const MobileNav = ({ activeRange, menuItems }: MobileNavProps) => {
+export const MobileNav: React.FC<MobileNavProps> = ({
+  activeRange,
+  menuItems,
+}) => {
   const { isToggled: menu, toggle } = useToggle();
 
-  // Defaults
+  // Defaults for color and logo
   const bgColor = activeRange?.bgColor ?? "bg-white/5 backdrop-blur-lg";
   const textColor = activeRange?.textColor ?? "text-white";
   const currentLogo = activeRange?.logo ?? logo;
 
-  // Determine icon colors
+  // Determine icon color based on text color
   const iconColor = textColor.includes("black") ? "black" : "white";
 
   return (
@@ -35,6 +43,7 @@ export const MobileNav = ({ activeRange, menuItems }: MobileNavProps) => {
           <div
             className={`w-full max-w-[880px] rounded-full px-6 py-3 flex items-center justify-between shadow-sm transition-colors duration-300 ${bgColor} ${textColor}`}
           >
+            {/* Logo */}
             <Link to="/" className="flex items-center gap-3">
               <img src={currentLogo} alt="logo" className="h-[1.15em]" />
               <span className={`logoText lowercase text-base ${textColor}`}>
@@ -42,7 +51,7 @@ export const MobileNav = ({ activeRange, menuItems }: MobileNavProps) => {
               </span>
             </Link>
 
-            {/* Toggle */}
+            {/* Toggle button */}
             <button
               onClick={toggle}
               aria-expanded={menu}
@@ -59,7 +68,7 @@ export const MobileNav = ({ activeRange, menuItems }: MobileNavProps) => {
         </div>
       </header>
 
-      {/* Mobile dropdown */}
+      {/* Mobile dropdown menu */}
       {menu && (
         <div className="flex justify-center mt-3 px-4">
           <div
@@ -69,7 +78,7 @@ export const MobileNav = ({ activeRange, menuItems }: MobileNavProps) => {
               {menuItems.map((link, index) => (
                 <li key={index}>
                   <Link
-                    to={link.url}
+                    to={link.url || "#"}
                     onClick={toggle}
                     className="custom-link block hover:opacity-80 transition"
                   >
@@ -77,6 +86,7 @@ export const MobileNav = ({ activeRange, menuItems }: MobileNavProps) => {
                   </Link>
                 </li>
               ))}
+
               <li>
                 <BtnMain
                   to="https://app.rootscards.com/signup"
