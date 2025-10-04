@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "@phosphor-icons/react";
-import type { NavItem } from "@/constants/navConstants";
+import { navMenu2 } from "@/constants/navConstants";
 import { BtnMain } from "../buttons/BtnMain";
 import { MobileNav } from "./MobileNav";
 import logo from "/lightLogo.svg";
@@ -14,15 +14,11 @@ export interface ScrollRange {
   logo?: string;
 }
 
-interface SecondaryNavProps {
+interface MainNavProps {
   ranges?: ScrollRange[];
-  menuItems: NavItem[]; // ✅ expects array of NavItem
 }
 
-export const SecondaryNav: React.FC<SecondaryNavProps> = ({
-  ranges = [],
-  menuItems, // ✅ properly destructured from props
-}) => {
+export const SecondaryNav: React.FC<MainNavProps> = ({ ranges = [] }) => {
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
@@ -36,23 +32,21 @@ export const SecondaryNav: React.FC<SecondaryNavProps> = ({
     if (range.end !== undefined) {
       return scrollY >= range.start && scrollY < range.end;
     }
-    return scrollY >= range.start;
+    return scrollY >= range.start; // open-ended range
   });
 
-  // Defaults if no range is matched
+  // Default styles if no range is matched
   const bgColor = activeRange?.bgColor || "bg-transparent";
   const textColor = activeRange?.textColor || "text-white";
   const logoToShow = activeRange?.logo || logo;
 
   return (
     <>
-      {/* Desktop Nav */}
       <nav
         className={`absolute hidden lg:block w-full z-40 transition-colors duration-300 ${bgColor}`}
       >
         <header className="max-w-[1400px] mx-auto px-4 md:px-8 py-6">
           <div className="flex items-center justify-between">
-            {/* Logo */}
             <Link to="/shortlets" className="flex items-center gap-2">
               <img
                 src={logoToShow}
@@ -61,17 +55,12 @@ export const SecondaryNav: React.FC<SecondaryNavProps> = ({
               />
               <span className={`logoText ${textColor}`}>rootscards</span>
             </Link>
-
-            {/* Menu Items */}
             <ul
               className={`flex font-medium space-x-8 items-center ${textColor}`}
             >
-              {menuItems.map((link, index) => (
+              {navMenu2.map((link, index) => (
                 <li key={index}>
-                  <Link
-                    to={link.url || "#"}
-                    className="custom-link hover:opacity-80 transition"
-                  >
+                  <Link to={link.url} className="custom-link">
                     {link.menu}
                   </Link>
                 </li>
@@ -86,8 +75,8 @@ export const SecondaryNav: React.FC<SecondaryNavProps> = ({
         </header>
       </nav>
 
-      {/* Mobile Nav */}
-      <MobileNav activeRange={activeRange} menuItems={menuItems} />
+      {/* Mobile nav */}
+      <MobileNav activeRange={activeRange} menuItems={navMenu2} />
     </>
   );
 };

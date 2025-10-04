@@ -6,7 +6,8 @@ export interface SubNavItem {
   icon?: React.FC<{ size?: number }>;
 }
 
-export interface NavItem {
+// navMenu types for main nav with submenu
+interface NavItem {
   menu: string;
   url?: string;
   submenu?: SubNavItem[];
@@ -55,15 +56,24 @@ export const navMenu: NavItem[] = [
   { menu: "Sign In/Up", url: "https://app.rootscards.com" },
 ];
 
-export const navMenu2: NavItem[] = [
+// navMenu2 types for secondary nav without submenu
+interface SimpleNavItem {
+  menu: string;
+  url: string;
+  icon?: React.FC<{ size?: number }>;
+}
+
+export const navMenu2: SimpleNavItem[] = [
   { menu: "View demo", url: "/demo" },
   { menu: "Pricing", url: "/pricing" },
   { menu: "Sign In/Up", url: "https://app.rootscards.com" },
 ];
 
+// navRanges for scroll-based styling
 import logo from "/lightLogo.svg";
 import darkLogo from "/darkLogo.svg";
 
+// ranges for mobile nav
 export const navRange1 = [
   {
     start: 10,

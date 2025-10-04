@@ -7,6 +7,7 @@ import { MegaMenu } from "./MegaMenu";
 import { MobileNav } from "./MobileNav";
 import lightLogo from "/lightLogo.svg";
 import darkLogo from "/darkLogo.svg";
+import { motion } from "framer-motion";
 
 export interface ScrollRange {
   start: number;
@@ -24,22 +25,23 @@ export const MainNav: React.FC<MainNavProps> = ({ ranges = [] }) => {
   const [scrollY, setScrollY] = useState(0);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
 
+  // Track scroll position
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Determine the active scroll range
   const activeRange = ranges.find((range) => {
-    if (range.end !== undefined) {
+    if (range.end !== undefined)
       return scrollY >= range.start && scrollY < range.end;
-    }
     return scrollY >= range.start;
   });
 
   const isDropdownActive = !!activeMenu;
 
-  // Style logic
+  // Styles based on scroll + dropdown
   const bgColor = isDropdownActive
     ? "bg-white"
     : activeRange?.bgColor || "bg-transparent";
@@ -61,10 +63,10 @@ export const MainNav: React.FC<MainNavProps> = ({ ranges = [] }) => {
 
   return (
     <>
-      <nav className="absolute hidden lg:block w-full z-40 transition-all duration-300 px-4 mt-4">
+      {/* Desktop nav */}
+      <nav className="absolute hidden lg:block w-full z-40 px-4 mt-1">
         <header
-          className={`max-w-[1400px] mx-auto px-4 md:px-8 py-6 relative transition-all duration-300 
-          rounded-t-xl ${bgColor}`}
+          className={`max-w-[1400px] mx-auto px-4 md:px-8 py-4 relative rounded-xl transition-colors duration-300 ${bgColor}`}
         >
           <div className="flex items-center justify-between">
             {/* Logo */}
@@ -86,22 +88,19 @@ export const MainNav: React.FC<MainNavProps> = ({ ranges = [] }) => {
               className={`flex font-medium space-x-8 items-center ${textColor} transition-colors duration-200`}
             >
               {navMenu.map((link, index) => (
-                <li
-                  key={index}
-                  className="relative"
-                  onClick={() => handleMenuToggle(link.menu)}
-                >
+                <li key={index} className="relative">
                   {link.submenu ? (
-                    <button className="custom-link cursor-pointer flex items-center gap-1 hover:opacity-80">
+                    <button
+                      onClick={() => handleMenuToggle(link.menu)}
+                      className="custom-link cursor-pointer flex items-center gap-1 hover:opacity-80 transition-opacity duration-200"
+                    >
                       {link.menu}
-                      <span className="ml-1">
-                        <CaretDown />
-                      </span>
+                      <CaretDown className="ml-1" />
                     </button>
                   ) : (
                     <Link
                       to={link.url || "#"}
-                      className="custom-link hover:opacity-80"
+                      className="custom-link hover:opacity-80 transition-opacity duration-200"
                     >
                       {link.menu}
                     </Link>
@@ -119,20 +118,20 @@ export const MainNav: React.FC<MainNavProps> = ({ ranges = [] }) => {
               />
             </ul>
           </div>
-        </header>
 
-        {/* Mega Menu — toggles like FAQ, stays attached */}
-        <div
-          className={`max-w-[1400px] mx-auto transition-all duration-300 overflow-hidden ${
-            activeMenu ? "max-h-[600px]" : "max-h-0"
-          }`}
-        >
-          {activeSubmenu.length > 0 && (
-            <div className="rounded-b-xl shadow-lg border border-t-0 border-gray-100">
-              <MegaMenu submenu={activeSubmenu} />
-            </div>
-          )}
-        </div>
+          {/* Mega Menu */}
+          <motion.div
+            layout
+            animate={activeSubmenu.length > 0 ? "open" : "closed"}
+            variants={{
+              open: { opacity: 1 },
+              closed: { opacity: 0 },
+            }}
+            className="mx-auto overflow-hidden mt-2"
+          >
+            <MegaMenu submenu={activeSubmenu} />
+          </motion.div>
+        </header>
       </nav>
 
       {/* Mobile nav */}

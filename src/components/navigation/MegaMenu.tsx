@@ -39,7 +39,7 @@ export const MegaMenu: React.FC<MegaMenuProps> = ({ submenu }) => {
             to={sub.url}
             className="hover:bg-gray-50 rounded-lg p-3 transition custom-link space-y-3"
           >
-            <h5 className="font-semibold flex items-center gap-2 text-blue-800">
+            <h5 className="custom-link flex items-center gap-2 text-blue-800">
               {sub.title} →
             </h5>
             <p className="text-sm text-gray-600">{sub.description}</p>
