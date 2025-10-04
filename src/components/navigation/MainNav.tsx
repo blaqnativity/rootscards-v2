@@ -25,34 +25,37 @@ export const MainNav: React.FC<MainNavProps> = ({ ranges = [] }) => {
   const [scrollY, setScrollY] = useState(0);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
 
-  // Track scroll position
+  // Track scroll position (for mobile)
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Determine the active scroll range
+  // Determine the active scroll range (for mobile only)
   const activeRange = ranges.find((range) => {
     if (range.end !== undefined)
       return scrollY >= range.start && scrollY < range.end;
     return scrollY >= range.start;
   });
 
+  // State for dropdown
   const isDropdownActive = !!activeMenu;
 
-  // Styles based on scroll + dropdown
-  const bgColor = isDropdownActive
-    ? "bg-white"
-    : activeRange?.bgColor || "bg-transparent";
+  // --- DESKTOP NAV STYLES (fixed, not scroll-based) ---
+  const desktopBgColor = "bg-transparent"; // or "bg-white"
+  const desktopTextColor = "text-white"; // or "text-black"
+  const desktopLogo = lightLogo;
 
-  const textColor = isDropdownActive
-    ? "text-black"
-    : activeRange?.textColor || "text-white";
+  // Adjust when dropdown is open
+  const bgColor = isDropdownActive ? "bg-white" : desktopBgColor;
+  const textColor = isDropdownActive ? "text-black" : desktopTextColor;
+  const logoToShow = isDropdownActive ? darkLogo : desktopLogo;
 
-  const logoToShow = isDropdownActive
-    ? darkLogo
-    : activeRange?.logo || lightLogo;
+  // --- MOBILE NAV STYLES (scroll-based) ---
+  const mobileBgColor = activeRange?.bgColor || "bg-transparent";
+  const mobileTextColor = activeRange?.textColor || "text-white";
+  const mobileLogo = activeRange?.logo || lightLogo;
 
   const handleMenuToggle = (menuName: string) => {
     setActiveMenu((prev) => (prev === menuName ? null : menuName));
@@ -134,8 +137,17 @@ export const MainNav: React.FC<MainNavProps> = ({ ranges = [] }) => {
         </header>
       </nav>
 
-      {/* Mobile nav */}
-      <MobileNav activeRange={activeRange} menuItems={navMenu} />
+      {/* Mobile nav (scroll-reactive) */}
+      <MobileNav
+        activeRange={{
+          start: activeRange?.start ?? 0,
+          end: activeRange?.end,
+          bgColor: mobileBgColor,
+          textColor: mobileTextColor,
+          logo: mobileLogo,
+        }}
+        menuItems={navMenu}
+      />
     </>
   );
 };

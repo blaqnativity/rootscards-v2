@@ -19,9 +19,9 @@ export const Hero = () => {
       className="py-10 md:py-15 relative h-screen w-full overflow-hidden"
     >
       {/* Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-white">
+      <div className="relative z-10 flex flex-col items-center justify-center h-full text-white px-2 md:px-0">
         <div className="max-w-7xl text-center mb-10">
-          <h1 className="headerText font-bold relative">
+          <h1 className="headerText font-bold">
             Make your shortlets self-serve, fraud-proof, and queue-free
           </h1>
           <p className="headerThree max-w-3xl my-10 tracking-wide mx-auto">

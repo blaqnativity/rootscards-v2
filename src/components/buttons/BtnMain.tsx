@@ -25,15 +25,14 @@ export const BtnMain: React.FC<ButtonProps> = ({
 }) => {
   const classes = `
     w-fit inline-flex items-center justify-between 
-    rounded-full cursor-pointer font-bold 
-    h-12 pl-1 pr-4 
+    rounded-full cursor-pointer font-bold py-1 pl-1 pr-3 
     hover:opacity-90 transition 
     ${btnBg} ${btnBorder}
   `;
 
   const iconBubble = Icon && (
     <span
-      className={`flex items-center justify-center w-10 h-10 rounded-full ${iconBg} ${iconColor}`}
+      className={`flex items-center justify-center px-3 py-3 rounded-full ${iconBg} ${iconColor}`}
     >
       <Icon size={18} />
     </span>
@@ -42,7 +41,7 @@ export const BtnMain: React.FC<ButtonProps> = ({
   const content = (
     <>
       {iconBubble}
-      <span className={`ml-2 text-sm ${textColor}`}>{text}</span>
+      <span className={`ml-2 text-xs md:text-sm ${textColor}`}>{text}</span>
     </>
   );
 

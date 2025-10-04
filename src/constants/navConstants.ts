@@ -76,7 +76,7 @@ import darkLogo from "/darkLogo.svg";
 // ranges for mobile nav
 export const navRange1 = [
   {
-    start: 10,
+    start: 0,
     end: 900.8,
     bgColor: "bg-white/5 backdrop-blur-2xl",
     textColor: "text-white",
@@ -106,7 +106,7 @@ export const navRange1 = [
 
 export const navRange2 = [
   {
-    start: 10,
+    start: 0,
     end: 900.8,
     bgColor: "bg-white/5 backdrop-blur-2xl",
     textColor: "text-white",
@@ -114,7 +114,7 @@ export const navRange2 = [
   },
   {
     start: 900.8,
-    end: 2871.1,
+    end: 1863.2,
     bgColor: "bg-white shadow-md",
     textColor: "text-black",
     logo: darkLogo,
@@ -122,9 +122,9 @@ export const navRange2 = [
   {
     start: 1863.2,
     end: 2871.1,
-    bgColor: "bg-white shadow-md",
-    textColor: "text-black",
-    logo: darkLogo,
+    bgColor: "bg-white/5 backdrop-blur-2xl",
+    textColor: "text-white",
+    logo,
   },
   {
     start: 2871.1,

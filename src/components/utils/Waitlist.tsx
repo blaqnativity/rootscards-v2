@@ -25,7 +25,7 @@ export const Waitlist = () => {
             />
             <BtnSecondary
               to="#"
-              text="Join the waitlist"
+              text="Join waitlist"
               btnBg="bg-white"
               textColor="text-black"
               icon={ArrowRightIcon}
@@ -35,7 +35,7 @@ export const Waitlist = () => {
 
         <img
           src={vector}
-          className="absolute w-2xl -bottom-40 md:bottom-20 md:right-20"
+          className="absolute w-2xl -bottom-40 md:bottom-20 md:right-20 -z-0"
         />
       </div>
     </section>
