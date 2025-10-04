@@ -16,18 +16,16 @@ export const MegaMenu: React.FC<MegaMenuProps> = ({ submenu }) => {
       {/* Left column */}
       <div className="flex flex-col gap-4">
         <Link
-          to="/products"
+          to="#"
           className="rounded-xl p-4 bg-gradient-to-r from-yellow-200 via-green-200 to-blue-200 transition"
         >
           <h4 className="font-semibold text-lg">Products Overview</h4>
-          <p className="text-sm">Learn about all our offerings</p>
         </Link>
         <Link
-          to="/demo"
+          to="#"
           className="rounded-xl p-4 bg-gradient-to-r from-purple-200 via-pink-200 to-orange-200 transition"
         >
           <h4 className="font-semibold text-lg">View demo</h4>
-          <p className="text-sm">Explore how it works in action</p>
         </Link>
       </div>
 

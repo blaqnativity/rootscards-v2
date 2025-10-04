@@ -24,7 +24,7 @@ export const Hero = () => {
           <h1 className="headerText font-bold relative">
             Make your shortlets self-serve, fraud-proof, and queue-free
           </h1>
-          <p className="headerThree px-10 max-w-4xl my-10 tracking-wide mx-auto">
+          <p className="headerThree max-w-3xl my-10 tracking-wide mx-auto">
             RootsCards handles identity, access codes, deposits, and
             housekeeping—so guests check in on WhatsApp, and you stop
             babysitting arrivals.
