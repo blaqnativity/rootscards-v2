@@ -1,17 +1,17 @@
 import { cn } from "@/lib/utils";
 import React, { useEffect, useState } from "react";
-import { processesCard } from "@/constants/processes";
 import { ArrowUpRight } from "@phosphor-icons/react";
 
-export const ProcessesCarousel = ({
-  direction = "left",
-  speed = "fast",
-  pauseOnHover = true,
-  className,
-  gap = 40,
-  fadeOut = true,
-  fadeOutColor = "white",
-}: {
+interface ProcessItem {
+  tagline: string;
+  title: string;
+  description: string;
+  image: string;
+  color: string;
+}
+
+interface ProcessesCarouselProps {
+  data: ProcessItem[];
   direction?: "left" | "right";
   speed?: "fast" | "normal" | "slow" | number;
   pauseOnHover?: boolean;
@@ -19,10 +19,20 @@ export const ProcessesCarousel = ({
   gap?: number;
   fadeOut?: boolean;
   fadeOutColor?: string;
-}) => {
+}
+
+export const ProcessesCarousel = ({
+  data,
+  direction = "left",
+  speed = "fast",
+  pauseOnHover = true,
+  className,
+  gap = 40,
+  fadeOut = true,
+  fadeOutColor = "white",
+}: ProcessesCarouselProps) => {
   const containerRef = React.useRef<HTMLDivElement>(null);
   const scrollerRef = React.useRef<HTMLUListElement>(null);
-
   const [start, setStart] = useState(false);
 
   useEffect(() => {
@@ -77,7 +87,6 @@ export const ProcessesCarousel = ({
           start && "animate-scroll",
           pauseOnHover && "hover:[animation-play-state:paused]"
         )}
-        // 👇 Added for mobile touch pause/resume
         onTouchStart={(e) => {
           (e.currentTarget as HTMLElement).style.animationPlayState = "paused";
         }}
@@ -85,7 +94,7 @@ export const ProcessesCarousel = ({
           (e.currentTarget as HTMLElement).style.animationPlayState = "running";
         }}
       >
-        {processesCard.map((process, index) => (
+        {data.map((item, index) => (
           <li
             key={index}
             className="w-[350px] md:w-[400px] flex-shrink-0 flex flex-col justify-between shadow-sm rounded-[49px] bg-[#222222] overflow-hidden transition-opacity duration-500 border border-[#555555]"
@@ -93,29 +102,23 @@ export const ProcessesCarousel = ({
             <div className="px-6 space-y-2 py-6">
               <div className="flex justify-between items-center">
                 <span className="bg-[#111111] text-white px-4 py-2 rounded-full">
-                  {process.tagline}
+                  {item.tagline}
                 </span>
                 <span
                   className="bg-white p-2 flex justify-center items-center rounded-full"
-                  style={{ backgroundColor: process.color }}
+                  style={{ backgroundColor: item.color }}
                 >
                   <ArrowUpRight size={18} weight="bold" />
                 </span>
               </div>
               <h3 className="headerThree text-white font-semibold md:w-60">
-                {process.title}
+                {item.title}
               </h3>
               <p className="text-white md:w-[85%] tracking-widest">
-                {process.description}
+                {item.description}
               </p>
             </div>
-
-            {/* Image section */}
-            <img
-              src={process.image}
-              alt={process.title}
-              className="w-full h-auto"
-            />
+            <img src={item.image} alt={item.title} className="w-full h-auto" />
           </li>
         ))}
       </ul>

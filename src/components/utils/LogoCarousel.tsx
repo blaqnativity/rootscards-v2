@@ -32,7 +32,7 @@ export const Carousel: React.FC<CarouselProps> = ({
         {/* Left side (optional) */}
         {title && (
           <div>
-            <span className="headerFive text-white">{title}</span>
+            <span className="hFive text-white">{title}</span>
           </div>
         )}
 

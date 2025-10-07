@@ -10,8 +10,8 @@ export const Waitlist = () => {
  max-w-[1200px] rounded-4xl h-[50vh] mx-auto bg-no-repeat md:bg-cover flex items-center p-5 md:p-10"
       >
         <div className="w-full md:w-[50%]">
-          <h2 className="headerTwo text-white">Join our Waitlist</h2>
-          <span className="headerFive text-white my-6 block">
+          <h2 className="text-white">Join our Waitlist</h2>
+          <span className="text-white my-6 block">
             Be among the first to experience what we’re building. By joining our
             waitlist, you’ll get early access, insider updates, and exclusive
             perks designed just for our first supporters. Don’t miss your chance

@@ -31,15 +31,15 @@ export const Hero = () => {
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-white">
-        <div className="pill">
+        <div className="pill mb-10">
           <Lightning weight="fill" size={15} />
           <span className="text-xs shadow-2xl">
             AI-Powered Smart Infrastructure
           </span>
         </div>
 
-        <div className="max-w-7xl text-center mb-10">
-          <h1 className="headerText font-bold relative">
+        <div className="max-w-6xl space-y-10 text-center">
+          <h1 className="hOne font-bold relative">
             We make Queues
             <div className="ml-3 relative inline-block">
               <img
@@ -50,7 +50,7 @@ export const Hero = () => {
               <span className="relative z-0">disappear</span>
             </div>
           </h1>
-          <p className="headerThree px-10 max-w-4xl my-10 tracking-wide">
+          <p className="hFour max-w-3xl mx-auto tracking-normal">
             Process thousands in seconds with AI-powered check-ins, automated
             queue routing and live insights—built for events, clinics, coworking
             and retail.

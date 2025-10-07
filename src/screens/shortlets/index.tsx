@@ -7,20 +7,17 @@ import { Ratings } from "./Ratings";
 import { FAQ } from "@/components/utils/FAQ";
 import { ShortletsFAQ } from "@/constants/FAQ";
 import { Newsletter } from "./Newsletter";
-import { Waitlist } from "@/components/utils/Waitlist";
 
 export const Shortlets = () => {
   return (
     <Layout>
       <Hero />
-      <div className="relative overflow-hidden"></div>
       <Features />
       <Steps />
       <Pricing />
       <Ratings />
       <FAQ data={ShortletsFAQ} />
       <Newsletter />
-      <Waitlist />
     </Layout>
   );
 };

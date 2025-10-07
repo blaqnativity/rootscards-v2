@@ -73,10 +73,10 @@ export const Pricing = () => {
     <section className="bg-gray-100 py-16">
       <div className="max-w-6xl mx-auto px-4">
         {/* Section Header */}
-        <h2 className="text-3xl text-center md:text-4xl font-bold mb-2">
+        <h2 className="hThree text-center font-bold mb-2">
           Fair, flexible pricing
         </h2>
-        <p className="text-center text-gray-600 mb-6">
+        <p className="hFive text-center text-gray-600 mb-6">
           Start free. Scale as you add units. Cancel anytime.
         </p>
 

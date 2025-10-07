@@ -128,7 +128,7 @@ export const MainNav: React.FC<MainNavProps> = ({ ranges = [] }) => {
             animate={activeSubmenu.length > 0 ? "open" : "closed"}
             variants={{
               open: { opacity: 1 },
-              closed: { opacity: 0 },
+              closed: { display: "hidden", opacity: 0 },
             }}
             className="mx-auto overflow-hidden mt-2"
           >

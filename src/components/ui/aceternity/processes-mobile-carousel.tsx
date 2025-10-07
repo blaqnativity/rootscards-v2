@@ -4,13 +4,21 @@ import { useState, useId } from "react";
 import { processesCard } from "@/constants/processes";
 import { ArrowUpRight } from "@phosphor-icons/react";
 
+type ProcessType = {
+  tagline: string;
+  title: string;
+  description: string;
+  image: string;
+  color: string;
+};
+
 const ProcessSlide = ({
   process,
   index,
   current,
   handleSlideClick,
 }: {
-  process: (typeof processesCard)[0];
+  process: ProcessType;
   index: number;
   current: number;
   handleSlideClick: (index: number) => void;
@@ -43,7 +51,6 @@ const ProcessSlide = ({
         <p className="text-white tracking-widest">{process.description}</p>
       </div>
 
-      {/* Image section */}
       <img
         src={process.image}
         alt={process.title}
@@ -76,16 +83,26 @@ const CarouselControl = ({
   );
 };
 
-export function ProcessesMobileCarousel() {
+export const ProcessesMobileCarousel = ({
+  data = processesCard, // 👈 makes it reusable
+}: {
+  data?: {
+    tagline: string;
+    title: string;
+    description: string;
+    image: string;
+    color: string;
+  }[];
+}) => {
   const [current, setCurrent] = useState(0);
   const id = useId();
 
   const handlePreviousClick = () => {
-    setCurrent((prev) => (prev === 0 ? processesCard.length - 1 : prev - 1));
+    setCurrent((prev) => (prev === 0 ? data.length - 1 : prev - 1));
   };
 
   const handleNextClick = () => {
-    setCurrent((prev) => (prev === processesCard.length - 1 ? 0 : prev + 1));
+    setCurrent((prev) => (prev === data.length - 1 ? 0 : prev + 1));
   };
 
   const handleSlideClick = (index: number) => {
@@ -100,29 +117,26 @@ export function ProcessesMobileCarousel() {
       <ul
         className="flex transition-transform duration-500 ease-in-out"
         style={{
-          transform: `translateX(-${current * (100 / processesCard.length)}%)`,
-          width: `${processesCard.length * 100}%`,
+          transform: `translateX(-${current * (100 / data.length)}%)`,
+          width: `${data.length * 100}%`,
         }}
       >
-        {processesCard.map((process, index) => (
+        {data.map((process, index) => (
           <div
             key={index}
             className="flex-shrink-0 flex justify-center w-full"
-            style={{ width: `${100 / processesCard.length}%` }} // each slide takes equal fraction
+            style={{ width: `${100 / data.length}%` }}
           >
-            <div className="">
-              <ProcessSlide
-                process={process}
-                index={index}
-                current={current}
-                handleSlideClick={handleSlideClick}
-              />
-            </div>
+            <ProcessSlide
+              process={process}
+              index={index}
+              current={current}
+              handleSlideClick={handleSlideClick}
+            />
           </div>
         ))}
       </ul>
 
-      {/* Floating controls */}
       <div className="absolute inset-0 flex items-center justify-between px-2 pointer-events-none">
         <CarouselControl
           type="previous"
@@ -137,4 +151,4 @@ export function ProcessesMobileCarousel() {
       </div>
     </div>
   );
-}
+};

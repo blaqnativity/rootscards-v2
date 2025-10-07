@@ -19,8 +19,12 @@ export const Features = () => {
                   />
                 )}
               </div>
-              <h3 className="font-semibold text-gray-900">{feature.title}</h3>
-              <p className="text-sm text-gray-600 w-2/3">{feature.desc}</p>
+              <h3 className="hFour font-semibold text-gray-900">
+                {feature.title}
+              </h3>
+              <p className="hFive blackFade text-sm text-gray-600 w-fit md:w-1/2">
+                {feature.desc}
+              </p>
             </li>
           ))}
         </ul>

@@ -38,9 +38,7 @@ export const ProcessesMobileCarousel = ({
             <ArrowUpRight size={18} weight="bold" />
           </span>
         </div>
-        <h3 className="headerThree text-white font-semibold">
-          {process.title}
-        </h3>
+        <h3 className="text-white font-semibold">{process.title}</h3>
         <p className="text-white tracking-widest">{process.description}</p>
       </div>
 

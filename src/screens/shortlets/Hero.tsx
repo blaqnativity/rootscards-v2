@@ -19,12 +19,12 @@ export const Hero = () => {
       className="py-10 md:py-15 relative h-screen w-full overflow-hidden"
     >
       {/* Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-white px-2 md:px-0">
-        <div className="max-w-7xl text-center mb-10">
-          <h1 className="headerText font-bold">
+      <div className="relative z-10 flex flex-col items-center justify-center h-full text-white">
+        <div className="max-w-7xl text-center space-y-10">
+          <h1 className="hOne font-bold">
             Make your shortlets self-serve, fraud-proof, and queue-free
           </h1>
-          <p className="headerThree max-w-3xl my-10 tracking-wide mx-auto">
+          <p className="hFour max-w-3xl mx-auto tracking-normal">
             RootsCards handles identity, access codes, deposits, and
             housekeeping—so guests check in on WhatsApp, and you stop
             babysitting arrivals.

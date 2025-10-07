@@ -29,7 +29,7 @@ export const FAQ = ({
         {/* Left side */}
         <div className="flex flex-col text-left basis-1/2">
           {typeof title === "string" ? (
-            <p className="headerTwo font-semibold whitespace-pre-line md:leading-14 max-w-xl">
+            <p className="hThree font-semibold whitespace-pre-line md:leading-14 max-w-xl">
               {title}
             </p>
           ) : (
@@ -49,7 +49,7 @@ export const FAQ = ({
                   aria-expanded={isOpen}
                   onClick={() => handleToggle(index)}
                 >
-                  <span className="flex-1 headerFive">{item.question}</span>
+                  <span className="flex-1 hFour">{item.question}</span>
                   <CaretDownIcon
                     size={20}
                     weight="bold"
@@ -64,7 +64,7 @@ export const FAQ = ({
                   }`}
                   style={{ transition: "max-height 0.3s ease-in-out" }}
                 >
-                  <div className="pb-5 leading-relaxed fadeText space-y-2">
+                  <div className="hFive pb-5 leading-relaxed blackFade space-y-2">
                     {item.answer}
                   </div>
                 </div>

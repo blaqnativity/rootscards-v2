@@ -7,6 +7,7 @@ import { ErrorPage } from "@/ErrorPage";
 // Lazy imports
 const Home = lazy(() => import("@/screens/home/index"));
 const Shortlets = lazy(() => import("@/screens/shortlets"));
+const Waitlist = lazy(() => import("@/screens/waitlist"));
 
 export const RootRouter = () => {
   return (
@@ -16,6 +17,7 @@ export const RootRouter = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/shortlets" element={<Shortlets />} />
+          <Route path="/waitlist" element={<Waitlist />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </Suspense>

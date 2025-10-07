@@ -16,10 +16,10 @@ export const Steps = () => {
           <div className="flex flex-col items-start gap-3 md:gap-0 md:flex-row justify-between">
             {/* Left side: heading */}
             <div>
-              <span className="text-sm uppercase tracking-wide text-gray-600">
-                HOW IT WORKS
+              <span className="hFive uppercase tracking-wide text-gray-600">
+                how it works
               </span>
-              <h2 className="headingText font-bold max-w-2xl leading-10 md:leading-20">
+              <h2 className="hTwo font-bold max-w-2xl md:leading-18">
                 <span className="text-black/50">From booking to </span>
                 <br className="hidden md:block" />
                 checkout in 4 steps
@@ -28,7 +28,7 @@ export const Steps = () => {
 
             {/* Right side: text + CTA */}
             <div className="space-y-3 text-start">
-              <p className="max-w-xs text-gray-700">
+              <p className="hFive max-w-xs text-gray-700">
                 Mirrors your current process — just faster, auditable, and less
                 human error.
               </p>
@@ -73,7 +73,7 @@ export const Steps = () => {
 
                 {/* Caption */}
                 <div className="absolute bottom-5 left-5 md:bottom-10 md:left-10 text-white w-xs md:w-2xl z-10">
-                  <p className="headerTwo leading-14">
+                  <p className="hThree leading-14">
                     “How Rootscard eliminates wait time and improves user{" "}
                     <span className="ml-3 relative inline-block">
                       <img
@@ -117,8 +117,8 @@ export const Steps = () => {
                 className="w-full h-auto rounded-lg"
               />
               <div className="p-4">
-                <h3 className="font-semibold">{card.title}</h3>
-                <p className="text-gray-600 text-sm">{card.desc}</p>
+                <h3 className="hFour font-semibold">{card.title}</h3>
+                <p className="hFive blackFade">{card.desc}</p>
               </div>
             </div>
           ))}

@@ -37,8 +37,8 @@ export const PainPointSection = () => {
   return (
     <section className="py-10 md:py-20 bg-[#F6F6F6]">
       <main className="max-w-[1400px] mx-auto px-4 md:px-8">
-        <span className="headerFive fadeText uppercase">the need</span>
-        <h2 className="headerTwo font-semibold max-w-7xl my-10">
+        <span className="hFive fadeText uppercase">the need</span>
+        <h2 className="hThree font-semibold max-w-7xl my-10">
           Long waits erode revenue and trust. RootsCards eliminates bottlenecks
           with{" "}
           <span className="text-black/60">
@@ -54,7 +54,7 @@ export const PainPointSection = () => {
               to="https://app.rootscards.com/signup"
               className="flex items-center gap-1 bg-gray-100 w-fit px-5 py-2 rounded-full"
             >
-              <span className="headerFour">Explore Experience</span>
+              <span className="hFour">Explore Experience</span>
               <ArrowUpRight size={18} className="text-gray-600" />
             </Link>
 
@@ -67,7 +67,7 @@ export const PainPointSection = () => {
                   animate={{ x: 0, opacity: 1 }}
                   exit={{ x: -40, opacity: 0 }}
                   transition={{ duration: 0.5 }}
-                  className="headerSubText text-4xl md:text-5xl font-medium"
+                  className="hTwo font-medium titleFont"
                 >
                   {activeSlide.title}
                 </motion.h3>
