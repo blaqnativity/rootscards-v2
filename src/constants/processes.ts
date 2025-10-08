@@ -1,14 +1,23 @@
-import behavioral from "../assets/images/behavioral.svg";
-import optimization from "../assets/images/optimize.svg";
-import seamless from "../assets/images/seamless.svg";
-import insights from "../assets/images/insights.svg";
+import behavioral from "@/assets/images/behavioral.svg";
+import optimization from "@/assets/images/optimize.svg";
+import seamless from "@/assets/images/seamless.svg";
+import insights from "@/assets/images/insights.svg";
+import ai from "@/assets/images/ai.svg";
+import db from "@/assets/images/db.svg";
+import api from "@/assets/images/api.svg";
+import qr from "@/assets/images/qr.svg";
+import plg from "@/assets/images/plg.svg";
+import rfl from "@/assets/images/rfl.svg";
+import rsvp from "@/assets/images/rsvp.svg";
+
+import clb from "@/assets/images/clb.svg";
 
 export interface Processes {
-  tagline: string;
-  title: string;
+  tagline?: string;
+  title?: string;
   description: string;
   image: string;
-  color: string;
+  color?: string;
 }
 
 export const processesCard: Processes[] = [
@@ -39,6 +48,54 @@ export const processesCard: Processes[] = [
     description: "Throughput, dwell time, service SLAs and revenue impact.",
     image: insights,
     color: "#CFE69B",
+  },
+];
+
+export const waitlist: Processes[] = [
+  {
+    description: "Self-check-in (NFC/QR/WhatsApp) + fast manual fallback.",
+    image: seamless,
+  },
+  {
+    description: "Smart RSVPs, plus-ones, custom questions.",
+    image: rsvp,
+  },
+  {
+    description: "Live dashboard: arrivals, latecomers, repeat-visitor trends.",
+    image: db,
+  },
+  {
+    description: "AI insights: engagement, no-shows, peak hours.",
+    image: ai,
+  },
+  {
+    description: "Webhooks & simple APIs. Optional NFC kits.",
+    image: api,
+  },
+  {
+    description:
+      "Growth loops in product-led growth (PLG) create self-sustaining systems.",
+    image: plg,
+  },
+  {
+    description:
+      "Acquisition: public RSVP/check-in pages → “Powered by RootsCards” → join with 1 tap.",
+    image: seamless,
+  },
+  {
+    description:
+      "Collaboration: invite teammates; each invite bumps your place in the queue.",
+    image: clb,
+  },
+  {
+    description:
+      "Virality: referral link after signup; each referral moves you up.",
+    image: rfl,
+  },
+  {
+    description:
+      "Expansion: start at one door → add more doors/locations with the same QR.",
+    image: qr,
   },
 ];
 
