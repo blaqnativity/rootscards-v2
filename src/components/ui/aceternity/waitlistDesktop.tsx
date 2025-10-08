@@ -1,6 +1,5 @@
 import { cn } from "@/lib/utils";
 import React, { useEffect, useState } from "react";
-import { ArrowUpRight } from "@phosphor-icons/react";
 import logo from "@/assets/images/rc.svg";
 
 interface ProcessItem {
