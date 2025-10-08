@@ -45,7 +45,7 @@ export const Hero = () => {
               <img
                 src={vector}
                 alt="overlay"
-                className="absolute top-1/2 -right-18 h-auto w-full max-w-none -translate-x-1/3 md:-translate-x-1/5 -translate-y-1/2 pointer-events-none"
+                className="absolute top-1/2 -right-18 h-auto w-full max-w-none -translate-x-1/3 md:-translate-x-1/5 -translate-y-1/ pointer-events-none"
               />
               <span className="relative z-0">disappear</span>
             </div>

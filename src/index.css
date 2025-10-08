@@ -136,7 +136,7 @@ html {
 
 @layer components {
   .hOne {
-    @apply text-[50px] leading-18 md:text-[80px];
+    @apply text-[55px] leading-12 md:leading-18 md:text-[80px];
     font-family: "Forum";
   }
   .hTwo {
@@ -146,10 +146,10 @@ html {
     @apply leading-8 md:leading-12 text-[30px]  md:text-[50px];
   }
   .hFour {
-    @apply leading-8 md:leading-8 text-[20px]  md:text-[20px];
+    @apply leading-8 md:leading-8 text-[18px]  md:text-[20px];
   }
   .hFive {
-    @apply text-[16px] md:text-[16px];
+    @apply text-[14px] md:text-[16px];
   }
 }
 
@@ -205,4 +205,8 @@ html {
 .bubble-icon {
   @apply flex items-center justify-center px-2 py-2 rounded-full 
     bg-gray-700 text-white;
+}
+
+.bubbleText {
+  @apply text-white text-sm font-semibold ml-2;
 }

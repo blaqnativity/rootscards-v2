@@ -20,7 +20,7 @@ export const Hero = () => {
     >
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-white">
-        <div className="max-w-7xl text-center space-y-10">
+        <div className="max-w-6xl px-4 md:px-8 space-y-10 text-center">
           <h1 className="hOne font-bold">
             Make your shortlets self-serve, fraud-proof, and queue-free
           </h1>
@@ -46,6 +46,7 @@ export const Hero = () => {
             />
           </div>
         </div>
+
         <div className="w-full absolute -bottom-10 bg-[#222222] flex justify-center items-center border border-[#444444] py-4">
           <Carousel logos={carousels} />
         </div>
