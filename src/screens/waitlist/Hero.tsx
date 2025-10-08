@@ -26,7 +26,7 @@ export const Hero = () => {
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-white gap-10 px-4">
         <div className="bubble">
           <img src={logo} className="bubble-icon w-10 h-10" alt="" />
-          <span className="bubble-text">Rootscard is launching soon</span>
+          <span className="hFour ml-1">Rootscard is launching soon</span>
         </div>
 
         <div className="flex flex-col items-center justify-center text-center gap-5 max-w-7xl">

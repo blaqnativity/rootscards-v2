@@ -99,30 +99,33 @@ export const WaitlistForm = () => {
               {...register("email")}
               className="w-full bg-black/30 border border-white/10 rounded-full px-5 py-3 text-sm text-white placeholder-gray-400 focus:outline-none focus:border-white/30"
             />
-            {errors.email && (
-              <p className="text-red-400 text-xs mt-1">
-                {errors.email.message}
-              </p>
-            )}
           </div>
 
           <button
             type="submit"
             disabled={isSubmitting}
-            className={`w-fit inline-flex items-center justify-center rounded-full ${
+            className={`w-fit cursor-pointer inline-flex items-center justify-center rounded-full ${
               isSubmitting
                 ? "bg-gray-400 cursor-not-allowed"
                 : "bg-white hover:bg-gray-200"
             } text-black pl-3 py-1 text-sm font-semibold transition whitespace-nowrap`}
           >
-            {isSubmitting ? "Submitting..." : "Join the waitlist"}
-            {!isSubmitting && (
-              <span className="bg-black ml-2 mr-1 p-2 rounded-full">
-                <ArrowRight size={18} color="white" />
-              </span>
-            )}
+            {/* Text */}
+            <span>{isSubmitting ? "Processing" : "Join the waitlist"}</span>
+
+            {/* Icon stays visible always */}
+            <span
+              className={`bg-black ml-2 mr-1 p-2 rounded-full transition ${
+                isSubmitting ? "opacity-50" : "opacity-100"
+              }`}
+            >
+              <ArrowRight size={18} color="white" />
+            </span>
           </button>
         </div>
+        {errors.email && (
+          <p className="text-red-400 text-xs">{errors.email.message}</p>
+        )}
       </form>
     </div>
   );

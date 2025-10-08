@@ -5,7 +5,7 @@ export const submitWaitlist = async (formData: {
   spaceType: string;
   email: string;
 }) => {
-  console.log("Received from form:", formData); // This confirms your form data
+  console.log("Received from form:", formData);
 
   const now = new Date();
   const nowTs = now.getTime();
@@ -36,14 +36,26 @@ export const submitWaitlist = async (formData: {
     },
   };
 
-  console.log("Payload sent to API:", payload); // This confirms what’s sent
+  try {
+    const response = await axios.post(
+      "https://api.therootshive.com/v3/rootscard/addevent",
+      payload,
+      {
+        headers: { "Content-Type": "application/json" },
+        auth: {
+          username: "sample",
+          password: "rootscards",
+        },
+      }
+    );
 
-  const response = await axios.post(
-    "https://api.therootshive.com/v3/rootscard/addevent",
-    payload,
-    { headers: { "Content-Type": "application/json" } }
-  );
-
-  console.log("✅ API response:", response.data);
-  return response.data;
+    console.log("✅ API response:", response.data);
+    return response.data;
+  } catch (error) {
+    console.error(
+      "Error submitting waitlist:",
+      error.response?.data || error.message
+    );
+    throw error;
+  }
 };
