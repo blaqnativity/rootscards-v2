@@ -35,10 +35,10 @@ export const PainPointSection = () => {
   const activeSlide = slides[currentIndex];
 
   return (
-    <section className="py-10 md:py-20 bg-[#F6F6F6]">
-      <main className="max-w-[1400px] mx-auto px-4 md:px-8">
-        <span className="hFive fadeText uppercase">the need</span>
-        <h2 className="hThree font-semibold max-w-7xl my-10">
+    <section className="py-10 md:py-15 bg-[#F6F6F6]">
+      <main className="max-w-[1400px] mx-auto px-4 md:px-8 space-y-5">
+        <h5 className="hFive blackFade uppercase">the need</h5>
+        <h2 className="hThree font-semibold max-w-7xl mb-10">
           Long waits erode revenue and trust. RootsCards eliminates bottlenecks
           with{" "}
           <span className="text-black/60">

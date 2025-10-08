@@ -1,24 +1,41 @@
-import { useState } from "react";
-import { ArrowRight } from "@phosphor-icons/react";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { waitlistSchema } from "@/services/validation/waitlistSchema";
+import { submitWaitlist } from "@/services/waitlistService";
+import { ArrowRight, CaretDownIcon } from "@phosphor-icons/react";
+import { toast } from "react-toastify";
 
 export const WaitlistForm = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    spaceType: "",
-    email: "",
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isSubmitting },
+  } = useForm({
+    resolver: yupResolver(waitlistSchema),
+    defaultValues: {
+      name: "",
+      spaceType: "",
+      email: "",
+    },
   });
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+  type WaitlistFormData = {
+    name: string;
+    spaceType: string;
+    email: string;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Submitted:", formData);
-    // 🔥 You can connect this to an API or Google Form later
+  const onSubmit = async (data: WaitlistFormData) => {
+    try {
+      const res = await submitWaitlist(data);
+      console.log("Submitted:", res);
+      toast.success("🎉 You’ve successfully joined the waitlist!");
+      reset();
+    } catch (err) {
+      console.error("Error:", err);
+      toast.error("Something went wrong. Please try again later.");
+    }
   };
 
   return (
@@ -33,51 +50,77 @@ export const WaitlistForm = () => {
       </p>
 
       <form
-        onSubmit={handleSubmit}
+        onSubmit={handleSubmit(onSubmit)}
         className="flex flex-col gap-4 md:flex-wrap md:gap-3"
       >
         <div className="flex flex-col md:flex-row gap-3">
-          <input
-            type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            placeholder="Name"
-            className="flex-1 bg-black/30 border border-white/10 rounded-full px-5 py-3 text-sm text-white placeholder-gray-400 focus:outline-none focus:border-white/30"
-          />
+          <div className="flex-1">
+            <input
+              type="text"
+              placeholder="Name"
+              {...register("name")}
+              className="w-full bg-black/30 border border-white/10 rounded-full px-5 py-3 text-sm text-white placeholder-gray-400 focus:outline-none focus:border-white/30"
+            />
+            {errors.name && (
+              <p className="text-red-400 text-xs mt-1">{errors.name.message}</p>
+            )}
+          </div>
 
-          <select
-            name="spaceType"
-            value={formData.spaceType}
-            onChange={handleChange}
-            className="flex-1 bg-black/30 border border-white/10 rounded-full px-5 py-3 text-sm text-white placeholder-gray-400 focus:outline-none focus:border-white/30"
-          >
-            <option value="">Space type</option>
-            <option value="club">Offices</option>
-            <option value="event">Apartments</option>
-            <option value="lounge">Churches</option>
-            <option value="lounge">Event spaces</option>
-          </select>
+          <div className="relative flex-1">
+            <select
+              {...register("spaceType")}
+              className="w-full bg-black/30 border border-white/10 rounded-full px-5 pr-10 py-3 text-sm text-white 
+               appearance-none focus:outline-none focus:border-white/30"
+            >
+              <option value="">Space type</option>
+              <option value="office">Offices</option>
+              <option value="apartment">Apartments</option>
+              <option value="church">Churches</option>
+              <option value="event-space">Event spaces</option>
+            </select>
+            <CaretDownIcon
+              size={16}
+              color="white"
+              className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none"
+            />
+            {errors.spaceType && (
+              <p className="text-red-400 text-xs mt-1">
+                {errors.spaceType.message}
+              </p>
+            )}
+          </div>
         </div>
 
         <div className="flex flex-col md:flex-row items-stretch gap-3">
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            placeholder="Your email address"
-            className="flex-1 bg-black/30 border border-white/10 rounded-full px-5 py-3 text-sm text-white placeholder-gray-400 focus:outline-none focus:border-white/30"
-          />
+          <div className="flex-1">
+            <input
+              type="email"
+              placeholder="Your email address"
+              {...register("email")}
+              className="w-full bg-black/30 border border-white/10 rounded-full px-5 py-3 text-sm text-white placeholder-gray-400 focus:outline-none focus:border-white/30"
+            />
+            {errors.email && (
+              <p className="text-red-400 text-xs mt-1">
+                {errors.email.message}
+              </p>
+            )}
+          </div>
 
           <button
             type="submit"
-            className="w-fit inline-flex items-center justify-center rounded-full bg-white text-black pl-3 py-1 text-sm font-semibold hover:bg-gray-200 transition whitespace-nowrap"
+            disabled={isSubmitting}
+            className={`w-fit inline-flex items-center justify-center rounded-full ${
+              isSubmitting
+                ? "bg-gray-400 cursor-not-allowed"
+                : "bg-white hover:bg-gray-200"
+            } text-black pl-3 py-1 text-sm font-semibold transition whitespace-nowrap`}
           >
-            Join the waitlist
-            <span className="bg-black ml-2 mr-1 p-2 rounded-full">
-              <ArrowRight size={18} color="white" />
-            </span>
+            {isSubmitting ? "Submitting..." : "Join the waitlist"}
+            {!isSubmitting && (
+              <span className="bg-black ml-2 mr-1 p-2 rounded-full">
+                <ArrowRight size={18} color="white" />
+              </span>
+            )}
           </button>
         </div>
       </form>

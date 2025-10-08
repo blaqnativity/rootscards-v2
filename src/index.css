@@ -143,13 +143,13 @@ html {
     @apply leading-10 md:leading-14 text-[50px] md:text-[70px];
   }
   .hThree {
-    @apply leading-10 md:leading-12 text-[30px]  md:text-[50px];
+    @apply leading-8 md:leading-12 text-[30px]  md:text-[50px];
   }
   .hFour {
-    @apply leading-10 md:leading-8 text-[16px]  md:text-[20px];
+    @apply leading-8 md:leading-8 text-[20px]  md:text-[20px];
   }
   .hFive {
-    @apply text-[10px] md:text-[16px];
+    @apply text-[16px] md:text-[16px];
   }
 }
 

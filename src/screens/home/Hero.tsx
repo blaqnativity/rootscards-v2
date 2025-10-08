@@ -38,7 +38,7 @@ export const Hero = () => {
           </span>
         </div>
 
-        <div className="max-w-6xl space-y-10 text-center">
+        <div className="max-w-6xl px-4 md:px-8 space-y-10 text-center">
           <h1 className="hOne font-bold relative">
             We make Queues
             <div className="ml-3 relative inline-block">
@@ -50,7 +50,7 @@ export const Hero = () => {
               <span className="relative z-0">disappear</span>
             </div>
           </h1>
-          <p className="hFour max-w-3xl mx-auto tracking-normal">
+          <p className="hFour md:w-3/4 mx-auto tracking-normal">
             Process thousands in seconds with AI-powered check-ins, automated
             queue routing and live insights—built for events, clinics, coworking
             and retail.

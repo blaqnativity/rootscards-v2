@@ -14,7 +14,7 @@ export const SubFooter = () => {
         <div className="max-w-[1400px] mx-auto flex justify-between items-center">
           <Link to="/" className="flex items-center gap-1">
             <img src={logo} className="h-[1.1em] md:h-[1.5em]" />
-            <span className="logoText">rootscards</span>
+            <span className="logoText">Rootscards</span>
           </Link>
 
           <div className="flex items-center gap-4">
