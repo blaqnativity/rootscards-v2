@@ -52,10 +52,14 @@ export const submitWaitlist = async (formData: {
     console.log("✅ API response:", response.data);
     return response.data;
   } catch (error) {
-    console.error(
-      "Error submitting waitlist:",
-      error.response?.data || error.message
-    );
+    if (axios.isAxiosError(error)) {
+      console.error(
+        "Error submitting waitlist:",
+        error.response?.data || error.message
+      );
+    } else {
+      console.error("Error submitting waitlist:", (error as Error).message);
+    }
     throw error;
   }
 };
