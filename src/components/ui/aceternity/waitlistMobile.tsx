@@ -1,15 +1,12 @@
 "use client";
 import { IconArrowNarrowRight } from "@tabler/icons-react";
 import { useState, useId } from "react";
-import { processesCard } from "@/constants/processes";
-import { ArrowUpRight } from "@phosphor-icons/react";
+import { waitlist } from "@/constants/processes";
+import logo from "@/assets/images/rc.svg";
 
 type ProcessType = {
-  tagline?: string;
-  title?: string;
   description: string;
   image: string;
-  color?: string;
 };
 
 const ProcessSlide = ({
@@ -35,25 +32,17 @@ const ProcessSlide = ({
     >
       <div className="px-6 space-y-2 py-6">
         <div className="flex justify-between items-center">
-          <span className="bg-[#111111] text-white px-4 py-2 rounded-full">
-            {process.tagline}
-          </span>
-          <span
-            className="p-2 flex justify-center items-center rounded-full"
-            style={{ backgroundColor: process.color }}
-          >
-            <ArrowUpRight size={18} weight="bold" />
+          <span className="">
+            <img src={logo} alt="" />
           </span>
         </div>
-        <h3 className="headerThree text-white font-semibold">
-          {process.title}
-        </h3>
+
         <p className="text-white tracking-widest">{process.description}</p>
       </div>
 
       <img
         src={process.image}
-        alt={process.title}
+        alt="Process Image"
         className="w-full block object-cover rounded-b-[49px] h-auto md:h-60"
       />
     </div>
@@ -83,8 +72,8 @@ const CarouselControl = ({
   );
 };
 
-export const ProcessesMobileCarousel = ({
-  data = processesCard,
+export const WaitlistMobile = ({
+  data = waitlist,
 }: {
   data?: ProcessType[];
 }) => {

@@ -43,8 +43,8 @@ export const MainNav: React.FC<MainNavProps> = ({ ranges = [] }) => {
   const isDropdownActive = !!activeMenu;
 
   // --- DESKTOP NAV STYLES (fixed, not scroll-based) ---
-  const desktopBgColor = "bg-transparent"; // or "bg-white"
-  const desktopTextColor = "text-white"; // or "text-black"
+  const desktopBgColor = "bg-transparent";
+  const desktopTextColor = "text-white";
   const desktopLogo = lightLogo;
 
   // Adjust when dropdown is open
@@ -77,13 +77,9 @@ export const MainNav: React.FC<MainNavProps> = ({ ranges = [] }) => {
               <img
                 src={logoToShow}
                 alt="logo"
-                className="h-[1.3em] md:h-[1.5em] transition-all duration-200"
+                className="h-[1.3em] md:h-[1.5em]"
               />
-              <span
-                className={`logoText ${textColor} transition-colors duration-200`}
-              >
-                rootscards
-              </span>
+              <span className={`logoText ${textColor}`}>rootscards</span>
             </Link>
 
             {/* Desktop menu */}
@@ -98,7 +94,11 @@ export const MainNav: React.FC<MainNavProps> = ({ ranges = [] }) => {
                       className="custom-link cursor-pointer flex items-center gap-1 hover:opacity-80 transition-opacity duration-200"
                     >
                       {link.menu}
-                      <CaretDown className="ml-1" />
+                      <CaretDown
+                        className={`ml-1 transition-transform duration-300 ${
+                          activeMenu === link.menu ? "rotate-180" : "rotate-0"
+                        }`}
+                      />
                     </button>
                   ) : (
                     <Link
@@ -126,9 +126,10 @@ export const MainNav: React.FC<MainNavProps> = ({ ranges = [] }) => {
           <motion.div
             layout
             animate={activeSubmenu.length > 0 ? "open" : "closed"}
+            style={{ visibility: "hidden" }}
             variants={{
-              open: { opacity: 1 },
-              closed: { display: "hidden", opacity: 0 },
+              open: { visibility: "visible", opacity: 1 },
+              closed: { visibility: "hidden", opacity: 0 },
             }}
             className="mx-auto overflow-hidden mt-2"
           >

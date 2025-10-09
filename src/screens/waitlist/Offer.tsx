@@ -1,6 +1,6 @@
-import { ProcessesMobileCarousel } from "@/components/ui/aceternity/processes-mobile-carousel";
-import { waitlist, processesCard } from "@/constants/processes";
+import { waitlist } from "@/constants/processes";
 import { Waitlist } from "@/components/ui/aceternity/waitlistDesktop";
+import { WaitlistMobile } from "@/components/ui/aceternity/waitlistMobile";
 
 export const Offer = () => {
   return (
@@ -19,7 +19,7 @@ export const Offer = () => {
           </div>
           {/* Mobile carousel */}
           <div className="block md:hidden">
-            <ProcessesMobileCarousel data={processesCard} />
+            <WaitlistMobile data={waitlist} />
           </div>
         </div>
       </main>

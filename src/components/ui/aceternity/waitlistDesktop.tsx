@@ -5,7 +5,6 @@ import logo from "@/assets/images/rc.svg";
 interface ProcessItem {
   description: string;
   image: string;
-  color: string;
 }
 
 interface ProcessesCarouselProps {

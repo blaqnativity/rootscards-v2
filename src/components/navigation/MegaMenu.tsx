@@ -12,18 +12,18 @@ interface MegaMenuProps {
 
 export const MegaMenu: React.FC<MegaMenuProps> = ({ submenu }) => {
   return (
-    <div className="mx-auto text-black bg-white rounded-b-xl p-8 grid grid-cols-3 gap-8 z-[9999] relative">
+    <div className="mx-auto text-black rounded-b-xl p-8 grid grid-cols-3 gap-8 z-[9999] relative">
       {/* Left column */}
       <div className="flex flex-col gap-4">
         <Link
           to="#"
-          className="rounded-xl p-4 bg-gradient-to-r from-yellow-200 via-green-200 to-blue-200 transition"
+          className="rounded-xl p-4 bg-gradient-to-r from-yellow-200 via-green-200 to-blue-200"
         >
-          <h4 className="font-semibold text-lg">Products Overview</h4>
+          <h4 className="font-semibold text-lg">Products overview</h4>
         </Link>
         <Link
           to="#"
-          className="rounded-xl p-4 bg-gradient-to-r from-purple-200 via-pink-200 to-orange-200 transition"
+          className="rounded-xl p-4 bg-gradient-to-r from-purple-200 via-pink-200 to-orange-200"
         >
           <h4 className="font-semibold text-lg">View demo</h4>
         </Link>
