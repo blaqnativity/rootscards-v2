@@ -1,4 +1,3 @@
-import vector from "../../assets/images/vector.svg";
 import bgImage from "../../assets/images/gradientBg.png";
 import { ArrowRight, Lightning } from "@phosphor-icons/react";
 import { BtnMain } from "../../components/buttons/BtnMain";
@@ -8,6 +7,7 @@ import { scheduleDemo } from "@/services/useCalendly";
 import useCalendlyLoader from "@/hooks/useCalendlyLoader";
 import { Carousel } from "../../components/utils/LogoCarousel";
 import { carouselOne as carousels } from "@/constants/carouseLogos";
+import { Line } from "@/components/ui/animation";
 export const Hero = () => {
   useCalendlyLoader();
   return (
@@ -42,11 +42,9 @@ export const Hero = () => {
           <h1 className="hOne font-bold relative">
             We make Queues
             <div className="ml-3 relative inline-block">
-              <img
-                src={vector}
-                alt="overlay"
-                className="absolute top-1/2 -right-18 h-auto w-full max-w-none -translate-x-1/3 md:-translate-x-1/5 -translate-y-1/3 pointer-events-none"
-              />
+              <span className="absolute top-1/3 md:1/2 -z-10 -right-18 -translate-x-1/3 md:-translate-x-1/6 -translate-y-1/3 md:-translate-1/2 pointer-events-none">
+                <Line />
+              </span>
               <span className="relative z-0">disappear</span>
             </div>
           </h1>

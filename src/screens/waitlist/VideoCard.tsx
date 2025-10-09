@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Play } from "@phosphor-icons/react";
 import videoPrev from "@/assets/images/videoPrev.svg";
-import vector from "@/assets/images/vector.svg";
+import { Line } from "@/components/ui/animation";
 
 export interface Step {
   tagline: string;
@@ -81,11 +81,9 @@ export const VideoCard = () => {
                     <p className="hThree font-semibold leading-snug">
                       “How Rootscard eliminates wait time and improves user{" "}
                       <span className="relative inline-block">
-                        <img
-                          src={vector}
-                          alt="underline"
-                          className="absolute -bottom-6 left-1/4 w-[120%] pointer-events-none"
-                        />
+                        <div className="absolute -translate-y-1/4 -translate-x-1/3 left-1/4 w-[120%] pointer-events-none">
+                          <Line />
+                        </div>
                         <span className="relative z-10">experience"</span>
                       </span>
                     </p>

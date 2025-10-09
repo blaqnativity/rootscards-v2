@@ -3,11 +3,11 @@ import React, { useEffect, useState } from "react";
 import { ArrowUpRight } from "@phosphor-icons/react";
 
 interface ProcessItem {
-  tagline: string;
-  title: string;
-  description: string;
-  image: string;
-  color: string;
+  tagline?: string;
+  title?: string;
+  description?: string;
+  image?: string;
+  color?: string;
 }
 
 interface ProcessesCarouselProps {
