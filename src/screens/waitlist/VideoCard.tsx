@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Play } from "@phosphor-icons/react";
 import videoPrev from "@/assets/images/videoPrev.svg";
-import { Line } from "@/components/ui/animation";
+import { Line } from "@/components/ui/animation/animation";
 
 export interface Step {
   tagline: string;

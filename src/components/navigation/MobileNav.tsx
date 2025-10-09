@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { X, List, ArrowRight } from "@phosphor-icons/react";
+import { X, List, ArrowRight, CaretDown } from "@phosphor-icons/react";
 import { BtnMain } from "../buttons/BtnMain";
 import { useToggle } from "../../hooks/useToggle";
 import logo from "/lightLogo.svg";
@@ -25,15 +26,18 @@ export const MobileNav: React.FC<MobileNavProps> = ({
   menuItems,
 }) => {
   const { isToggled: menu, toggle } = useToggle();
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
-  // Scroll-based styles (with defaults)
   const bgColor = activeRange?.bgColor ?? "bg-white/5 backdrop-blur-lg";
   const textColor = activeRange?.textColor ?? "text-white";
   const currentLogo = activeRange?.logo ?? logo;
 
-  // Icon color detection based on text color
   const isDarkText = textColor.includes("black");
   const iconColor = isDarkText ? "black" : "white";
+
+  const handleDropdownToggle = (menuName: string) => {
+    setOpenDropdown((prev) => (prev === menuName ? null : menuName));
+  };
 
   return (
     <nav className="lg:hidden fixed top-6 left-0 w-full z-50 pointer-events-auto">
@@ -73,26 +77,90 @@ export const MobileNav: React.FC<MobileNavProps> = ({
         </div>
       </header>
 
-      {/* Dropdown menu */}
+      {/* Mobile dropdown menu */}
       {menu && (
         <div className="flex justify-center mt-3 px-4">
           <div
             className={`w-full max-w-[820px] rounded-3xl p-8 shadow-2xl transition-all duration-300 ${bgColor} ${textColor}`}
           >
-            <ul className="space-y-8 text-lg font-medium">
-              {menuItems.map((link, index) => (
-                <li key={index}>
-                  <Link
-                    to={link.url || "#"}
-                    onClick={toggle}
-                    className="custom-link block hover:opacity-80 transition-opacity duration-200"
-                  >
-                    {link.menu}
-                  </Link>
-                </li>
-              ))}
+            <ul className="space-y-6 text-lg font-medium">
+              {menuItems.map((link, index) => {
+                const hasSubmenu = !!link.submenu;
 
-              <li>
+                return (
+                  <li key={index}>
+                    {hasSubmenu ? (
+                      <div>
+                        {/* Parent item with dropdown toggle */}
+                        <button
+                          onClick={() => handleDropdownToggle(link.menu)}
+                          className="flex items-center justify-between w-full custom-link hover:opacity-80 transition-opacity duration-200"
+                        >
+                          <span>{link.menu}</span>
+                          <CaretDown
+                            size={20}
+                            className={`transition-transform duration-300 ${
+                              openDropdown === link.menu ? "rotate-180" : ""
+                            }`}
+                          />
+                        </button>
+
+                        {/* Submenu section */}
+                        {openDropdown === link.menu && (
+                          <div className="bg-white p-6 rounded-2xl mt-4 space-y-4">
+                            {/* Optional quick links like "Products overview" */}
+                            {/* <div className="grid grid-cols-1 gap-3">
+                              <Link
+                                to="#"
+                                onClick={toggle}
+                                className="rounded-lg p-3 text-center font-medium bg-gradient-to-r from-yellow-200 via-green-200 to-blue-200 hover:opacity-90 transition"
+                              >
+                                Products overview
+                              </Link>
+                              <Link
+                                to="#"
+                                onClick={toggle}
+                                className="rounded-lg p-3 text-center font-medium bg-gradient-to-r from-purple-200 via-pink-200 to-orange-200 hover:opacity-90 transition"
+                              >
+                                View demo
+                              </Link>
+                            </div> */}
+
+                            {/* Submenu items */}
+                            <div className="flex flex-col gap-4 mt-3">
+                              {link.submenu?.map((sub, subIndex) => (
+                                <Link
+                                  key={subIndex}
+                                  to={sub.url}
+                                  onClick={toggle}
+                                  className="block p-3 hover:bg-gray-50 transition"
+                                >
+                                  <h5 className="font-semibold text-blue-700 text-base">
+                                    {sub.title}
+                                  </h5>
+                                  <p className="text-sm text-gray-600 mt-1 leading-snug">
+                                    {sub.description}
+                                  </p>
+                                </Link>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    ) : (
+                      <Link
+                        to={link.url || "#"}
+                        onClick={toggle}
+                        className="custom-link block hover:opacity-80 transition-opacity duration-200"
+                      >
+                        {link.menu}
+                      </Link>
+                    )}
+                  </li>
+                );
+              })}
+
+              <li className="pt-2">
                 <BtnMain
                   to="https://app.rootscards.com/signup"
                   text="Start free trial"

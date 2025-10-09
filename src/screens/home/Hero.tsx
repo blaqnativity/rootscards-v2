@@ -7,7 +7,7 @@ import { scheduleDemo } from "@/services/useCalendly";
 import useCalendlyLoader from "@/hooks/useCalendlyLoader";
 import { Carousel } from "../../components/utils/LogoCarousel";
 import { carouselOne as carousels } from "@/constants/carouseLogos";
-import { Line } from "@/components/ui/animation";
+import { Line } from "@/components/ui/animation/animation";
 export const Hero = () => {
   useCalendlyLoader();
   return (

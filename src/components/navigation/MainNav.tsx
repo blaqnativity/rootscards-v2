@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, CaretDown } from "@phosphor-icons/react";
-import { navMenu } from "../../constants/navConstants";
-import { BtnMain } from "../buttons/BtnMain";
+import { navMenu } from "@/constants/navConstants";
+import { BtnMain } from "@/components/buttons/BtnMain";
 import { MegaMenu } from "./MegaMenu";
 import { MobileNav } from "./MobileNav";
 import lightLogo from "/lightLogo.svg";
@@ -24,41 +24,42 @@ interface MainNavProps {
 export const MainNav: React.FC<MainNavProps> = ({ ranges = [] }) => {
   const [scrollY, setScrollY] = useState(0);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
+  const hoverTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  // Track scroll position (for mobile)
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Determine the active scroll range (for mobile only)
   const activeRange = ranges.find((range) => {
     if (range.end !== undefined)
       return scrollY >= range.start && scrollY < range.end;
     return scrollY >= range.start;
   });
 
-  // State for dropdown
   const isDropdownActive = !!activeMenu;
 
-  // --- DESKTOP NAV STYLES (fixed, not scroll-based) ---
   const desktopBgColor = "bg-transparent";
   const desktopTextColor = "text-white";
   const desktopLogo = lightLogo;
 
-  // Adjust when dropdown is open
   const bgColor = isDropdownActive ? "bg-white" : desktopBgColor;
   const textColor = isDropdownActive ? "text-black" : desktopTextColor;
   const logoToShow = isDropdownActive ? darkLogo : desktopLogo;
 
-  // --- MOBILE NAV STYLES (scroll-based) ---
   const mobileBgColor = activeRange?.bgColor || "bg-transparent";
   const mobileTextColor = activeRange?.textColor || "text-white";
   const mobileLogo = activeRange?.logo || lightLogo;
 
-  const handleMenuToggle = (menuName: string) => {
-    setActiveMenu((prev) => (prev === menuName ? null : menuName));
+  // Hover handlers only for dropdown items
+  const handleMouseEnter = (menu: string) => {
+    if (hoverTimeout.current) clearTimeout(hoverTimeout.current);
+    setActiveMenu(menu);
+  };
+
+  const handleMouseLeave = () => {
+    hoverTimeout.current = setTimeout(() => setActiveMenu(null), 150);
   };
 
   const activeSubmenu =
@@ -86,30 +87,38 @@ export const MainNav: React.FC<MainNavProps> = ({ ranges = [] }) => {
             <ul
               className={`flex font-medium space-x-8 items-center ${textColor} transition-colors duration-200`}
             >
-              {navMenu.map((link, index) => (
-                <li key={index} className="relative">
-                  {link.submenu ? (
-                    <button
-                      onClick={() => handleMenuToggle(link.menu)}
-                      className="custom-link cursor-pointer flex items-center gap-1 hover:opacity-80 transition-opacity duration-200"
-                    >
-                      {link.menu}
-                      <CaretDown
-                        className={`ml-1 transition-transform duration-300 ${
-                          activeMenu === link.menu ? "rotate-180" : "rotate-0"
-                        }`}
-                      />
-                    </button>
-                  ) : (
-                    <Link
-                      to={link.url || "#"}
-                      className="custom-link hover:opacity-80 transition-opacity duration-200"
-                    >
-                      {link.menu}
-                    </Link>
-                  )}
-                </li>
-              ))}
+              {navMenu.map((link, index) => {
+                const hasSubmenu = !!link.submenu;
+
+                return (
+                  <li
+                    key={index}
+                    className="relative"
+                    {...(hasSubmenu && {
+                      onMouseEnter: () => handleMouseEnter(link.menu),
+                      onMouseLeave: handleMouseLeave,
+                    })}
+                  >
+                    {hasSubmenu ? (
+                      <button className="custom-link cursor-pointer flex items-center gap-1 hover:opacity-80 transition-opacity duration-200">
+                        {link.menu}
+                        <CaretDown
+                          className={`ml-1 transition-transform duration-300 ${
+                            activeMenu === link.menu ? "rotate-180" : "rotate-0"
+                          }`}
+                        />
+                      </button>
+                    ) : (
+                      <Link
+                        to={link.url || "#"}
+                        className="custom-link hover:opacity-80 transition-opacity duration-200"
+                      >
+                        {link.menu}
+                      </Link>
+                    )}
+                  </li>
+                );
+              })}
 
               <BtnMain
                 to="https://app.rootscards.com/signup"
@@ -132,6 +141,8 @@ export const MainNav: React.FC<MainNavProps> = ({ ranges = [] }) => {
               closed: { visibility: "hidden", opacity: 0 },
             }}
             className="mx-auto overflow-hidden mt-2"
+            onMouseEnter={() => handleMouseEnter(activeMenu || "")}
+            onMouseLeave={handleMouseLeave}
           >
             <MegaMenu submenu={activeSubmenu} />
           </motion.div>
