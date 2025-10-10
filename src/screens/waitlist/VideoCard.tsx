@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Play } from "@phosphor-icons/react";
 import videoPrev from "@/assets/images/videoPrev.svg";
-import { RiveLogo as Line } from "@/components/ui/animation/line";
+import line from "@/assets/images/line.svg";
 
 export interface Step {
   tagline: string;
@@ -80,10 +80,11 @@ export const VideoCard = () => {
                   <div className="absolute bottom-5 left-5 md:bottom-10 md:left-10 text-white z-10 w-[80%] md:w-[75%]">
                     <p className="relative hThree font-semibold leading-10 md:leading-15">
                       “How Rootscard eliminates wait time and improves user{" "}
-                      <span className="absolute -translate-x-[100%] -translate-y-1/4 md:-translate-x-[155%] md:-translate-y-2/5  pointer-events-none">
-                        <Line />
-                      </span>
-                      <span className="relative z-10">experience"</span>
+                      <img
+                        src={line}
+                        className="-z-20 w-40 md:w-70 -translate-x-3 translate-y-0.5 md:-translate-x-5 md:translate-y-2 h-auto absolute pointer-events-none"
+                      />
+                      <span>experience"</span>
                     </p>
                   </div>
                 </>

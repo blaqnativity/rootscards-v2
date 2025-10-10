@@ -74,7 +74,7 @@ export const MainNav: React.FC<MainNavProps> = ({ ranges = [] }) => {
         >
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-2">
+            <Link to="/" className="flex items-center gap-1">
               <img
                 src={logoToShow}
                 alt="logo"
