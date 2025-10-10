@@ -38,7 +38,7 @@ export const submitWaitlist = async (formData: {
 
   try {
     const response = await axios.post(
-      "https://api.therootshive.com/v3/rootscard/addevent",
+      "https://api.therootshive.com/v3/rootscard//addfrontendevent",
       payload,
       {
         headers: { "Content-Type": "application/json" },

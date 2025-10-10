@@ -81,9 +81,9 @@ export const VideoCard = () => {
                     <p className="hThree font-semibold leading-snug">
                       “How Rootscard eliminates wait time and improves user{" "}
                       <span className="relative inline-block">
-                        <div className="absolute -translate-y-1/4 -translate-x-1/3 left-1/4 w-[120%] pointer-events-none">
+                        <span className="absolute -translate-y-1/4 -translate-x-1/3 left-1/4 w-[120%] pointer-events-none">
                           <Line />
-                        </div>
+                        </span>
                         <span className="relative z-10">experience"</span>
                       </span>
                     </p>

@@ -8,7 +8,7 @@ export const Line = () => {
         animationData={successAnimation}
         loop={true}
         autoplay={true}
-        className="w-60 md:w-90 h-30 md:h-fit"
+        className="w-60 md:w-90 h-30 md:h-auto"
       />
     </div>
   );

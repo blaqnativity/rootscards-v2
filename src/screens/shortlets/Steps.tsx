@@ -2,8 +2,8 @@ import { useState } from "react";
 import { BtnMain } from "@/components/buttons/BtnMain";
 import { ArrowRight, Play } from "@phosphor-icons/react";
 import videoPrev from "@/assets/images/videoPrev.svg";
-import vector from "@/assets/images/vector.svg";
 import { cards } from "@/constants/processes";
+import { Line } from "@/components/ui/animation/animation";
 
 export const Steps = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -75,14 +75,13 @@ export const Steps = () => {
                 <div className="absolute bottom-5 left-5 md:bottom-10 md:left-10 text-white w-xs md:w-2xl z-10">
                   <p className="hThree leading-14">
                     “How Rootscard eliminates wait time and improves user{" "}
-                    <span className="ml-3 relative inline-block">
-                      <img
-                        src={vector}
-                        alt="overlay"
-                        className="absolute -bottom-10 md:-bottom-20 left-10 h-auto w-full max-w-none -translate-x-1/3 md:-translate-x-1/5 -translate-y-1/2 pointer-events-none"
-                      />
+                    <div className="ml-3 relative inline-block">
+                      <span className="absolute -bottom-10 -z-10 md:-bottom-20 left-10 -translate-x-1/3 md:-translate-x-1/4 translate-y-1 pointer-events-none">
+                        <Line />
+                      </span>
+
                       <span className="relative z-0">experience"</span>
-                    </span>
+                    </div>
                   </p>
                 </div>
               </>
