@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Play } from "@phosphor-icons/react";
 import videoPrev from "@/assets/images/videoPrev.svg";
-import { Line } from "@/components/ui/animation/animation";
+import { RiveLogo as Line } from "@/components/ui/animation/line";
 
 export interface Step {
   tagline: string;
@@ -77,15 +77,13 @@ export const VideoCard = () => {
                   </button>
 
                   {/* Caption overlay */}
-                  <div className="absolute bottom-5 left-5 md:bottom-10 md:left-10 text-white z-10 max-w-2xl">
-                    <p className="hThree font-semibold leading-snug">
+                  <div className="absolute bottom-5 left-5 md:bottom-10 md:left-10 text-white z-10 w-[80%] md:w-[75%]">
+                    <p className="relative hThree font-semibold leading-10 md:leading-15">
                       “How Rootscard eliminates wait time and improves user{" "}
-                      <span className="relative inline-block">
-                        <span className="absolute -translate-y-1/4 -translate-x-1/3 left-1/4 w-[120%] pointer-events-none">
-                          <Line />
-                        </span>
-                        <span className="relative z-10">experience"</span>
+                      <span className="absolute -translate-x-[100%] -translate-y-1/4 md:-translate-x-[155%] md:-translate-y-2/5  pointer-events-none">
+                        <Line />
                       </span>
+                      <span className="relative z-10">experience"</span>
                     </p>
                   </div>
                 </>

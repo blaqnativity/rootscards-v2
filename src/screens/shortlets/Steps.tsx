@@ -3,7 +3,7 @@ import { BtnMain } from "@/components/buttons/BtnMain";
 import { ArrowRight, Play } from "@phosphor-icons/react";
 import videoPrev from "@/assets/images/videoPrev.svg";
 import { cards } from "@/constants/processes";
-import { Line } from "@/components/ui/animation/animation";
+import { RiveLogo as Line } from "@/components/ui/animation/line";
 
 export const Steps = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -72,11 +72,11 @@ export const Steps = () => {
                 </button>
 
                 {/* Caption */}
-                <div className="absolute bottom-5 left-5 md:bottom-10 md:left-10 text-white w-xs md:w-2xl z-10">
-                  <p className="hThree leading-14">
+                <div className="absolute bottom-5 left-5 md:bottom-10 md:left-10 text-white w-[70%] md:w-2xl z-10">
+                  <p className="hThree leading-8 md:leading-14">
                     “How Rootscard eliminates wait time and improves user{" "}
                     <div className="ml-3 relative inline-block">
-                      <span className="absolute -bottom-10 -z-10 md:-bottom-20 left-10 -translate-x-1/3 md:-translate-x-1/4 translate-y-1 pointer-events-none">
+                      <span className="absolute top-1/2 -translate-y-[45%] -translate-x-[20%] md:-translate-y-[48%] md:-translate-x-[20%] pointer-events-none">
                         <Line />
                       </span>
 

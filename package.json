@@ -13,6 +13,7 @@
     "@gsap/react": "^2.1.2",
     "@hookform/resolvers": "^5.2.2",
     "@phosphor-icons/react": "^2.1.10",
+    "@rive-app/react-canvas": "^4.23.4",
     "@tabler/icons-react": "^3.35.0",
     "@tailwindcss/vite": "^4.1.13",
     "axios": "^1.12.2",

@@ -7,7 +7,7 @@ import { scheduleDemo } from "@/services/useCalendly";
 import useCalendlyLoader from "@/hooks/useCalendlyLoader";
 import { Carousel } from "../../components/utils/LogoCarousel";
 import { carouselOne as carousels } from "@/constants/carouseLogos";
-import { Line } from "@/components/ui/animation/animation";
+import { RiveLogo as Line } from "@/components/ui/animation/line";
 export const Hero = () => {
   useCalendlyLoader();
   return (
@@ -42,7 +42,7 @@ export const Hero = () => {
           <h1 className="hOne font-bold relative">
             We make Queues
             <div className="ml-3 relative inline-block">
-              <span className="absolute top-1/3 md:1/2 -z-10 -right-18 -translate-x-1/3 md:-translate-x-1/6 -translate-y-1/3 md:-translate-1/2 pointer-events-none">
+              <span className="absolute top-2/3 md:top-1/2 -z-10 -translate-x-[17%] md:-translate-x-[17%] -translate-y-3/6 md:-translate-y-1/2 pointer-events-none">
                 <Line />
               </span>
               <span className="relative z-0">disappear</span>

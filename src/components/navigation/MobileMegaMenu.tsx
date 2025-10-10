@@ -8,7 +8,7 @@ interface SubmenuItem {
 
 interface MobileMegaMenuProps {
   submenu: SubmenuItem[];
-  onClose?: () => void; // optional, to close the menu on link click
+  onClose?: () => void;
 }
 
 export const MobileMegaMenu: React.FC<MobileMegaMenuProps> = ({
@@ -16,37 +16,38 @@ export const MobileMegaMenu: React.FC<MobileMegaMenuProps> = ({
   onClose,
 }) => {
   return (
-    <div className="w-full flex flex-col gap-6 mt-4">
-      {/* Quick links section */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+    <div className="w-full text-black rounded-b-xl p-6 flex flex-col gap-8 bg-white shadow-lg">
+      {/* Gradient quick links section (matches desktop style) */}
+      <div className="flex flex-col gap-4">
         <Link
           to="#"
           onClick={onClose}
-          className="rounded-lg p-4 text-center font-medium bg-gradient-to-r from-yellow-200 via-green-200 to-blue-200 hover:opacity-90 transition"
+          className="flex items-center justify-center rounded-xl p-6 bg-gradient-to-r from-yellow-200 via-green-200 to-blue-200 hover:opacity-90 transition h-24"
         >
-          Products overview
+          <h4 className="font-semibold text-lg text-center">
+            Products Overview
+          </h4>
         </Link>
         <Link
           to="#"
           onClick={onClose}
-          className="rounded-lg p-4 text-center font-medium bg-gradient-to-r from-purple-200 via-pink-200 to-orange-200 hover:opacity-90 transition"
+          className="flex items-center justify-center rounded-xl p-6 bg-gradient-to-r from-purple-200 via-pink-200 to-orange-200 hover:opacity-90 transition h-24"
         >
-          View demo
+          <h4 className="font-semibold text-lg text-center">View Demo</h4>
         </Link>
       </div>
 
-      {/* Submenu items */}
-      <div className="flex flex-col gap-5 mt-4">
+      {/* Submenu grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         {submenu.map((sub, subIdx) => (
           <Link
             key={subIdx}
             to={sub.url}
             onClick={onClose}
-            className="rounded-lg p-4 border border-gray-200 hover:bg-gray-50 transition space-y-2"
+            className="hover:bg-gray-50 rounded-lg p-4 transition border border-gray-100 space-y-2"
           >
-            <h5 className="font-semibold text-lg text-blue-700 flex items-center justify-between">
-              {sub.title}
-              <span className="text-gray-400 text-sm">→</span>
+            <h5 className="font-semibold text-blue-800 flex items-center justify-between">
+              {sub.title} <span className="text-gray-400 text-sm">→</span>
             </h5>
             <p className="text-sm text-gray-600 leading-snug">
               {sub.description}

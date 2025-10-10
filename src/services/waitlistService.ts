@@ -43,7 +43,7 @@ export const submitWaitlist = async (formData: {
       {
         headers: { "Content-Type": "application/json" },
         auth: {
-          username: "Sample",
+          username: "sample",
           password: "rootscards",
         },
       }
