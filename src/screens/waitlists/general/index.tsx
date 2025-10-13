@@ -1,4 +1,4 @@
-import { Waitlist as Layout } from "@/layouts/WaitList";
+import { Waitlist as Layout } from "@/layouts/Waitlist";
 import { Hero } from "../Hero";
 import { WaitlistForm } from "./WaitlistForm";
 import { VideoCard } from "./VideoCard";

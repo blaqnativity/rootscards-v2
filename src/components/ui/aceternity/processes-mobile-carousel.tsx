@@ -8,7 +8,7 @@ type ProcessType = {
   tagline?: string;
   title?: string;
   description: string;
-  image: string;
+  image?: string;
   color?: string;
 };
 
