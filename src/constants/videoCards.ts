@@ -47,3 +47,45 @@ export const videoCards: VideoCard[] = [
     },
   },
 ];
+
+export interface Step {
+  description: string;
+}
+
+export const officesWaitlist: Step[] = [
+  {
+    description: "Speed up entry, end gate drama.",
+  },
+  {
+    description: "See who showed up and who returns.",
+  },
+  {
+    description: "Export proof for sponsors or management.",
+  },
+];
+
+export const spacesWaitlist: Step[] = [
+  {
+    description: "No clipboards. No bottlenecks at reception.",
+  },
+  {
+    description: "Real-time who’s in the building.",
+  },
+  {
+    description: "Cleaner compliance & incident reporting.",
+  },
+];
+
+export const shortletsWaitlist: Step[] = [
+  {
+    description: "Reduce late-night handovers and back-and-forth.",
+  },
+  {
+    description:
+      "Keep a verifiable guest log (and avoid “we never stayed” drama).",
+  },
+  {
+    description:
+      "Coordinate cleaners and turnovers with actual checkout times.",
+  },
+];

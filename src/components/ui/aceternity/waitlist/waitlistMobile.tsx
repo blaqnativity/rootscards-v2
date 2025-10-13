@@ -6,7 +6,6 @@ import logo from "@/assets/images/rc.svg";
 
 type ProcessType = {
   description: string;
-  image: string;
 };
 
 const ProcessSlide = ({
@@ -22,7 +21,7 @@ const ProcessSlide = ({
 }) => {
   return (
     <div
-      className="flex flex-col justify-between shadow-sm rounded-[49px] bg-[#222222] overflow-hidden transition-all duration-500 border border-[#555555] w-full mx-auto"
+      className="flex flex-col justify-between shadow-sm rounded-[32px] bg-[#222222] overflow-hidden transition-all duration-500 border border-[#555555] w-full mx-auto"
       onClick={() => handleSlideClick(index)}
       style={{
         opacity: current === index ? 1 : 0.6,
@@ -30,21 +29,14 @@ const ProcessSlide = ({
         transition: "all 0.5s ease",
       }}
     >
-      <div className="px-6 space-y-2 py-6">
+      <div className="px-6 space-y-6 py-6">
         <div className="flex justify-between items-center">
           <span className="">
-            <img src={logo} alt="" />
+            <img src={logo} className="h-auto w-14" />
           </span>
         </div>
-
-        <p className="text-white tracking-widest">{process.description}</p>
+        <p className="hThree text-white">{process.description}</p>
       </div>
-
-      <img
-        src={process.image}
-        alt="Process Image"
-        className="w-full block object-cover rounded-b-[49px] h-auto md:h-60"
-      />
     </div>
   );
 };
@@ -110,7 +102,7 @@ export const WaitlistMobile = ({
         {data.map((process, index) => (
           <div
             key={index}
-            className="flex-shrink-0 flex justify-center w-full"
+            className="flex-shrink-0 flex justify-center w-full h-[250px]"
             style={{ width: `${100 / data.length}%` }}
           >
             <ProcessSlide

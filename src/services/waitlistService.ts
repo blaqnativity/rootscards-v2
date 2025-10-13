@@ -32,7 +32,7 @@ export const submitWaitlist = async (formData: {
     },
   };
 
-  // Call your Vercel API endpoint, not the external API
+  // API endpoint call
   const res = await axios.post("/api/submit-waitlist", payload);
   return res.data;
 };

@@ -16,7 +16,7 @@ export interface Processes {
   tagline?: string;
   title?: string;
   description: string;
-  image: string;
+  image?: string;
   color?: string;
 }
 
@@ -101,7 +101,7 @@ export const waitlist: Processes[] = [
 
 interface FeaturesProps {
   image?: string;
-  title: string;
+  title?: string;
   desc: string;
   color?: string;
 }
@@ -181,5 +181,106 @@ export const properties: FeaturesProps[] = [
     title: "Owner Analytics",
     desc: "Arrivals today, SLA performance, revenue, repeat rates—clean and actionable.",
     color: "#F0C118",
+  },
+];
+
+// data for waitlist-spaces features section
+export const spaces: FeaturesProps[] = [
+  {
+    color: "#0181D7",
+    image: whatsapp,
+    desc: "Create your space.",
+  },
+  {
+    color: "#3AAD51",
+    image: lock,
+    desc: "Pick entry mode: NFC / QR / WhatsApp.",
+  },
+  {
+    color: "#EF314C",
+    image: owner,
+    desc: "Go live — watch arrivals in real time.",
+  },
+  {
+    color: "#914ACA",
+    image: noise,
+    desc: "PLG loop",
+  },
+];
+
+export const spacesTwo: FeaturesProps[] = [
+  {
+    color: "#EF9931",
+    image: tasks,
+    desc: "Guests hit your public page → 1-tap join → more spaces discover us.",
+  },
+  {
+    color: "#6B48DC",
+    image: deposits,
+    desc: "Host loop: staff invites = priority; each teammate adds momentum.",
+  },
+  {
+    color: "#858B1E",
+    image: whatsapp,
+    desc: "Attendee loop: guests hit your public page → 1-tap join → more spaces discover us.",
+  },
+];
+
+export const officesScroll: Processes[] = [
+  {
+    description: "Visitor pre-registration links + walk-in QR.",
+  },
+  {
+    description: "Badge/label options and reason-for-visit.",
+  },
+  {
+    description: "Time-on-premise, department/host mapping, CSV/PDF exports.",
+  },
+  {
+    description: "Cleaner scheduling prompts on checkout.",
+  },
+  {
+    description: "Owner/manager dashboard across multiple properties.",
+  },
+  {
+    description:
+      "Growth loops in product-led growth (PLG) create self-sustaining systems.",
+  },
+  {
+    description:
+      "Collab loop: invite HR/Facilities/Security — setup spreads, stickiness skyrockets.",
+  },
+  {
+    description: "Expansion loop: start at HQ → clone to branches in minutes.",
+  },
+];
+
+export const shortletsScroll: Processes[] = [
+  {
+    description: "Guest pre-arrival link (ID + details) or lobby QR.",
+  },
+  {
+    description: "Check-in timestamps, stay length, unit mapping.",
+  },
+  {
+    description: "Optional deposits/damages notes & photo attachments.",
+  },
+  {
+    description: "Cleaner scheduling prompts on checkout.",
+  },
+  {
+    description: "Owner/manager dashboard across multiple properties.",
+  },
+  {
+    description:
+      "Growth loops in product-led growth (PLG) create self-sustaining systems.",
+  },
+  {
+    description:
+      "Guest loop: guests see your branded page → share with friends → hosts adopt.",
+  },
+  {
+    description:
+      "Portfolio loop: add more units/locations in one click — scale without chaos.",
   },
 ];

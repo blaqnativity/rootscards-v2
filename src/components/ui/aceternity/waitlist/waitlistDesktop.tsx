@@ -4,7 +4,6 @@ import logo from "@/assets/images/rc.svg";
 
 interface ProcessItem {
   description: string;
-  image?: string;
 }
 
 interface ProcessesCarouselProps {
@@ -94,26 +93,15 @@ export const Waitlist = ({
         {data.map((item, index) => (
           <li
             key={index}
-            className="w-[350px] md:w-[400px] flex-shrink-0 flex flex-col justify-between shadow-sm rounded-[49px] bg-[#222222] overflow-hidden transition-opacity duration-500 border border-[#555555]"
+            className="w-[350px] h-[200px] md:w-[350px] flex-shrink-0 flex flex-col justify-between shadow-sm rounded-[32px] bg-[#222222] overflow-hidden transition-opacity duration-500 border border-[#555555]"
           >
-            <div className="px-6 py-4 space-y-2">
+            <div className="px-6 py-4 space-y-4">
               <div>
                 <img src={logo} alt="Logo" />
               </div>
 
-              <p className="text-white md:w-[85%] tracking-widest">
-                {item.description}
-              </p>
+              <p className="hFour text-white">{item.description}</p>
             </div>
-
-            {/* Only render image if provided */}
-            {item.image && (
-              <img
-                src={item.image}
-                alt="Process illustration"
-                className="w-full h-auto object-cover"
-              />
-            )}
           </li>
         ))}
       </ul>

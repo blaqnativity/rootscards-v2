@@ -48,3 +48,32 @@ export const ShortletsFAQ = [
       "No. We support code keypads and popular smart locks. Worst-case, rotate manual codes per stay.",
   },
 ];
+
+export const SpacesFAQ = [
+  {
+    question: "Hardware? Optional (NFC).",
+    answer: "QR/WhatsApp are enough.",
+  },
+  {
+    question: "Multiple doors?",
+    answer: "QR/WhatsApp are enough.",
+  },
+  {
+    question: "Integrations?",
+    answer: "QR/WhatsApp are enough.",
+  },
+];
+export const ShortletsWaitlist = [
+  {
+    question: "ID/KYC?",
+    answer: "Collect IDs and key details; export if needed.",
+  },
+  {
+    question: "No front desk?",
+    answer: "QR/WhatsApp are enough.",
+  },
+  {
+    question: "Integrations?",
+    answer: "QR/WhatsApp are enough.",
+  },
+];

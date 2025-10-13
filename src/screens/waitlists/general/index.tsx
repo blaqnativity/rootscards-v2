@@ -1,18 +1,17 @@
+import { Waitlist as Layout } from "@/layouts/WaitList";
 import { Hero } from "../Hero";
 import { WaitlistForm } from "./WaitlistForm";
 import { VideoCard } from "./VideoCard";
-import { SubFooter as Footer } from "@/components/navigation/SubFooter";
 import { Offer } from "./Offer";
 
 export const GeneralWaitlist = () => {
   return (
-    <>
+    <Layout>
       <Hero>
         <WaitlistForm />
       </Hero>
       <VideoCard />
       <Offer />
-      <Footer />
-    </>
+    </Layout>
   );
 };

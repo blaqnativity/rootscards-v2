@@ -4,7 +4,7 @@ import { waitlistSchema } from "@/services/validation/waitlistSchema";
 import { submitWaitlist } from "@/services/waitlistService";
 import { ArrowRight, CaretDownIcon } from "@phosphor-icons/react";
 import { toast } from "react-toastify";
-
+import { Input } from "@heroui/input";
 export const WaitlistForm = () => {
   const {
     register,
@@ -55,12 +55,20 @@ export const WaitlistForm = () => {
       >
         <div className="flex flex-col md:flex-row gap-3">
           <div className="flex-1">
-            <input
-              type="text"
-              placeholder="Name"
+            <Input
               {...register("name")}
-              className="w-full bg-black/30 border border-white/10 rounded-full px-5 py-3 text-sm text-white placeholder-gray-400 focus:outline-none focus:border-white/30"
+              placeholder="Enter your name"
+              variant="flat"
+              type="text"
+              radius="full"
+              classNames={{
+                input: "text-white placeholder:text-gray-400",
+                inputWrapper:
+                  "bg-black/40 border border-white/10 backdrop-blur-sm hover:border-white/20 focus:border-white/30",
+                label: "text-gray-300",
+              }}
             />
+
             {errors.name && (
               <p className="text-red-400 text-xs mt-1">{errors.name.message}</p>
             )}
@@ -69,8 +77,8 @@ export const WaitlistForm = () => {
           <div className="relative flex-1">
             <select
               {...register("spaceType")}
-              className="w-full bg-black/30 border border-white/10 rounded-full px-5 pr-10 py-3 text-sm text-white 
-               appearance-none focus:outline-none focus:border-white/30"
+              className="w-full bg-black/40 border border-white/10 rounded-2xl px-5 pr-10 py-3 text-sm text-white
+     appearance-none focus:outline-none focus:border-white/30 backdrop-blur-sm"
             >
               <option value="">Space type</option>
               <option value="office">Offices</option>
@@ -78,11 +86,13 @@ export const WaitlistForm = () => {
               <option value="church">Churches</option>
               <option value="event-space">Event spaces</option>
             </select>
+
             <CaretDownIcon
               size={16}
               color="white"
               className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none"
             />
+
             {errors.spaceType && (
               <p className="text-red-400 text-xs mt-1">
                 {errors.spaceType.message}
@@ -92,36 +102,36 @@ export const WaitlistForm = () => {
         </div>
 
         <div className="flex flex-col md:flex-row items-stretch gap-3">
-          <div className="flex-1">
+          <div className="flex items-center justify-center w-full bg-black/30 border border-white/10 rounded-full px-5 pr-1 py-1 gap-3">
             <input
               type="email"
               placeholder="Your email address"
               {...register("email")}
-              className="w-full bg-black/30 border border-white/10 rounded-full px-5 py-3 text-sm text-white placeholder-gray-400 focus:outline-none focus:border-white/30"
+              className="bg-transparent rounded-full w-full px-1 text-sm text-white placeholder-gray-400 focus:outline-none focus:border-white/30"
             />
-          </div>
 
-          <button
-            type="submit"
-            disabled={isSubmitting}
-            className={`w-fit cursor-pointer inline-flex items-center justify-center rounded-full ${
-              isSubmitting
-                ? "bg-gray-400 cursor-not-allowed"
-                : "bg-white hover:bg-gray-200"
-            } text-black pl-3 py-1 text-sm font-semibold transition whitespace-nowrap`}
-          >
-            {/* Text */}
-            <span>{isSubmitting ? "Processing" : "Join the waitlist"}</span>
-
-            {/* Icon stays visible always */}
-            <span
-              className={`bg-black ml-2 mr-1 p-2 rounded-full transition ${
-                isSubmitting ? "opacity-50" : "opacity-100"
-              }`}
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className={`w-fit cursor-pointer inline-flex items-center justify-center rounded-full ${
+                isSubmitting
+                  ? "bg-gray-400 cursor-not-allowed"
+                  : "bg-white hover:bg-gray-200"
+              } text-black pl-3 py-1 text-sm font-semibold transition whitespace-nowrap`}
             >
-              <ArrowRight size={18} color="white" />
-            </span>
-          </button>
+              {/* Text */}
+              <span>{isSubmitting ? "Processing" : "Join the waitlist"}</span>
+
+              {/* Icon stays visible always */}
+              <span
+                className={`bg-black ml-2 mr-1 p-2 rounded-full transition ${
+                  isSubmitting ? "opacity-50" : "opacity-100"
+                }`}
+              >
+                <ArrowRight size={18} color="white" />
+              </span>
+            </button>
+          </div>
         </div>
         {errors.email && (
           <p className="text-red-400 text-xs">{errors.email.message}</p>

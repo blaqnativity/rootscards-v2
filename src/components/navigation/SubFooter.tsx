@@ -10,7 +10,7 @@ import {
 export const SubFooter = () => {
   return (
     <>
-      <section className="w-full bg-[#f0f0f0f0] py-5 px-4 md:px-8">
+      <section className="w-full bg-[#F0F0F0] py-5 px-4 md:px-8">
         <div className="max-w-[1400px] mx-auto flex justify-between items-center">
           <Link to="/" className="flex items-center gap-1">
             <img src={logo} className="h-[1.1em] md:h-[1.5em]" />

@@ -1,5 +1,4 @@
 import bg from "@/assets/images/waitlist.png";
-// import logo from "/lightLogo.svg";
 import Aurora from "@/components/ui/reactbits/Aurora";
 
 import type { ReactNode } from "react";
@@ -40,13 +39,8 @@ export const Hero = ({
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-white gap-10 px-4">
-        <div className="bubble flex items-center">
-          {/* <img
-            src={logo}
-            className="bubble-icon w-10 h-10"
-            alt="Rootscard logo"
-          /> */}
-          <span className="bubbleText ml-1">Rootscard is launching soon</span>
+        <div className="bubble">
+          <span className="bubbleText">Rootscard is launching soon</span>
         </div>
 
         <div className="flex flex-col items-center justify-center text-center gap-5 max-w-[80%]">
