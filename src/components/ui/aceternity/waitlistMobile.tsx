@@ -6,7 +6,7 @@ import logo from "@/assets/images/rc.svg";
 
 type ProcessType = {
   description: string;
-  image: string;
+  image?: string;
 };
 
 const ProcessSlide = ({
