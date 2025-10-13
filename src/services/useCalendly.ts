@@ -1,4 +1,4 @@
-import { initCalendlyPopup } from "../api/calendlyApi";
+import { initCalendlyPopup } from "../../api/calendlyApi";
 
 const demoUrl = "https://calendly.com/toluwaseogunde/rootscards-30-minute-demo";
 

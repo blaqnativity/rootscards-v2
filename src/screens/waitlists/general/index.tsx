@@ -1,17 +1,18 @@
-import { Hero } from "./Hero";
+import { Hero } from "../Hero";
+import { WaitlistForm } from "./WaitlistForm";
 import { VideoCard } from "./VideoCard";
 import { SubFooter as Footer } from "@/components/navigation/SubFooter";
 import { Offer } from "./Offer";
 
-export const Waitlist = () => {
+export const GeneralWaitlist = () => {
   return (
     <>
-      <Hero />
+      <Hero>
+        <WaitlistForm />
+      </Hero>
       <VideoCard />
       <Offer />
       <Footer />
     </>
   );
 };
-
-export default Waitlist;

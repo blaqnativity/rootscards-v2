@@ -39,7 +39,7 @@ export const WaitlistForm = () => {
   };
 
   return (
-    <div className="w-full max-w-2xl mx-auto bg-black/60 rounded-3xl p-8 backdrop-blur-md border border-white/10">
+    <div className="w-full max-w-2xl mx-auto bg-[#111111]/90 rounded-3xl p-8 backdrop-blur-md border border-white/10">
       <h3 className="text-white text-lg font-semibold mb-2">
         Join our Waitlist
       </h3>

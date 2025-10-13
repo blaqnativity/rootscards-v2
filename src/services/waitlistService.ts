@@ -5,8 +5,6 @@ export const submitWaitlist = async (formData: {
   spaceType: string;
   email: string;
 }) => {
-  console.log("Received from form:", formData);
-
   const now = new Date();
   const nowTs = now.getTime();
   const nowDate = now.toISOString().split("T")[0];
@@ -27,39 +25,14 @@ export const submitWaitlist = async (formData: {
         card: "waitlist",
         full_name: formData.name,
         email: formData.email,
-        phone: "",
         first_name: formData.name.split(" ")[0] || "",
         last_name: formData.name.split(" ")[1] || "",
-        phone_number: "",
         installation: formData.spaceType || null,
       },
     },
   };
 
-  try {
-    const response = await axios.post(
-      "https://api.therootshive.com/v3/rootscard/addfrontendevent ",
-      payload,
-      {
-        headers: { "Content-Type": "application/json" },
-        auth: {
-          username: "Sample",
-          password: "rootscards",
-        },
-      }
-    );
-
-    console.log("✅ API response:", response.data);
-    return response.data;
-  } catch (error) {
-    if (axios.isAxiosError(error)) {
-      console.error(
-        "Error submitting waitlist:",
-        error.response?.data || error.message
-      );
-    } else {
-      console.error("Error submitting waitlist:", (error as Error).message);
-    }
-    throw error;
-  }
+  // Call your Vercel API endpoint, not the external API
+  const res = await axios.post("/api/submit-waitlist", payload);
+  return res.data;
 };
