@@ -1,5 +1,5 @@
-import axios from "axios";
 import type { VercelRequest, VercelResponse } from "@vercel/node";
+import axios from "axios";
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== "POST") {
@@ -22,10 +22,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(200).json(response.data);
   } catch (error: unknown) {
     if (error instanceof Error) {
-      console.error("API Error:", error.message);
+      console.error(error.message);
     } else {
-      console.error("API Error:", error);
+      console.error(error);
     }
-    return res.status(500).json({ error: "Failed to submit waitlist data" });
+    return res.status(500).json({ error: "Failed to submit waitlist" });
   }
 }

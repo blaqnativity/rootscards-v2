@@ -25,6 +25,7 @@ export const submitWaitlist = async (formData: {
         card: "waitlist",
         full_name: formData.name,
         email: formData.email,
+        phone: "",
         first_name: formData.name.split(" ")[0] || "",
         last_name: formData.name.split(" ")[1] || "",
         installation: formData.spaceType || null,
@@ -32,7 +33,6 @@ export const submitWaitlist = async (formData: {
     },
   };
 
-  // API endpoint call
   const res = await axios.post("/api/submit-waitlist", payload);
   return res.data;
 };
