@@ -26,6 +26,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     } else {
       console.error("API Error:", error);
     }
-    return res.status(500).json({ error: "Failed to submit waitlist" });
+    return res.status(500).json({ error: "Failed to submit waitlist data" });
   }
 }
