@@ -11,9 +11,6 @@
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
-    "@heroui/input": "^2.4.28",
-    "@heroui/system": "^2.4.23",
-    "@heroui/theme": "^2.4.23",
     "@hookform/resolvers": "^5.2.2",
     "@phosphor-icons/react": "^2.1.10",
     "@radix-ui/react-select": "^2.2.6",
@@ -24,7 +21,6 @@
     "class-variance-authority": "^0.7.1",
     "framer-motion": "^12.23.22",
     "gsap": "^3.13.0",
-    "lottie-react": "^2.4.1",
     "lucide-react": "^0.542.0",
     "ogl": "^1.0.11",
     "react": "^19.2.0",

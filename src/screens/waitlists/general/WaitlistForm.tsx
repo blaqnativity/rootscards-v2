@@ -4,7 +4,6 @@ import { waitlistSchema } from "@/services/validation/waitlistSchema";
 import { submitWaitlist } from "@/services/waitlistService";
 import { ArrowRight, CaretDownIcon } from "@phosphor-icons/react";
 import { toast } from "react-toastify";
-import { Input } from "@heroui/input";
 export const WaitlistForm = () => {
   const {
     register,
@@ -55,20 +54,12 @@ export const WaitlistForm = () => {
       >
         <div className="flex flex-col md:flex-row gap-3">
           <div className="flex-1">
-            <Input
-              {...register("name")}
-              placeholder="Enter your name"
-              variant="flat"
+            <input
               type="text"
-              radius="full"
-              classNames={{
-                input: "text-white placeholder:text-gray-400",
-                inputWrapper:
-                  "bg-black/40 border border-white/10 backdrop-blur-sm hover:border-white/20 focus:border-white/30",
-                label: "text-gray-300",
-              }}
+              placeholder="Name"
+              {...register("name")}
+              className="w-full bg-black/30 border border-white/10 rounded-full px-5 py-3 text-sm text-white placeholder-gray-400 focus:outline-none focus:border-white/30"
             />
-
             {errors.name && (
               <p className="text-red-400 text-xs mt-1">{errors.name.message}</p>
             )}

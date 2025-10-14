@@ -214,3 +214,18 @@ html {
 select {
   background-color: black;
 }
+select option {
+  @apply backdrop-blur-2xl;
+  background-color: transparent;
+  color: white;
+}
+select:focus {
+  outline: none;
+  border-color: #888;
+}
+select:hover {
+  border-color: #aaa;
+}
+select::-ms-expand {
+  display: none;
+}
