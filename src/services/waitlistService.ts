@@ -33,6 +33,9 @@ export const submitWaitlist = async (formData: {
     },
   };
 
-  const res = await axios.post("/api/submit-waitlist", payload);
+  const res = await axios.post("/api/submit-waitlist", payload, {
+    headers: { "Content-Type": "application/json" },
+  });
+
   return res.data;
 };

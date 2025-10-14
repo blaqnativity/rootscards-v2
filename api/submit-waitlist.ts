@@ -5,6 +5,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== "POST") {
     return res.status(405).json({ message: "Method Not Allowed" });
   }
+  console.log("Forwarding payload:", req.body);
 
   try {
     const response = await axios.post(
@@ -25,6 +26,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       console.error(error.message);
     } else {
       console.error(error);
+      console.log("Received body:", req.body);
     }
     return res.status(500).json({ error: "Failed to submit waitlist" });
   }
