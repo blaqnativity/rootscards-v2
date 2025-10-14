@@ -22,12 +22,20 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     return res.status(200).json(response.data);
   } catch (error: unknown) {
-    if (error instanceof Error) {
-      console.error(error.message);
-    } else {
-      console.error(error);
-      console.log("Received body:", req.body);
+    // Check if it's an Axios error to get more details
+    if (axios.isAxiosError(error)) {
+      console.error("Error from therootshive.com API:", error.response?.data);
+      console.error("Status code from API:", error.response?.status);
+
+      // Send the actual error details back to your frontend for easier debugging
+      return res.status(error.response?.status || 500).json({
+        message: "Request to downstream API failed",
+        details: error.response?.data,
+      });
     }
-    return res.status(500).json({ error: "Failed to submit waitlist" });
+
+    // Fallback for non-Axios errors
+    console.error("An unexpected error occurred:", error);
+    return res.status(500).json({ message: "An unexpected error occurred" });
   }
 }

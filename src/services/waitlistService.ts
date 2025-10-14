@@ -27,15 +27,20 @@ export const submitWaitlist = async (formData: {
         email: formData.email,
         phone: "",
         first_name: formData.name.split(" ")[0] || "",
-        last_name: formData.name.split(" ")[1] || "",
+        last_name: formData.name.split(" ").slice(1).join(" ") || "",
         installation: formData.spaceType || null,
       },
     },
   };
 
-  const res = await axios.post("/api/submit-waitlist", payload, {
-    headers: { "Content-Type": "application/json" },
-  });
-
-  return res.data;
+  try {
+    const res = await axios.post("/api/submit-waitlist", payload, {
+      headers: { "Content-Type": "application/json" },
+    });
+    return res.data;
+  } catch (error) {
+    console.error("Submission failed:", error);
+    // Re-throw the error so the UI component can handle it (e.g., show a message)
+    throw error;
+  }
 };
