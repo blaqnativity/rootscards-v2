@@ -9,7 +9,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   try {
     const response = await axios.post(
-      "https://api.therootshive.com/v3/rootscard/addfrontendevent",
+      "https://api.therootshive.com/v3/rootscard/addevents",
       req.body,
       {
         headers: { "Content-Type": "application/json" },

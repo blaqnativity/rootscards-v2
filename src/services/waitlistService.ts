@@ -33,10 +33,21 @@ export const submitWaitlist = async (formData: {
     },
   };
 
+  // ------------------------------------------------------------------
+  // ✅ CODE INJECTED HERE: Log the payload being SENT to the server
+  console.log("Payload being sent to /api/submit-waitlist:", payload);
+  // ------------------------------------------------------------------
+
   try {
     const res = await axios.post("/api/submit-waitlist", payload, {
       headers: { "Content-Type": "application/json" },
     });
+
+    // ------------------------------------------------------------------
+    // ✅ CODE INJECTED HERE: Log the response data received from the server
+    console.log("API Response Data Received:", res.data);
+    // ------------------------------------------------------------------
+
     return res.data;
   } catch (error) {
     console.error("Submission failed:", error);
