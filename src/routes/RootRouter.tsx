@@ -18,9 +18,9 @@ export const RootRouter = () => {
       <ScrollToTop />
       <Suspense fallback={<Loader color="#ffffff" />}>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/shortlets" element={<Shortlets />} />
-          <Route path="/waitlist-general" element={<General />} />
+          <Route path="/" element={<General />} />
           <Route path="/waitlist-offices" element={<Offices />} />
           <Route path="/waitlist-spaces" element={<Spaces />} />
           <Route path="/waitlist-shortlets" element={<Shortlet />} />

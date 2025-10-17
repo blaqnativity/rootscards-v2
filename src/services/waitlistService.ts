@@ -1,5 +1,6 @@
 import axios from "axios";
 
+// Helper function to format the Date object into 'YYYY-MM-DD HH:MM:SS'
 const formatDateTime = (date: Date): string => {
   const pad = (num: number) => num.toString().padStart(2, "0");
 
@@ -14,6 +15,16 @@ const formatDateTime = (date: Date): string => {
   return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
 };
 
+// Helper function to safely split a full name
+const splitName = (
+  fullName: string
+): { firstName: string; lastName: string } => {
+  const parts = fullName.trim().split(/\s+/);
+  const firstName = parts[0] || "";
+  const lastName = parts.slice(1).join(" ") || "";
+  return { firstName, lastName };
+};
+
 export const submitWaitlist = async (formData: {
   name: string;
   spaceType: string;
@@ -25,6 +36,8 @@ export const submitWaitlist = async (formData: {
 
   const nowDate = now.toISOString().split("T")[0];
   const nowFormatted = formatDateTime(now);
+
+  const { firstName, lastName } = splitName(formData.name); // <== NAME SPLIT
 
   const referenceValue = `spaces-${formData.email}`;
 
@@ -44,6 +57,10 @@ export const submitWaitlist = async (formData: {
         Name: formData.name,
         Email_Address: formData.email,
         Installation: formData.spaceType || null,
+
+        // fullName split into first and last name
+        First_Name: firstName,
+        Last_Name: lastName,
       },
     },
   };
